@@ -1,11 +1,13 @@
 // import react from "react";
 import logo from "../../.././src/logo.svg"
+import "../NavBar/NavBar.css"
 
 
 const Navbar = () => {
 	 return (
 	 	<nav>
-			<img src={logo} alt="logo" />
+
+			<h2>Travel Herd</h2>
 			<button> Dashboard </button>
 			<button>Login</button>
  	

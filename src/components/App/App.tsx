@@ -7,8 +7,11 @@ import Navbar from '../NavBar/NavBar';
 function App() {
   return (<>
 
+<<<<<<< HEAD
 
     <Navbar></Navbar>
+=======
+>>>>>>> main
     <Login></Login>
     <Dashboard></Dashboard>
     </>

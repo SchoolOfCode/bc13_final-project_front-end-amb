@@ -1,0 +1,13 @@
+.join-form {
+    width: 30%;
+    height: 30%;
+    top: 30%;
+    left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgb(246, 246, 246);
+    border: 3px solid blue;
+    border-radius: 15px;
+}

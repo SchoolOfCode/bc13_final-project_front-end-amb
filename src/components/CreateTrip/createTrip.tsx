@@ -18,8 +18,9 @@ function onSubmit(data:any) {
 
 
     return (<>
-    <div className="create-trip-form">
+    
     <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="create-trip-form">
         <label>Group Name</label>
         <input
             type="text"       
@@ -62,9 +63,9 @@ function onSubmit(data:any) {
 
 
         
-
+        </div>
     </form>
-    </div>
+    
     </>)
 }
 

@@ -36,7 +36,7 @@ const Dashboard = () => {
     <button onClick={() => {handleJoinTripVisibility()}}>Join Trip</button>
 
     <div style={{visibility: joinTripVisibility ? 'visible' : 'hidden'}}>
-        <JoinTrip></JoinTrip>
+        <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
     </div>
 
     <button onClick={() => {handleViewTripVisibility()}}>View Trip</button>

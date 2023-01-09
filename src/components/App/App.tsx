@@ -5,7 +5,7 @@ import Dashboard from '../Dashboard/dashboard'
 
 function App() {
   return (<>
-  hello world
+
     <Login></Login>
     <Dashboard></Dashboard>
     </>

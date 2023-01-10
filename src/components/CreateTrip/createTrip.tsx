@@ -4,7 +4,7 @@ import './createTrip.css'
 import { useAuth0 } from '@auth0/auth0-react'
 import MembersForm from './MembersForm/MembersForm'
 import DateForm from './DateForm/DateForm'
-import Itinerary from './Itinerary/Itinerary'
+import ItineraryForm from './ItineraryForm/ItineraryForm'
 
 const CreateTrip = () => {
 
@@ -19,10 +19,9 @@ const {
 } = useForm();
 
 function onSubmit(data:any) {
-    data.Admin = user?.sub
-    console.log(data)
+    data.Admin = user?.sub  // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
+    console.log(data) // TODO: Create a function that changes state in the dashboard component to 'data'.
 }
-
 
 
     return (<>
@@ -53,22 +52,9 @@ function onSubmit(data:any) {
         <MembersForm
             {...{ control, register, errors}}
         />
-        <Itinerary
+        <ItineraryForm
             {...{ control, register, errors}}
         />
-    
-
-        {/* <label>Itinerary</label>
-        <input
-            type="text"
-            {...register("itinerary", {
-                required: true,
-                minLength: 3,
-            })}/>
-            {errors.itinerary && <p>This field needs to be completed</p>} */}
-
-
-        
             
         <input type="submit" value="submit"></input>
        

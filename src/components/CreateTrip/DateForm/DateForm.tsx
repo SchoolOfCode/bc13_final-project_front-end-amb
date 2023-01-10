@@ -11,10 +11,10 @@ export default function DateForm({ control, register}:any) {
   return (
     <>
       
-      <ul>
+      
         {fields.map((item, index) => {
           return (
-            <li key={item.id}>
+            <div key={item.id}>
               <input
                 type="date"
                 name={`date[${index}].name`}            
@@ -25,10 +25,10 @@ export default function DateForm({ control, register}:any) {
                 Delete
               </button>
 
-            </li>
+            </div>
           );
         })}
-      </ul>
+      
 
         <button
           type="button"

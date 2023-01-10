@@ -11,10 +11,10 @@ export default function MembersForm({ control, register}:any) {
   return (
     <>
       
-      <ul>
+      
         {fields.map((item, index) => {
           return (
-            <li style={{listStyle:'none'}} key={item.id}>
+            <div style={{listStyle:'none'}} key={item.id}>
 
               <div>
               <label>Name 
@@ -37,10 +37,10 @@ export default function MembersForm({ control, register}:any) {
                 Delete
               </button>
 
-            </li>
+            </div>
           );
         })}
-      </ul>
+      
 
         <button
           type="button"

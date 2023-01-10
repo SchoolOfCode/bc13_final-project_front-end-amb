@@ -37,7 +37,7 @@ const Dashboard = () => {
         <CreateTrip></CreateTrip>
     </div>
 
-    {!isAuthenticated ? <Login></Login> : <p>logged in</p>}
+    {!isAuthenticated && <Login></Login>}
 
     {isAuthenticated ? <button onClick={() => {handleJoinTripVisibility()}}>Join Trip</button> : <p>You need to be logged in to view this</p>}
 

@@ -4,9 +4,27 @@
     width: 100vw;
     height: 100vh;
     background-color: rgb(234, 234, 234);
-    
-    justify-content: center;
-    align-items: center;
+    justify-content:space-between;
+    align-items:center;
     display: flex;
+    flex-direction: column;
+}
 
+.flex-item {
+    align-self: flex-end;
+    margin: 25px;
+}
+
+.getStarted {
+    width: 10%;
+    height: 10%;
+    background-color: rgb(142, 202, 255);
+    border-radius: 15px;;
+}
+
+.flex-item > button {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(142, 202, 255);
+    border-radius: 15px;;
 }

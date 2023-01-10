@@ -7,12 +7,15 @@ const Login = ({getStarted}:any) => {
 
  
 
-    return (<div className="login-page">
-
-        <LogoutButton></LogoutButton>
+    return (
+    <div className="login-page">
+        
+       <div className="flex-item">
         <LoginButton/>
-        <button onClick={getStarted}>Get started</button>
-       
+        </div>
+        <button className="getStarted" onClick={getStarted}>Get started</button>
+        
+        <LogoutButton></LogoutButton>
     </div>)
 }
 

@@ -1,17 +1,25 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
 import './createTrip.css'
+import { useAuth0 } from '@auth0/auth0-react'
+import MembersForm from './MembersForm/MembersForm'
+import DateForm from './DateForm/DateForm'
+import Itinerary from './Itinerary/Itinerary'
 
 const CreateTrip = () => {
 
+    const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+
 const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors }
 } = useForm();
 
 function onSubmit(data:any) {
+    data.Admin = user?.sub
     console.log(data)
 }
 
@@ -39,24 +47,28 @@ function onSubmit(data:any) {
             })}/>
             {errors.destination && <p>This field needs to be completed</p>}
 
-        <label>Date</label>
-        <input
-            type="date"
-            {...register("date", {
-                required: true,
-                minLength: 3,
-            })}/>
-            {errors.date && <p>This field needs to be completed</p>}
+        <DateForm
+            {...{ control, register, errors}}
+        />
+        <MembersForm
+            {...{ control, register, errors}}
+        />
+        <Itinerary
+            {...{ control, register, errors}}
+        />
+    
 
-        <label>Itinerary</label>
+        {/* <label>Itinerary</label>
         <input
             type="text"
             {...register("itinerary", {
                 required: true,
                 minLength: 3,
             })}/>
-            {errors.itinerary && <p>This field needs to be completed</p>}
+            {errors.itinerary && <p>This field needs to be completed</p>} */}
 
+
+        
             
         <input type="submit" value="submit"></input>
        
@@ -69,4 +81,4 @@ function onSubmit(data:any) {
     </>)
 }
 
-export default CreateTrip
+export default CreateTrip  

@@ -1,7 +1,7 @@
 // import react from "react";
 import {  Link } from "react-router-dom";
 import './NavBar.css';
-import Dashboard from "../Dashboard/dashboard";
+
 
 
 const Navbar= () =>{
@@ -15,7 +15,7 @@ const Navbar= () =>{
 			<li className="menu-item">
 				<Link to="/viewTripsPage">View Trips</Link>
 			</li>
-			<button>Login</button>
+			<button className ="button-24">Login</button>
 		</nav>
 	 );
 	 };

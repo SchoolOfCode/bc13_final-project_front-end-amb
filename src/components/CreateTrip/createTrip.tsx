@@ -1,20 +1,27 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
 import './createTrip.css'
+import { useAuth0 } from '@auth0/auth0-react'
+import MembersForm from './MembersForm/MembersForm'
+import DateForm from './DateForm/DateForm'
+import ItineraryForm from './ItineraryForm/ItineraryForm'
 
 const CreateTrip = () => {
 
+    const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+
 const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors }
 } = useForm();
 
 function onSubmit(data:any) {
-    console.log(data)
+    data.Admin = user?.sub  // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
+    console.log(data) // TODO: Create a function that changes state in the dashboard component to 'data'.
 }
-
 
 
     return (<>
@@ -39,24 +46,15 @@ function onSubmit(data:any) {
             })}/>
             {errors.destination && <p>This field needs to be completed</p>}
 
-        <label>Date</label>
-        <input
-            type="date"
-            {...register("date", {
-                required: true,
-                minLength: 3,
-            })}/>
-            {errors.date && <p>This field needs to be completed</p>}
-
-        <label>Itinerary</label>
-        <input
-            type="text"
-            {...register("itinerary", {
-                required: true,
-                minLength: 3,
-            })}/>
-            {errors.itinerary && <p>This field needs to be completed</p>}
-
+        <DateForm
+            {...{ control, register, errors}}
+        />
+        <MembersForm
+            {...{ control, register, errors}}
+        />
+        <ItineraryForm
+            {...{ control, register, errors}}
+        />
             
         <input type="submit" value="submit"></input>
        
@@ -69,4 +67,4 @@ function onSubmit(data:any) {
     </>)
 }
 
-export default CreateTrip
+export default CreateTrip  

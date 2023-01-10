@@ -1,0 +1,47 @@
+#dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    gap: 10%;
+}
+
+#dashboard-btn-container{
+    border:0px solid black;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:35%;
+    gap:5%;
+}
+
+
+#dashboard-btn-container div {
+    border: 3px solid #df6332;
+    height:100%;
+    flex-basis:15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 400%;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+#dashboard-btn-container p {
+    font-size: 200%;
+    margin: 0
+}
+
+.icon {
+    font-size: 300%;
+}

@@ -27,3 +27,4 @@ function handleSubmit(e:any) {
 }
 
 export default JoinTrip
+ 

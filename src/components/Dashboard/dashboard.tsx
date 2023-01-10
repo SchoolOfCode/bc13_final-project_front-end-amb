@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+
 import './dashboard.css'
-import CreateTrip from "../CreateTrip/createTrip";
-import JoinTrip from "../JoinTripPage/joinTrip";
-import ViewTrips from "../ViewTripsPage/viewTripsPage";
-import TripDetails from "../TripDetailsPage/tripDetailsPage";
+import React, {useState} from 'react'
+import CreateTrip from '../CreateTrip/createTrip'
+import JoinTrip from '../JoinTripPage/joinTrip'
+import ViewTrips from '../ViewTripsPage/viewTripsPage'
+import TripDetails from '../TripDetailsPage/tripDetailsPage'
+import { useAuth0 } from '@auth0/auth0-react'
+import Login from '../Login/login'
+import LogoutButton from '../LogoutButton/LogoutButton'
+
 
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
 import { ImBinoculars } from "react-icons/im";
 
 const Dashboard = () => {
+
   const [createTripVisibility, setCreateTripVisibility] = useState(false);
   const [joinTripVisibility, setJoinTripVisibility] = useState(false);
   const [viewTripVisibility, setViewTripVisibility] = useState(false);
+  const [loginVisibility, setLoginVisibility] = useState(true)
+  const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
   function handleCreateTripVisibility() {
     setCreateTripVisibility((current) => !current);
@@ -26,6 +34,10 @@ const Dashboard = () => {
     setViewTripVisibility((current) => !current);
   }
 
+ function handleLoginVisibility() {
+  setLoginVisibility(current => !current)
+    }
+    
   return (
     <section id="dashboard">
       <h1>Where are we going?</h1>
@@ -67,12 +79,16 @@ const Dashboard = () => {
           <p>view</p>
           <p>trips</p>
         </div>
+<div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
 
+    {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
+</div>
         <div style={{ display: viewTripVisibility ? "block" : "none" }}>
           <ViewTrips></ViewTrips>
         </div>
       </div>
       <div>
+
         <TripDetails></TripDetails>
       </div>
     </section>

@@ -1,13 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import LoginButton from "../LoginButton/LoginButton";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import './login.css'
 
-const Login = ({visibility}:any) => {
+const Login = () => {
+
+ 
+
     return (<div className="login-page">
 
- <LogoutButton></LogoutButton>
-        <LoginButton prop={visibility}/>
+        <LogoutButton></LogoutButton>
+        <LoginButton/>
        
     </div>)
 }

@@ -4,6 +4,7 @@ import JoinTrip from '../JoinTripPage/joinTrip'
 import ViewTrips from '../ViewTripsPage/viewTripsPage'
 import TripDetails from '../TripDetailsPage/tripDetailsPage'
 import { useAuth0 } from '@auth0/auth0-react'
+import Login from '../Login/login'
 
 
 const Dashboard = () => {
@@ -35,6 +36,8 @@ const Dashboard = () => {
     <div style={{visibility: createTripVisibility ? 'visible' : 'hidden'}}>
         <CreateTrip></CreateTrip>
     </div>
+
+    {!isAuthenticated ? <Login></Login> : <p>logged in</p>}
 
     {isAuthenticated ? <button onClick={() => {handleJoinTripVisibility()}}>Join Trip</button> : <p>You need to be logged in to view this</p>}
 

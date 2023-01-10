@@ -30,6 +30,7 @@ function App() {
         <Dashboard></Dashboard>
         
       </Auth0Provider>
+
     </>
 
   );

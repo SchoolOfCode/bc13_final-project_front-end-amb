@@ -1,23 +1,27 @@
 // import react from "react";
-import logo from "../../.././src/logo.svg"
-import "../NavBar/NavBar.css"
+import {  Link } from "react-router-dom";
+import './NavBar.css';
 
 
-const Navbar = () => {
-	 return (
-	 	<nav>
+
+const Navbar= () =>{
+	return (
+		<nav>
 
 			<h2>Travel Herd</h2>
-			<button> Dashboard </button>
-			<button>Login</button>
- 	
-	 	</nav>
+			<li className="menu-item">
+				<Link to="/">Dashboard</Link>
+			</li>
+			<li className="menu-item">
+				<Link to="/viewTripsPage">View Trips</Link>
+			</li>
+			<button className ="button-24">Login</button>
+		</nav>
 	 );
 	 };
 	
 	 export default Navbar;
 	
-
 
 
 

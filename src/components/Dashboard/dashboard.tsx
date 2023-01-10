@@ -35,8 +35,9 @@ const Dashboard = () => {
             handleCreateTripVisibility();
           }}
         >
-          <IoMdCreate />
-          <h3>create trip</h3>
+          <IoMdCreate className="icon" />
+          <p>create</p>
+          <p>trip</p>
         </div>
 
         <div style={{ display: createTripVisibility ? "block" : "none" }}>
@@ -48,8 +49,9 @@ const Dashboard = () => {
             handleJoinTripVisibility();
           }}
         >
-          <AiOutlineUsergroupAdd />
-          <h3>join trip</h3>
+          <AiOutlineUsergroupAdd className="icon"/>
+          <p>join</p>
+          <p>trip</p>
         </div>
 
         <div style={{ display: joinTripVisibility ? "block" : "none" }}>
@@ -61,8 +63,9 @@ const Dashboard = () => {
             handleViewTripVisibility();
           }}
         >
-         <ImBinoculars/>
-          <h3>view trip</h3>
+         <ImBinoculars className="icon"/>
+          <p>view</p>
+          <p>trips</p>
         </div>
 
         <div style={{ display: viewTripVisibility ? "block" : "none" }}>

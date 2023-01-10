@@ -3,7 +3,7 @@ import LoginButton from "../LoginButton/LoginButton";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import './login.css'
 
-const Login = () => {
+const Login = ({getStarted}:any) => {
 
  
 
@@ -11,6 +11,7 @@ const Login = () => {
 
         <LogoutButton></LogoutButton>
         <LoginButton/>
+        <button onClick={getStarted}>Get started</button>
        
     </div>)
 }

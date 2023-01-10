@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Login from '../Login/login'
 import Dashboard from '../Dashboard/dashboard'
 import Navbar from '../NavBar/NavBar';
 import { Auth0Provider } from "@auth0/auth0-react";
-import LoginButton from "../LoginButton/LoginButton";
-import LogoutButton from "../LogoutButton/LogoutButton";
+import { useAuth0 } from '@auth0/auth0-react'
+
+let counter = 1;
 
 function App() {
+
+  const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+
+  const [loginVisibility, setLoginVisibility] = useState(true)
+
+
+  function handleLoginVisibility() {
+
+    if(isAuthenticated)
+    setLoginVisibility(false)
+  }
+
   return (
       <>
        <Auth0Provider 
@@ -23,10 +36,13 @@ function App() {
           scope="read:current_user update:current_user_metadata"
           useRefreshTokens={true}
         >
-           <LoginButton/>
-           <LogoutButton/>
+
+        <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
+         <Login visibility={handleLoginVisibility}></Login>
+         </div>
+
         <Navbar></Navbar>
-        <Login></Login>
+        
         <Dashboard></Dashboard>
       </Auth0Provider>
     </>

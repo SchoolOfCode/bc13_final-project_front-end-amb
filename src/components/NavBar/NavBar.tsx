@@ -15,7 +15,7 @@ const Navbar= () =>{
 			<li className="menu-item">
 				{/* <Link to="/viewTripsPage">View Trips</Link> */}
 			</li>
-			<button className ="button-24">Login</button>
+			<button className ="button-24">Log in</button>
 		</nav>
 	 );
 	 };

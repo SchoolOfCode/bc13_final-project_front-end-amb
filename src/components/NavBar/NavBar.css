@@ -18,34 +18,6 @@ h2 {
 
 }
 
-nav .menu-item {
-    color: var(--beige);
-    font-weight: 600;
-    transform-style: preserve-3d;
-    flex-grow: 1;
-    display: flex;
-    flex-basis: var(--item-width);
-    box-sizing: border-box;
-    padding: 1em 1.5em;
-    justify-content: center;
-    perspective: 200px;
-    letter-spacing: 0.5px;
-    min-height: 7.5em;
-}
-
-nav .menu-text, nav .menu-text a {
-    font-size: 1em;
-    color: var(--beige);
-    text-decoration: none;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    transition: color 0.1s ease-out;
-    text-align: center;
-}
-
-nav .menu-text a:hover {
-    color: rgba(255,255,255,0.5);
-}
-
 .button-24 {
     margin: 13% 40px 0px 0px;
     width: 100px;
@@ -84,4 +56,37 @@ nav .menu-text a:hover {
   .button-24:active {
     opacity: .5;
   }
+
+
+
+
+
+
+  nav .menu-item {
+    color: var(--beige);
+    font-weight: 600;
+    transform-style: preserve-3d;
+    flex-grow: 1;
+    display: flex;
+    flex-basis: var(--item-width);
+    box-sizing: border-box;
+    padding: 1em 1.5em;
+    justify-content: center;
+    perspective: 200px;
+    letter-spacing: 0.5px;
+    min-height: 7.5em;
+}
+
+nav .menu-text, nav .menu-text a {
+    font-size: 1em;
+    color: var(--beige);
+    text-decoration: none;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    transition: color 0.1s ease-out;
+    text-align: center;
+}
+
+nav .menu-text a:hover {
+    color: rgba(255,255,255,0.5);
+}
   

@@ -21,6 +21,10 @@ const Dashboard = () => {
   const [joinTripVisibility, setJoinTripVisibility] = useState(false);
   const [viewTripVisibility, setViewTripVisibility] = useState(false);
   const [loginVisibility, setLoginVisibility] = useState(true)
+  const [tripDetailsVisibility, setTripDetailsVisibility] = useState(false)
+  
+  const [currentTrip, setCurrentTrip] = useState({})
+
   const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
   function handleCreateTripVisibility() {
@@ -35,9 +39,13 @@ const Dashboard = () => {
     setViewTripVisibility((current) => !current);
   }
 
- function handleLoginVisibility() {
-  setLoginVisibility(current => !current)
-    }
+  function handleLoginVisibility() {
+    setLoginVisibility((current) => !current)
+  }
+
+  function handleTripDetailsVisibility() {
+    setTripDetailsVisibility((current) => !current)
+  }
     
   return (
     <div>
@@ -91,14 +99,14 @@ const Dashboard = () => {
     </div>
 
     <div style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
-        <CreateTrip cancelButton={handleCreateTripVisibility}></CreateTrip>
+        <CreateTrip setTripDetails={setCurrentTrip} setTripcancelButton={handleCreateTripVisibility}></CreateTrip>
     </div>
 
     <div style={{ visibility: viewTripVisibility ? "visible" : "hidden" }}>
-        <ViewTrips visibility={handleViewTripsVisibility}></ViewTrips>
+        <ViewTrips tripDetailsVisibility={handleTripDetailsVisibility} visibility={handleViewTripsVisibility}></ViewTrips>
     </div>
 
-    <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
+    <div style={{ visibility: tripDetailsVisibility ? "visible" : "hidden" }}>
         <TripDetails></TripDetails>
     </div>
 

@@ -1,5 +1,6 @@
 import "./viewTripsPage.css"
 import Navbar from "../NavBar/NavBar";
+import TripCard from "./TripCard/TripCard";
 
 const tripsArr = [
     {
@@ -32,15 +33,18 @@ const ViewTrips = (props:any) => {
        <div className="view-trip-form-item">
             <Navbar />
        </div>
-       <ul className="view-trip-form-item">
+       
+       <div className="view-trip-form-item">
+       
             {tripsArr.map((trip) => {
-                return (<li>
-                    <p>{trip.tripName}</p>
+                return (<div>
+                    {/* <p>{trip.tripName}</p>
                     <p>{trip.startDate} {trip.endDate}</p>
-                    <p>{trip.location}</p>
-                </li>)
+                    <p>{trip.location}</p> */}
+                    <TripCard handleTripDetailsVisibility={props.tripDetailsVisibility} trip={trip}></TripCard>
+                </div>)
             })}
-        </ul>
+        </div>
         <button className="view-trip-cancel-button" onClick={props.visibility}>cancel</button>
         </div>
         

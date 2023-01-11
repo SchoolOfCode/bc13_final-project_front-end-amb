@@ -21,6 +21,10 @@ const Dashboard = () => {
   const [joinTripVisibility, setJoinTripVisibility] = useState(false);
   const [viewTripVisibility, setViewTripVisibility] = useState(false);
   const [loginVisibility, setLoginVisibility] = useState(true)
+  const [tripDetailsVisibility, setTripDetailsVisibility] = useState(false)
+  
+  const [currentTrip, setCurrentTrip] = useState({})
+
   const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
   function handleCreateTripVisibility() {
@@ -31,25 +35,31 @@ const Dashboard = () => {
     setJoinTripVisibility((current) => !current);
   }
 
-  function handleViewTripVisibility() {
+  function handleViewTripsVisibility() {
     setViewTripVisibility((current) => !current);
   }
 
- function handleLoginVisibility() {
-  setLoginVisibility(current => !current)
-    }
+  function handleLoginVisibility() {
+    setLoginVisibility((current) => !current)
+  }
+
+  function handleTripDetailsVisibility() {
+    setTripDetailsVisibility((current) => !current)
+  }
     
   return (
+    <div>
     <section id="dashboard">
+
+      <div className="navbar-dashboard">
        <Navbar></Navbar>
-      <h1>Where are we going?</h1>
+      </div>
 
-      <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
+      <h1>Where are we going?</h1> 
 
-    {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
-</div>
       <div id="dashboard-btn-container">
-        <div
+
+        <div className="dashboard-container"
           onClick={() => {
             handleCreateTripVisibility();
           }}
@@ -59,11 +69,7 @@ const Dashboard = () => {
           <p>trip</p>
         </div>
 
-        <div className="dashboard-container" style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
-          <CreateTrip></CreateTrip>
-        </div>
-
-        <div
+        <div className="dashboard-container"
           onClick={() => {
             handleJoinTripVisibility();
           }}
@@ -73,13 +79,9 @@ const Dashboard = () => {
           <p>trip</p>
         </div>
 
-        <div className="dashboard-container" style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
-          <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
-        </div>
-
-        <div
+        <div className="dashboard-container"
           onClick={() => {
-            handleViewTripVisibility();
+            handleViewTripsVisibility();
           }}
         >
          <ImBinoculars className="icon"/>
@@ -87,15 +89,32 @@ const Dashboard = () => {
           <p>trips</p>
         </div>
 
-        <div className="dashboard-container" style={{ display: viewTripVisibility ? "block" : "none" }}>
-          <ViewTrips></ViewTrips>
-        </div>
+       
       </div>
-      <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
-
-        <TripDetails></TripDetails>
-      </div>
+     
     </section>
+
+    <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
+          {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
+    </div>
+
+    <div style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
+        <CreateTrip tripDetailsVisibility={handleTripDetailsVisibility} setTripDetails={setCurrentTrip} setTripcancelButton={handleCreateTripVisibility}></CreateTrip>
+    </div>
+
+    <div style={{ visibility: viewTripVisibility ? "visible" : "hidden" }}>
+        <ViewTrips setTripDetails={setCurrentTrip} tripDetailsVisibility={handleTripDetailsVisibility} visibility={handleViewTripsVisibility}></ViewTrips>
+    </div>
+
+    {currentTrip && <div style={{ visibility: tripDetailsVisibility ? "visible" : "hidden" }}>
+        <TripDetails tripDetails={currentTrip}></TripDetails>
+    </div>}
+
+    <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
+        <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
+    </div>
+
+  </div>
   );
 };
 

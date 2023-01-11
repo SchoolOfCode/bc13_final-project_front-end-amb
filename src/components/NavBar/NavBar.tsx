@@ -1,6 +1,7 @@
 // import react from "react";
 //import {  Link } from "react-router-dom";
 import './NavBar.css';
+import AuthButtons from '../AuthButtons/AuthButtons';
 
 
 
@@ -15,7 +16,10 @@ const Navbar= () =>{
 			<li className="menu-item">
 				{/* <Link to="/viewTripsPage">View Trips</Link> */}
 			</li>
-			<button className ="button-24">Log in</button>
+			<div>
+			<AuthButtons/>
+			</div>
+			{/* <button className ="button-24">Log in</button> */}
 		</nav>
 	 );
 	 };

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Dashboard from '../Dashboard/dashboard'
-import Navbar from '../NavBar/NavBar';
+
 import { Auth0Provider } from "@auth0/auth0-react";
 import { useAuth0 } from '@auth0/auth0-react'
 
@@ -25,7 +25,7 @@ function App() {
           useRefreshTokens={true}
         >
       
-        <Navbar></Navbar>
+       
         <Dashboard></Dashboard>
         
       </Auth0Provider>

@@ -1,14 +1,17 @@
-.create-trip-form {
+.createTripContainer {
+    height: 100vh;
+    width: 100vw;
     position: fixed;
-    display: flex;
-    top: 30%;
-    left: 30%;
     background-color: rgb(222, 222, 222);
-    width: 30%;
-    height: 50%;
+    top: 0%;
+
+}
+
+.create-trip-form {
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 5px solid blue;
     flex-wrap: wrap;
 }
+

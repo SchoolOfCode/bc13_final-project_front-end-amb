@@ -8,4 +8,13 @@
     align-items: center;
     position: fixed;
     background-color: var(--beige);
+    margin: auto;
+}
+
+.join-form-item {
+    margin-bottom: auto;
+}
+
+.join-cancel-button {
+    margin-bottom: 10%;
 }

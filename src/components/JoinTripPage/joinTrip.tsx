@@ -27,7 +27,7 @@ function handleSubmit(e:any) {
             </label>
             <input type="submit" value="Submit"></input>
         </form>
-        <button className="join-cancel-button" onClick={props.visibility}>cancel</button>
+        <button className="join-cancel-button cancel-button" onClick={props.visibility}>cancel</button>
     </div>
 }
 

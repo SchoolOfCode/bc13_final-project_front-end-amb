@@ -14,8 +14,7 @@ const Login = ({getStarted}:any) => {
         <LoginButton/>
         </div>
         <button className="getStarted" onClick={getStarted}>Get started</button>
-        
-        <LogoutButton></LogoutButton>
+      
     </div>)
 }
 

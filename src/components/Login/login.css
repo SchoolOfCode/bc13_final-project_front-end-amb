@@ -22,6 +22,7 @@
     background-color: var(--green);
     border-radius: var(--border-radius);
     color: var(--beige);
+    margin: auto;
 }
 
 .flex-item > button {

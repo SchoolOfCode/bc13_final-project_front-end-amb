@@ -28,8 +28,11 @@ const tripsArr = [
 const ViewTrips = (props:any) => {
     return (
        <div className='view-trips-div'>
-        <Navbar/>
-       <ul>
+
+       <div className="view-trip-form-item">
+            <Navbar />
+       </div>
+       <ul className="view-trip-form-item">
             {tripsArr.map((trip) => {
                 return (<li>
                     <p>{trip.tripName}</p>
@@ -38,7 +41,7 @@ const ViewTrips = (props:any) => {
                 </li>)
             })}
         </ul>
-        <button onClick={props.visibility}>cancel</button>
+        <button className="view-trip-cancel-button" onClick={props.visibility}>cancel</button>
         </div>
         
     )

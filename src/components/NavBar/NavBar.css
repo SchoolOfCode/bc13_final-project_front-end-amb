@@ -1,12 +1,11 @@
 nav {
-    /* width: var(--menu-width); */
-    width: 99vw;
+    width: 100vw;
+    height: 110px;
     display: flex;
     transform-style: preserve-3d;
     justify-content: space-evenly;
     position: relative;
-    /* z-index: 2; */
-    margin: 10px auto;
+    margin: auto;
     padding: 5px;
     flex-wrap: wrap;
     background-color: var(--green);
@@ -48,7 +47,7 @@ nav .menu-text a:hover {
 }
 
 .button-24 {
-    margin: 0px 50px 0px 0px;
+    margin: 0px 40px 0px 0px;
     background: var(--beige);
     border: 1px solid var(--light-orange);
     border-radius: 6px;

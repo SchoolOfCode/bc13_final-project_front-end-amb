@@ -28,9 +28,11 @@ function onSubmit(data:any) {
     return (<>
     <div className="createTripContainer">
 
-    <Navbar></Navbar>
+    <div className="create-trip-item">
+        <Navbar></Navbar>
+    </div>
 
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="create-trip-item" onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">
         <label>Group Name</label>
         <input
@@ -62,10 +64,11 @@ function onSubmit(data:any) {
             
         <input type="submit" value="submit"></input>
 
-        <button onClick={cancelButton}>Cancel</button>
+        
         
         </div>
     </form>
+    <button className="create-cancel-button" onClick={cancelButton}>Cancel</button>
     </div>
     </>)
 }

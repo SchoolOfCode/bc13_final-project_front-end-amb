@@ -41,13 +41,17 @@ const Dashboard = () => {
     
   return (
     <section id="dashboard">
+
+      <div className="navbar-dashboard">
        <Navbar></Navbar>
+      </div>
+
       <h1>Where are we going?</h1>
 
       <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
+          {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
+      </div>
 
-    {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
-</div>
       <div id="dashboard-btn-container">
         <div
           onClick={() => {

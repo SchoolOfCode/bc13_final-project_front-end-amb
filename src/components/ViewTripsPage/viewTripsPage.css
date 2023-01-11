@@ -5,4 +5,13 @@
     height: 100vh;
     position: fixed;
     background: var(--beige);
-    }
+}
+
+.view-trip-form-item {
+  
+    margin-bottom: auto;
+}
+
+.view-trip-cancel-button {
+    margin-bottom: 10%;
+}

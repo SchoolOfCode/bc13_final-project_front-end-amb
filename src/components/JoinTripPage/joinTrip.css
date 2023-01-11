@@ -1,7 +1,7 @@
 .join-form {
     width: 100vw;
     height: 100vh;
-    top: 0%;
+    top: 0px;
     left: 0%;
     display: flex;
     justify-content: center;
@@ -17,4 +17,8 @@
 
 .join-cancel-button {
     margin-bottom: 10%;
+}
+
+.join-nav {
+    top: 0px;
 }

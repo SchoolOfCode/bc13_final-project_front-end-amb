@@ -18,7 +18,7 @@ function handleSubmit(e:any) {
 }
 
     return <div className="join-form">
-        <div className="join-form-item">
+        <div className="join-form-item join-nav">
         <Navbar />
         </div>
         <form className="join-form-item" onSubmit={handleSubmit}>

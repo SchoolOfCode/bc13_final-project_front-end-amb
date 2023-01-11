@@ -1,14 +1,15 @@
 .join-form {
+    top: 0%;
+    left: 0%;
     width: 100vw;
     height: 100vh;
-    top: 0px;
-    left: 0%;
+    position: fixed;
+    background: var(--beige);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    background-color: var(--beige);
-    margin: auto;
+    flex-direction: column;
+ 
 }
 
 .join-form-item {

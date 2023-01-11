@@ -40,20 +40,18 @@ const Dashboard = () => {
     }
     
   return (
+    <div>
     <section id="dashboard">
 
       <div className="navbar-dashboard">
        <Navbar></Navbar>
       </div>
 
-      <h1>Where are we going?</h1>
-
-      <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
-          {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
-      </div>
+      <h1>Where are we going?</h1> 
 
       <div id="dashboard-btn-container">
-        <div
+
+        <div className="dashboard-container"
           onClick={() => {
             handleCreateTripVisibility();
           }}
@@ -63,11 +61,7 @@ const Dashboard = () => {
           <p>trip</p>
         </div>
 
-        <div className="dashboard-container" style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
-          <CreateTrip cancelButton={handleCreateTripVisibility}></CreateTrip>
-        </div>
-
-        <div
+        <div className="dashboard-container"
           onClick={() => {
             handleJoinTripVisibility();
           }}
@@ -77,11 +71,7 @@ const Dashboard = () => {
           <p>trip</p>
         </div>
 
-        <div className="dashboard-container" style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
-          <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
-        </div>
-
-        <div
+        <div className="dashboard-container"
           onClick={() => {
             handleViewTripsVisibility();
           }}
@@ -91,15 +81,32 @@ const Dashboard = () => {
           <p>trips</p>
         </div>
 
-        <div className="dashboard-container" style={{ display: viewTripVisibility ? "block" : "none" }}>
-          <ViewTrips visibility={handleViewTripsVisibility}></ViewTrips>
-        </div>
+       
       </div>
-      <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
-
-        <TripDetails></TripDetails>
-      </div>
+     
     </section>
+
+    <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
+          {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
+    </div>
+
+    <div style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
+        <CreateTrip cancelButton={handleCreateTripVisibility}></CreateTrip>
+    </div>
+
+    <div style={{ visibility: viewTripVisibility ? "visible" : "hidden" }}>
+        <ViewTrips visibility={handleViewTripsVisibility}></ViewTrips>
+    </div>
+
+    <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
+        <TripDetails></TripDetails>
+    </div>
+
+    <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
+        <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
+    </div>
+
+  </div>
   );
 };
 

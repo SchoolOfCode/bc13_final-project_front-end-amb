@@ -5,7 +5,7 @@ nav {
     transform-style: preserve-3d;
     justify-content: space-evenly;
     position: relative;
-    margin: auto;
+    /* margin: auto; */
     padding: 5px;
     flex-wrap: wrap;
     background-color: var(--green);
@@ -61,7 +61,7 @@ nav .menu-text a:hover {
     font-weight: 800;
     line-height: 16px;
     height: 70px;
-    /* min-height: 20px; */
+    min-height: 20px;
     outline: 0;
     padding: 12px 14px;
     text-align: center;

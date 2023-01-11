@@ -4,10 +4,19 @@ const TripDetails = ({tripDetails}:any) => {
 
     console.log(tripDetails)
     return <div className="trip-details-page">
-        {tripDetails && <h1>{tripDetails.group}</h1>}
-        {/* <p>{trip.startDate}</p><p>{trip.endDate}</p>
-        <p>{trip.location}</p> */}
-    </div>
+        {tripDetails && <div>
+        <h1>{tripDetails.group}</h1>
+        <p>Date: {tripDetails.date}</p>
+        </div>}
+      
+       
+        </div>
 }
 
 export default TripDetails
+
+
+  /* 
+        <p>Destination: {tripDetails.destination}</p>
+        {/* {/* <p>Members: {tripDetails.member}</p> */
+        /* <p>Itinerary: {tripDetails.event}</p> */  

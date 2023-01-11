@@ -9,7 +9,7 @@ nav {
     padding: 5px;
     flex-wrap: wrap;
     background-color: var(--green);
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 h2 {
@@ -47,7 +47,8 @@ nav .menu-text a:hover {
 }
 
 .button-24 {
-    margin: 0px 40px 0px 0px;
+    margin: 1% 40px 0px 0px;
+    width: 100px;
     background: var(--beige);
     border: 1px solid var(--light-orange);
     border-radius: 6px;

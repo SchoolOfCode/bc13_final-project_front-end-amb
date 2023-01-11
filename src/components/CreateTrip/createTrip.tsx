@@ -7,7 +7,7 @@ import DateForm from './DateForm/DateForm'
 import ItineraryForm from './ItineraryForm/ItineraryForm'
 import Navbar from '../NavBar/NavBar';
 
-const CreateTrip = ({cancelButton}:any) => {
+const CreateTrip = ({setTripcancelButton}:any) => {
 
     const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
@@ -68,7 +68,7 @@ function onSubmit(data:any) {
         
         </div>
     </form>
-    <button className="create-cancel-button cancel-button" onClick={cancelButton}>Cancel</button>
+    <button className="create-cancel-button cancel-button" onClick={setTripcancelButton}>Cancel</button>
     </div>
     </>)
 }

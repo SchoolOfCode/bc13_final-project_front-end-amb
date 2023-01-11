@@ -4,24 +4,24 @@ import TripCard from "./TripCard/TripCard";
 
 const tripsArr = [
     {
-        tripName: 'Julia hen do',
-        startDate: '2023/06/03',
-        endDate: '2023/06/06',
-        location: 'Paris'
+        group: 'Julia hen do',
+        date: '2023/06/03',
+        // endDate: '2023/06/06',
+        destination: 'Paris'
 
     },
 
     {
-        tripName: 'Work christmas meal',
-        startDate: '2023/12/18',
-        endDate: '2023/12/18',
-        location: 'London'
+        group: 'Work christmas meal',
+        date: '2023/12/18',
+        // endDate: '2023/12/18',
+        destination: 'London'
     },
      {
-        tripName: 'Girls trip',
-        startDate: '2023/08/01',
-        endDate: '2023/08/12',
-        location: 'Ibiza'
+        group: 'Girls trip',
+        date: '2023/08/01',
+        // endDate: '2023/08/12',
+        destination: 'Ibiza'
      }
 
 ]
@@ -39,7 +39,7 @@ const ViewTrips = (props:any) => {
             {tripsArr.map((trip) => {
                 return (<div>
 
-                    <TripCard handleTripDetailsVisibility={props.tripDetailsVisibility} trip={trip}></TripCard>
+                    <TripCard tripDetails={props.setTripDetails} handleTripDetailsVisibility={props.tripDetailsVisibility} trip={trip}></TripCard>
                 </div>)
             })}
         </div>

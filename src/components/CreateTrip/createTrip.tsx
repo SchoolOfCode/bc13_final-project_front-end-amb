@@ -36,23 +36,23 @@ function onSubmit(data:any) {
 
     <form className="create-trip-item" onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">
-        <label>Group Name</label>
+        <label>group name</label>
         <input
             type="text"       
             {...register("group", {
                 required: true,
                 minLength: 3,
             })}/>
-            {errors.group && <p>This field needs to be completed</p>}
+            {errors.group && <p>This field needs to be completed.</p>}
 
-        <label>Destination</label>
+        <label>destination</label>
         <input
             type="text"
             {...register("destination", {
                 required: true,
                 minLength: 3,
             })}/>
-            {errors.destination && <p>This field needs to be completed</p>}
+            {errors.destination && <p>This field needs to be completed.</p>}
 
         <DateForm
             {...{ control, register, errors}}
@@ -70,7 +70,7 @@ function onSubmit(data:any) {
         
         </div>
     </form>
-    <button className="create-cancel-button cancel-button" onClick={setTripcancelButton}>Cancel</button>
+    <button className="create-cancel-button cancel-button" onClick={setTripcancelButton}>cancel</button>
     </div>
     </>)
 }

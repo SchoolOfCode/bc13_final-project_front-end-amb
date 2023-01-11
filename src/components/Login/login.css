@@ -22,7 +22,16 @@
     background-color: var(--green);
     border-radius: var(--border-radius);
     color: var(--beige);
+    font-family: var(--font);
     margin: auto;
+    border: 1px solid var(--light-orange);
+    
+}
+
+.getStarted:hover,
+.getStarted:active {
+    border: 3px solid var(--dark-orange);
+    color: var(--light-orange);
 }
 
 /* .flex-item > button {

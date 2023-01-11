@@ -24,6 +24,14 @@ code {
     monospace;
 }
 
+.button:hover,
+.button:active {
+    border: 3px solid var(--dark-orange);
+    color: var(--light-orange);
+}
+
+
+
 .cancel-button {
   margin: 13% 40px 0px 0px;
   width: 100px;

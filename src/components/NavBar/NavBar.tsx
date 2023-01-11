@@ -2,14 +2,14 @@
 //import {  Link } from "react-router-dom";
 import './NavBar.css';
 import AuthButtons from '../AuthButtons/AuthButtons';
-
+import logo from '../../images/Logo.png';
 
 
 const Navbar= () =>{
 	return (
 		<nav>
-
-			<h2>Travel Herd</h2>
+			<img className="logo" src={logo} alt="camels walking off into distance"></img>
+			<text>TRAVEL HERD</text>
 			<li className="menu-item">
 				{/* <Link to="/">Dashboard</Link> */}
 			</li>

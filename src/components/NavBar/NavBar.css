@@ -90,3 +90,16 @@ nav .menu-text a:hover {
     color: rgba(255,255,255,0.5);
 }
   
+.logo{
+  display: fixed;
+  margin-left: 9px;
+  margin-right: auto;
+  width: 9%;
+}
+
+text{
+  font-family: tenor sans;
+  color: var(--beige);
+  font-size: large;
+  font-weight: 600;
+}

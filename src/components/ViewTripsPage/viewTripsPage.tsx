@@ -12,7 +12,7 @@ const tripsArr = [
     },
 
     {
-        group: 'Work christmas meal',
+        group: 'Work Christmas meal',
         date: '2023/12/18',
         // endDate: '2023/12/18',
         destination: 'London'
@@ -38,7 +38,6 @@ const ViewTrips = (props:any) => {
        
             {tripsArr.map((trip) => {
                 return (<div>
-
                     <TripCard tripDetails={props.setTripDetails} handleTripDetailsVisibility={props.tripDetailsVisibility} trip={trip}></TripCard>
                 </div>)
             })}
@@ -50,4 +49,4 @@ const ViewTrips = (props:any) => {
 
 }
 
-export default ViewTrips
+export default ViewTrips;

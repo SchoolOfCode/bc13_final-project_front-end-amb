@@ -1,5 +1,5 @@
 import "./viewTripsPage.css"
-
+import Navbar from "../NavBar/NavBar";
 
 const tripsArr = [
     {
@@ -28,6 +28,7 @@ const tripsArr = [
 const ViewTrips = (props:any) => {
     return (
        <div className='view-trips-div'>
+        <Navbar/>
        <ul>
             {tripsArr.map((trip) => {
                 return (<li>

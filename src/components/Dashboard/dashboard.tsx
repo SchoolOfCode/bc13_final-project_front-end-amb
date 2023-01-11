@@ -99,16 +99,16 @@ const Dashboard = () => {
     </div>
 
     <div style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
-        <CreateTrip setTripDetails={setCurrentTrip} setTripcancelButton={handleCreateTripVisibility}></CreateTrip>
+        <CreateTrip tripDetailsVisibility={handleTripDetailsVisibility} setTripDetails={setCurrentTrip} setTripcancelButton={handleCreateTripVisibility}></CreateTrip>
     </div>
 
     <div style={{ visibility: viewTripVisibility ? "visible" : "hidden" }}>
-        <ViewTrips tripDetailsVisibility={handleTripDetailsVisibility} visibility={handleViewTripsVisibility}></ViewTrips>
+        <ViewTrips setTripDetails={setCurrentTrip} tripDetailsVisibility={handleTripDetailsVisibility} visibility={handleViewTripsVisibility}></ViewTrips>
     </div>
 
-    <div style={{ visibility: tripDetailsVisibility ? "visible" : "hidden" }}>
-        <TripDetails></TripDetails>
-    </div>
+    {currentTrip && <div style={{ visibility: tripDetailsVisibility ? "visible" : "hidden" }}>
+        <TripDetails tripDetails={currentTrip}></TripDetails>
+    </div>}
 
     <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
         <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>

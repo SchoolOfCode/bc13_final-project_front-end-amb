@@ -38,9 +38,7 @@ const ViewTrips = (props:any) => {
        
             {tripsArr.map((trip) => {
                 return (<div>
-                    {/* <p>{trip.tripName}</p>
-                    <p>{trip.startDate} {trip.endDate}</p>
-                    <p>{trip.location}</p> */}
+
                     <TripCard handleTripDetailsVisibility={props.tripDetailsVisibility} trip={trip}></TripCard>
                 </div>)
             })}

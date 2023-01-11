@@ -7,7 +7,7 @@ import DateForm from './DateForm/DateForm'
 import ItineraryForm from './ItineraryForm/ItineraryForm'
 import Navbar from '../NavBar/NavBar';
 
-const CreateTrip = ({setTripcancelButton}:any) => {
+const CreateTrip = ({setTripcancelButton, setTripDetails, tripDetailsVisibility}:any) => {
 
     const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
@@ -22,6 +22,8 @@ const {
 function onSubmit(data:any) {
     data.Admin = user?.sub  // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
     console.log(data) // TODO: Create a function that changes state in the dashboard component to 'data'.
+    setTripDetails(data)
+    tripDetailsVisibility()
 }
 
 

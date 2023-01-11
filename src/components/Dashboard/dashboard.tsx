@@ -89,10 +89,10 @@ const Dashboard = () => {
           <ViewTrips></ViewTrips>
         </div>
       </div>
-      {/* <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
+      <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
 
         <TripDetails></TripDetails>
-      </div> */}
+      </div>
     </section>
   );
 };

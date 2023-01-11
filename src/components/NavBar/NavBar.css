@@ -1,5 +1,6 @@
 nav {
-    width: var(--menu-width);
+    /* width: var(--menu-width); */
+    width: 99vw;
     display: flex;
     transform-style: preserve-3d;
     justify-content: space-evenly;
@@ -8,8 +9,9 @@ nav {
     margin: 10px auto;
     padding: 5px;
     flex-wrap: wrap;
-    background-color: #ADD8E6
-    ;
+    background-color: #ADD8E6;
+    overflow: hidden;
+    
 }
 h2 {
     font-size: 1em;
@@ -45,6 +47,7 @@ nav .menu-text a:hover {
 }
 
 .button-24 {
+    margin: 0px 50px 0px 0px;
     background: #FF4742;
     border: 1px solid #FF4742;
     border-radius: 6px;

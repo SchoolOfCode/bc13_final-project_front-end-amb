@@ -8,6 +8,7 @@ import TripDetails from '../TripDetailsPage/tripDetailsPage'
 import { useAuth0 } from '@auth0/auth0-react'
 import Login from '../Login/login'
 import LogoutButton from '../LogoutButton/LogoutButton'
+import Navbar from '../NavBar/NavBar';
 
 
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
@@ -40,6 +41,7 @@ const Dashboard = () => {
     
   return (
     <section id="dashboard">
+       <Navbar></Navbar>
       <h1>Where are we going?</h1>
 
       <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
@@ -89,10 +91,10 @@ const Dashboard = () => {
           <ViewTrips></ViewTrips>
         </div>
       </div>
-      {/* <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
+      <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
 
         <TripDetails></TripDetails>
-      </div> */}
+      </div>
     </section>
   );
 };

@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height:100vh;
-    gap: 10%;
+    gap: 5%;
 }
 
 #dashboard-btn-container{
@@ -20,7 +20,8 @@
 
 
 #dashboard-btn-container div {
-    border: 3px solid #df6332;
+
+
     height:100%;
     flex-basis:15%;
     display: flex;
@@ -48,4 +49,5 @@ h1 {
 
 .dashboard-container {
     position: fixed;
+    border: 3px solid #df6332;
 }

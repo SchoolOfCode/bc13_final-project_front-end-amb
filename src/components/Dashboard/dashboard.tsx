@@ -31,7 +31,7 @@ const Dashboard = () => {
     setJoinTripVisibility((current) => !current);
   }
 
-  function handleViewTripVisibility() {
+  function handleViewTripsVisibility() {
     setViewTripVisibility((current) => !current);
   }
 
@@ -79,7 +79,7 @@ const Dashboard = () => {
 
         <div
           onClick={() => {
-            handleViewTripVisibility();
+            handleViewTripsVisibility();
           }}
         >
          <ImBinoculars className="icon"/>
@@ -88,7 +88,7 @@ const Dashboard = () => {
         </div>
 
         <div className="dashboard-container" style={{ display: viewTripVisibility ? "block" : "none" }}>
-          <ViewTrips></ViewTrips>
+          <ViewTrips visibility={handleViewTripsVisibility}></ViewTrips>
         </div>
       </div>
       <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>

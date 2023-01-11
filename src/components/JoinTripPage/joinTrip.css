@@ -1,13 +1,11 @@
 .join-form {
-    width: 30%;
-    height: 20%;
-    top: 10%;
-    left: 30%;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    left: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     background-color: var(--beige);
-    border: 3px solid var(--dark-orange);
-    border-radius: var(--border-radius);
 }

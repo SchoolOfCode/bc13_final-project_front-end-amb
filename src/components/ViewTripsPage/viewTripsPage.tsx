@@ -1,4 +1,5 @@
-import React from 'react'
+import "./viewTripsPage.css"
+
 
 const tripsArr = [
     {
@@ -24,9 +25,10 @@ const tripsArr = [
 
 ]
 
-const ViewTrips = () => {
+const ViewTrips = (props:any) => {
     return (
-        <ul>
+       <div className='view-trips-div'>
+       <ul>
             {tripsArr.map((trip) => {
                 return (<li>
                     <p>{trip.tripName}</p>
@@ -35,6 +37,9 @@ const ViewTrips = () => {
                 </li>)
             })}
         </ul>
+        <button onClick={props.visibility}>cancel</button>
+        </div>
+        
     )
 
 }

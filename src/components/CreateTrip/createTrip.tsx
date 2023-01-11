@@ -68,7 +68,7 @@ function onSubmit(data:any) {
         
         </div>
     </form>
-    <button className="create-cancel-button" onClick={cancelButton}>Cancel</button>
+    <button className="create-cancel-button cancel-button" onClick={cancelButton}>Cancel</button>
     </div>
     </>)
 }

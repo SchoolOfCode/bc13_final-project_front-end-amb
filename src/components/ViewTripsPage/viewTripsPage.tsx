@@ -45,7 +45,7 @@ const ViewTrips = (props:any) => {
                 </div>)
             })}
         </div>
-        <button className="view-trip-cancel-button" onClick={props.visibility}>cancel</button>
+        <button className="view-trip-cancel-button cancel-button" onClick={props.visibility}>cancel</button>
         </div>
         
     )

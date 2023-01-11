@@ -25,7 +25,7 @@ function onSubmit(data:any) {
 
 
     return (<>
-    
+    <div className="createTripContainer">
     <form onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">
         <label>Group Name</label>
@@ -57,13 +57,10 @@ function onSubmit(data:any) {
         />
             
         <input type="submit" value="submit"></input>
-       
-
-
         
         </div>
     </form>
-    
+    </div>
     </>)
 }
 

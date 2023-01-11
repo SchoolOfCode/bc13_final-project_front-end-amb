@@ -45,3 +45,7 @@ h1 {
 .icon {
     font-size: 300%;
 }
+
+.dashboard-container {
+    position: fixed;
+}

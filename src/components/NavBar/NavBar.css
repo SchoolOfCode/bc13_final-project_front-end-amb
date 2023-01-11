@@ -4,7 +4,7 @@ nav {
     transform-style: preserve-3d;
     justify-content: space-evenly;
     position: relative;
-    z-index: 2;
+    /* z-index: 2; */
     margin: 10px auto;
     padding: 5px;
     flex-wrap: wrap;

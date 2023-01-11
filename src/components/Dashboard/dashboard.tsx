@@ -41,6 +41,11 @@ const Dashboard = () => {
   return (
     <section id="dashboard">
       <h1>Where are we going?</h1>
+
+      <div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
+
+    {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
+</div>
       <div id="dashboard-btn-container">
         <div
           onClick={() => {
@@ -52,7 +57,7 @@ const Dashboard = () => {
           <p>trip</p>
         </div>
 
-        <div style={{ display: createTripVisibility ? "block" : "none" }}>
+        <div className="dashboard-container" style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
           <CreateTrip></CreateTrip>
         </div>
 
@@ -66,7 +71,7 @@ const Dashboard = () => {
           <p>trip</p>
         </div>
 
-        <div style={{ display: joinTripVisibility ? "block" : "none" }}>
+        <div className="dashboard-container" style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
           <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
         </div>
 
@@ -79,18 +84,15 @@ const Dashboard = () => {
           <p>view</p>
           <p>trips</p>
         </div>
-<div style={{visibility: loginVisibility ? 'visible' : 'hidden'}}>
 
-    {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
-</div>
-        <div style={{ display: viewTripVisibility ? "block" : "none" }}>
+        <div className="dashboard-container" style={{ display: viewTripVisibility ? "block" : "none" }}>
           <ViewTrips></ViewTrips>
         </div>
       </div>
-      <div>
+      {/* <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
 
         <TripDetails></TripDetails>
-      </div>
+      </div> */}
     </section>
   );
 };

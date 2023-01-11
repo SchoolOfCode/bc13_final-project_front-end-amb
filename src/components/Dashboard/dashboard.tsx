@@ -60,7 +60,7 @@ const Dashboard = () => {
         </div>
 
         <div className="dashboard-container" style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
-          <CreateTrip></CreateTrip>
+          <CreateTrip cancelButton={handleCreateTripVisibility}></CreateTrip>
         </div>
 
         <div

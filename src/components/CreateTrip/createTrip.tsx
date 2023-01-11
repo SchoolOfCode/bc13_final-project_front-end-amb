@@ -5,8 +5,9 @@ import { useAuth0 } from '@auth0/auth0-react'
 import MembersForm from './MembersForm/MembersForm'
 import DateForm from './DateForm/DateForm'
 import ItineraryForm from './ItineraryForm/ItineraryForm'
+import Navbar from '../NavBar/NavBar';
 
-const CreateTrip = () => {
+const CreateTrip = ({cancelButton}:any) => {
 
     const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
@@ -26,6 +27,9 @@ function onSubmit(data:any) {
 
     return (<>
     <div className="createTripContainer">
+
+    <Navbar></Navbar>
+
     <form onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">
         <label>Group Name</label>
@@ -57,6 +61,8 @@ function onSubmit(data:any) {
         />
             
         <input type="submit" value="submit"></input>
+
+        <button onClick={cancelButton}>Cancel</button>
         
         </div>
     </form>

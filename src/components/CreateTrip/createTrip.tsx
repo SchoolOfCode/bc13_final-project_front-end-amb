@@ -34,9 +34,11 @@ function onSubmit(data:any) {
         <Navbar></Navbar>
     </div>
 
+    <h1>Create Trip </h1>
+
     <form className="create-trip-item" onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">
-        <label>group name</label>
+        <label>Trip name</label>
         <input
             type="text"       
             {...register("group", {

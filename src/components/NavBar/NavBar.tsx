@@ -1,68 +1,28 @@
 // import react from "react";
 //import {  Link } from "react-router-dom";
-import './NavBar.css';
-import AuthButtons from '../AuthButtons/AuthButtons';
+import "./NavBar.css";
+import AuthButtons from "../AuthButtons/AuthButtons";
+import Dashboard from "../Dashboard/dashboard";
 
+const Navbar = ({ visibility }: any) => {
+  return (
+    <nav>
+      <h2>Travel Herd</h2>
+      <li className="menu-item">
+        <button onClick={visibility}>Dashboard</button>
+      </li>
+      <li className="menu-item">
+        {/* <Link to="/viewTripsPage">View Trips</Link> */}
+      </li>
+      <div>
+        <AuthButtons />
+      </div>
+      {/* <button className ="button-24">Log in</button> */}
+    </nav>
+  );
+};
 
-
-const Navbar= () =>{
-	return (
-		<nav>
-
-			<h2>Travel Herd</h2>
-			<li className="menu-item">
-				{/* <Link to="/">Dashboard</Link> */}
-			</li>
-			<li className="menu-item">
-				{/* <Link to="/viewTripsPage">View Trips</Link> */}
-			</li>
-			<div>
-			<AuthButtons/>
-			</div>
-			{/* <button className ="button-24">Log in</button> */}
-		</nav>
-	 );
-	 };
-	
-	 export default Navbar;
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default Navbar;
 
 // import React from "react";
 // import { Nav, NavLink, NavMenu }

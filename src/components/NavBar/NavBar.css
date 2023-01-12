@@ -95,7 +95,7 @@ nav .menu-text a:hover {
   max-height: 80%;
 }
 
-text{
+.text{
   font-family: 'Tenor Sans', sans-serif;
   color: var(--beige);
   font-size: 2em;

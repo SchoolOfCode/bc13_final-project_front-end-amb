@@ -6,7 +6,7 @@ import ViewTrips from "../ViewTripsPage/viewTripsPage";
 import TripDetails from "../TripDetailsPage/tripDetailsPage";
 import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../Login/login";
-import LogoutButton from "../LogoutButton/LogoutButton";
+//import LogoutButton from "../LogoutButton/LogoutButton";
 import Navbar from "../NavBar/NavBar";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const [page, setPage] = useState("login")
 
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated } = useAuth0(); // user, , getAccessTokenSilently
 
   function handlePage(page:string) {
     console.log(page)

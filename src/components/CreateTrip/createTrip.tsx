@@ -9,13 +9,13 @@ import ItineraryForm from './ItineraryForm/ItineraryForm'
 
 const CreateTrip = ({setTripcancelButton, setTripDetails, tripDetailsVisibility, pageSelect}:any) => {
 
-    const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+    const { user} = useAuth0() //, isAuthenticated, getAccessTokenSilently
 
 const {
     register,
     control,
     handleSubmit,
-    reset,
+    //reset,
     formState: { errors }
 } = useForm();
 

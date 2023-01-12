@@ -1,5 +1,5 @@
 import './tripDetailsPage.css'
-import Navbar from '../NavBar/NavBar'
+
 
 const TripDetails = ({tripDetails}:any) => {
 

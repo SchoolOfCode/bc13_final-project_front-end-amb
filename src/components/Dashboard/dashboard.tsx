@@ -13,50 +13,23 @@ import { IoMdCreate } from "react-icons/io";
 import { ImBinoculars } from "react-icons/im";
 
 const Dashboard = () => {
-  const [createTripVisibility, setCreateTripVisibility] = useState(false);
-  const [joinTripVisibility, setJoinTripVisibility] = useState(false);
-  const [viewTripVisibility, setViewTripVisibility] = useState(false);
-  const [loginVisibility, setLoginVisibility] = useState(true);
-  const [tripDetailsVisibility, setTripDetailsVisibility] = useState(false);
 
   const [currentTrip, setCurrentTrip] = useState({});
 
+  const [page, setPage] = useState("login")
+
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 
-  function handleCreateTripVisibility() {
-    setCreateTripVisibility((current) => !current);
-  }
-
-  function handleJoinTripVisibility() {
-    setJoinTripVisibility((current) => !current);
-  }
-
-  function handleViewTripsVisibility() {
-    setViewTripVisibility((current) => !current);
-  }
-
-  function handleLoginVisibility() {
-    setLoginVisibility((current) => !current);
-  }
-
-  function handleTripDetailsVisibility() {
-    setTripDetailsVisibility((current) => !current);
-  }
-
-  function handleResetVisibility() {
-    console.log("hola");
-    setCreateTripVisibility(false);
-    setJoinTripVisibility(false);
-    setViewTripVisibility(false);
-    setLoginVisibility(false);
-    setTripDetailsVisibility(false);
+  function handlePage(page:string) {
+    console.log(page)
+    setPage(page)
   }
 
   return (
     <div>
       <section id="dashboard">
         <div className="navbar-dashboard">
-          <Navbar visibility={joinTripVisibility}></Navbar>
+          <Navbar pageSelect={handlePage}></Navbar>
         </div>
 
         <h1>Where are we going?</h1>
@@ -65,7 +38,7 @@ const Dashboard = () => {
           <div
             className="dashboard-container"
             onClick={() => {
-              handleCreateTripVisibility();
+              handlePage("create");
             }}
           >
             <IoMdCreate className="icon" />
@@ -76,7 +49,7 @@ const Dashboard = () => {
           <div
             className="dashboard-container"
             onClick={() => {
-              handleJoinTripVisibility();
+              handlePage("join");
             }}
           >
             <AiOutlineUsergroupAdd className="icon" />
@@ -87,7 +60,7 @@ const Dashboard = () => {
           <div
             className="dashboard-container"
             onClick={() => {
-              handleViewTripsVisibility();
+              handlePage("view");
             }}
           >
             <ImBinoculars className="icon" />
@@ -97,36 +70,34 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <div style={{ visibility: loginVisibility ? "visible" : "hidden" }}>
-        {!isAuthenticated && <Login getStarted={handleLoginVisibility}></Login>}
+      <div className={ page === "login" ? "open" : "closed" }>
+        {!isAuthenticated && <Login pageSelect={handlePage}></Login>}
       </div>
 
-      <div style={{ visibility: createTripVisibility ? "visible" : "hidden" }}>
+      <div className={ page === "create" ? "open" : "closed" }>
         <CreateTrip
-          tripDetailsVisibility={handleTripDetailsVisibility}
           setTripDetails={setCurrentTrip}
-          setTripcancelButton={handleCreateTripVisibility}
+          pageSelect={handlePage}
         ></CreateTrip>
       </div>
 
-      <div style={{ visibility: viewTripVisibility ? "visible" : "hidden" }}>
+      <div className={ page === "view" ? "open" : "closed"}>
         <ViewTrips
           setTripDetails={setCurrentTrip}
-          tripDetailsVisibility={handleTripDetailsVisibility}
-          visibility={handleViewTripsVisibility}
+          pageSelect={handlePage}
         ></ViewTrips>
       </div>
 
       {currentTrip && (
         <div
-          style={{ visibility: tripDetailsVisibility ? "visible" : "hidden" }}
+          className={ page === "details" ? "open" : "closed" }
         >
           <TripDetails tripDetails={currentTrip}></TripDetails>
         </div>
       )}
 
-      <div style={{ visibility: joinTripVisibility ? "visible" : "hidden" }}>
-        <JoinTrip visibility={handleJoinTripVisibility}></JoinTrip>
+      <div className={ page === "join" ? "open" : "closed"}>
+        <JoinTrip pageSelect={handlePage}></JoinTrip>
       </div>
     </div>
   );

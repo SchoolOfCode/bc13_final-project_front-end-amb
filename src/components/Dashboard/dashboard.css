@@ -57,3 +57,11 @@ h1 {
 .navbar-dashboard {
     margin-bottom: auto;
 }
+
+.open {
+    visibility: visible
+}
+
+.closed {
+    visibility: hidden;
+}

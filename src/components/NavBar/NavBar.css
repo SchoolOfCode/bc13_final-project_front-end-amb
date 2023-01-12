@@ -10,7 +10,7 @@ nav {
     flex-wrap: wrap;
     background-color: var(--green);
     /* overflow: hidden; */
-    
+    z-index: 3;
 }
 h2 {
     font-size: 1em;

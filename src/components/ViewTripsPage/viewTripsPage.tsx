@@ -81,6 +81,10 @@ const tripsArr = [
 
 
 const ViewTrips = (props:any) => {
+
+    function handleChange() {
+        
+    }
     return (
        <div className='view-trips-div'>
 
@@ -93,11 +97,11 @@ const ViewTrips = (props:any) => {
             {tripsArr.map((trip) => {
                 return (<div>
 
-                    <TripCard tripDetails={props.setTripDetails} handleTripDetailsVisibility={props.tripDetailsVisibility} trip={trip}></TripCard>
+                    <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
                 </div>)
             })}
         </div>
-        <button className="view-trip-cancel-button cancel-button" onClick={props.visibility}>cancel</button>
+        <button className="view-trip-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
         </div>
         
     )

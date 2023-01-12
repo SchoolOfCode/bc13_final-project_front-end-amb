@@ -19,6 +19,8 @@
     gap:5%;
     align-self: center;
     margin-bottom: auto;
+    
+    margin-top: auto;
 }
 
 
@@ -32,12 +34,15 @@
     align-items: center;
     border-radius: var(--border-radius);
     text-align: center;
+    ;
+    cursor: pointer
 }
 
 h1 {
     font-size: 400%;
     font-weight: 600;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
+    margin-bottom: 5%;
 }
 
 #dashboard-btn-container p {
@@ -56,4 +61,12 @@ h1 {
 
 .navbar-dashboard {
     margin-bottom: auto;
+}
+
+.open {
+    visibility: visible
+}
+
+.closed {
+    visibility: hidden;
 }

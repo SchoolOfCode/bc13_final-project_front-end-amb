@@ -24,6 +24,12 @@ code {
     monospace;
 }
 
+.button:hover,
+.button:active {
+    border: 3px solid var(--dark-orange);
+    color: var(--light-orange);
+}
+
 .cancel-button {
   margin: 13% 40px 0px 0px;
   width: 100px;
@@ -37,7 +43,7 @@ code {
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 16px;
   height: 70px;
   min-height: 20px;
@@ -50,11 +56,46 @@ code {
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
+  font-family: var(--font);
+  
 }
 
 .cancel-button:hover,
 .cancel-button:active {
-background-color: var(--beige);
-background-position: 0 0;
-color: var(--green);
+    border: 3px solid var(--dark-orange);
+}
+
+.submit-button{
+  margin: 13% 40px 0px 0px;
+  width: 100px;
+  background: var(--green);
+  border: 1px solid var(--light-orange);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  transform: scale(0.8);
+  color: var(--beige);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 20px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: var(--font);
+}
+
+.submit-button:hover,
+.submit-button:active {
+    border: 2px solid var(--dark-orange);
+}
+
+.input-field {
+  border-color: 2px solid var(--dark-orange);
 }

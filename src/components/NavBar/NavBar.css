@@ -3,14 +3,14 @@ nav {
     height: 110px;
     display: flex;
     transform-style: preserve-3d;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     position: relative;
     /* margin: auto; */
     padding: 5px;
     flex-wrap: wrap;
     background-color: var(--green);
     /* overflow: hidden; */
-    
+    z-index: 3;
 }
 h2 {
     font-size: 1em;
@@ -58,10 +58,6 @@ h2 {
   }
 
 
-
-
-
-
   nav .menu-item {
     color: var(--beige);
     font-weight: 600;
@@ -90,3 +86,32 @@ nav .menu-text a:hover {
     color: rgba(255,255,255,0.5);
 }
   
+.logo{
+  display: fixed;
+  margin-left: 9px;
+  margin-right: auto;
+  padding-top: 10px ;
+  width: 9%;
+  max-height: 80%;
+}
+
+text{
+  font-family: 'Tenor Sans', sans-serif;
+  color: var(--beige);
+  font-size: 2em;
+  top: 50%;
+  justify-content: left; 
+  line-height: 110px;
+  margin-left: 10px;
+
+  /* margin-top: 70px;
+  margin-left: 20px; */
+  /* display: flex;
+  flex-direction: column;
+  /* position: absolute;
+
+  transform: translateY(-50%);
+  padding-left: auto;
+  margin-left: auto; */
+}
+

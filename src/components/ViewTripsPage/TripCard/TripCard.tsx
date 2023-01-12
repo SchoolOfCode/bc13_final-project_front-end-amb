@@ -1,9 +1,9 @@
 import './TripCard.css'
 
-const TripCard = ({trip, handleTripDetailsVisibility, tripDetails}:any) => {
+const TripCard = ({trip, handlePage, tripDetails}:any) => {
 
 function handleClick() {
-    handleTripDetailsVisibility()
+    handlePage("details")
     tripDetails(trip)
     
 }

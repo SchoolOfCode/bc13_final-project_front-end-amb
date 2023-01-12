@@ -9,6 +9,8 @@
     align-items:center;
     display: flex;
     flex-direction: column;
+    background-image: url(../../images/travel-bg.png);
+    background-size: cover;
 }
 
 .flex-item {
@@ -17,22 +19,19 @@
 }
 
 .getStarted {
-    width: 10%;
+    width: 30%;
     height: 10%;
     background-color: var(--green);
     border-radius: var(--border-radius);
     color: var(--beige);
     font-family: var(--font);
+    font-size: 200%;
     margin: auto;
-    border: 1px solid var(--light-orange);
-    font-size: 1.25rem;
-    
 }
 
 .getStarted:hover,
 .getStarted:active {
     border: 3px solid var(--dark-orange);
-    font-size: 1.25rem;
     cursor: pointer;
     }
 

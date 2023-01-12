@@ -1,42 +1,113 @@
-import React from 'react'
+import "./viewTripsPage.css"
+
+import TripCard from "./TripCard/TripCard";
 
 const tripsArr = [
-    {
-        tripName: 'Julia hen do',
-        startDate: '2023/06/03',
-        endDate: '2023/06/06',
-        location: 'Paris'
 
-    },
 
-    {
-        tripName: 'Work christmas meal',
-        startDate: '2023/12/18',
-        endDate: '2023/12/18',
-        location: 'London'
-    },
      {
-        tripName: 'Girls trip',
-        startDate: '2023/08/01',
-        endDate: '2023/08/12',
-        location: 'Ibiza'
+        Admin: "newUser",
+        group: "Minty Blobfish",
+        destination: "aaaaa",
+        date: [
+                {
+                    name: "2023-01-11"
+                }
+              ],
+        event: [
+                {
+                    type: "Accomodation",
+                    location: "location",
+                    date: "2023-01-13T11:11"
+                }
+               ],
+        member: [
+                {
+                    name: "aaa",
+                    email: "aaa@aaaa.com"
+                }
+                ],
+        
+     },
+     {
+        Admin: "newUser",
+        group: "Natasha's Group",
+        destination: "aaaaa",
+        date: [
+                {
+                    name: "2023-01-11"
+                }
+              ],
+        event: [
+                {
+                    type: "Accomodation",
+                    location: "location",
+                    date: "2023-01-13T11:11"
+                }
+               ],
+        member: [
+                {
+                    name: "aaa",
+                    email: "aaa@aaaa.com"
+                }
+                ],
+        
+     },
+
+     {
+        Admin: "newUser",
+        group: "Kylie's Group",
+        destination: "aaaaa",
+        date: [
+                {
+                    name: "2023-01-11"
+                }
+              ],
+        event: [
+                {
+                    type: "Accomodation",
+                    location: "location",
+                    date: "2023-01-13T11:11"
+                }
+               ],
+        member: [
+                {
+                    name: "aaa",
+                    email: "aaa@aaaa.com"
+                }
+                ],
+        
      }
 
 ]
 
-const ViewTrips = () => {
+
+const ViewTrips = (props:any) => {
+
+  
     return (
-        <ul>
+       <div className='view-trips-div'>
+
+       <div className="view-trip-form-item">
+            {/* <Navbar /> */}
+       </div>
+       
+       <div className="view-trip-form-item">
+       
             {tripsArr.map((trip) => {
-                return (<li>
-                    <p>{trip.tripName}</p>
-                    <p>{trip.startDate} {trip.endDate}</p>
-                    <p>{trip.location}</p>
-                </li>)
+                return (<div key={Math.random() * 10000}>
+
+
+                    <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
+
+                </div>)
             })}
-        </ul>
+        </div>
+        <button className="view-trip-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
+        </div>
+        
     )
 
 }
 
-export default ViewTrips
+export default ViewTrips;

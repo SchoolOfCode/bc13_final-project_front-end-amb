@@ -1,21 +1,25 @@
-import React, {useState} from 'react'
-import LoginButton from "../LoginButton/LoginButton";
-import LogoutButton from "../LogoutButton/LogoutButton";
+
 import './login.css'
 
-const Login = ({getStarted}:any) => {
+
+const Login = ({pageSelect}:any) => {
 
  
 
     return (
     <div className="login-page">
+
+{/* <div className="login-item">
+        <Navbar></Navbar>
+    </div> */}
         
-       <div className="flex-item">
+       {/* <div className="flex-item">
         <LoginButton/>
-        </div>
-        <button className="getStarted" onClick={getStarted}>Get started</button>
-        
-        <LogoutButton></LogoutButton>
+        </div> */}
+
+        <button className="getStarted" onClick={() => {pageSelect("dashboard")}}>get started</button>
+
+      
     </div>)
 }
 

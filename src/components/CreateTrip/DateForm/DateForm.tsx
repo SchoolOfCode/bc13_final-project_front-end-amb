@@ -22,7 +22,7 @@ export default function DateForm({ control, register}:any) {
               />
 
               <button type="button" onClick={() => remove(index)}>
-                Delete
+                delete
               </button>
 
             </div>
@@ -36,7 +36,7 @@ export default function DateForm({ control, register}:any) {
             append(null);
           }}
         >
-          Add Date
+          add date
         </button>
 
     </>

@@ -1,0 +1,20 @@
+.trip-details-page {
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: var(--beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.view-trip-form-item {
+    margin-bottom: auto;
+}
+
+.trip-details {
+    margin-bottom: auto;
+}

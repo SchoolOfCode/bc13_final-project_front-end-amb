@@ -1,23 +1,65 @@
 nav {
-    width: var(--menu-width);
+    width: 100vw;
+    height: 110px;
     display: flex;
     transform-style: preserve-3d;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     position: relative;
-    /* z-index: 2; */
-    margin: 10px auto;
+    /* margin: auto; */
     padding: 5px;
     flex-wrap: wrap;
-    background-color: #ADD8E6
-    ;
+    background-color: var(--green);
+    /* overflow: hidden; */
+    z-index: 3;
 }
 h2 {
     font-size: 1em;
+    color: var(--beige);
 
 }
 
-nav .menu-item {
-    color: white;
+.button-24 {
+    margin: 13% 40px 0px 0px;
+    width: 100px;
+    background: var(--beige);
+    border: 1px solid var(--light-orange);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    transform: scale(0.8);
+    color: var(--green);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    height: 70px;
+    min-height: 20px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .button-24:hover,
+  .button-24:active {
+    background-color: var(--green);
+    background-position: 0 0;
+    color: var(--beige);
+  }
+  
+  .button-24:active {
+    opacity: .5;
+  }
+
+
+  nav .menu-item {
+    color: var(--beige);
     font-weight: 600;
     transform-style: preserve-3d;
     flex-grow: 1;
@@ -33,7 +75,7 @@ nav .menu-item {
 
 nav .menu-text, nav .menu-text a {
     font-size: 1em;
-    color: white;
+    color: var(--beige);
     text-decoration: none;
     text-shadow: 0 1px 5px rgba(0,0,0,0.1);
     transition: color 0.1s ease-out;
@@ -43,42 +85,33 @@ nav .menu-text, nav .menu-text a {
 nav .menu-text a:hover {
     color: rgba(255,255,255,0.5);
 }
+  
+.logo{
+  display: fixed;
+  margin-left: 9px;
+  margin-right: auto;
+  padding-top: 10px ;
+  width: 9%;
+  max-height: 80%;
+}
 
-.button-24 {
-    background: #FF4742;
-    border: 1px solid #FF4742;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    box-sizing: border-box;
-    transform: scale(0.8);
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    line-height: 16px;
-    height: 70px;
-    /* min-height: 20px; */
-    outline: 0;
-    padding: 12px 14px;
-    text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-  }
-  
-  .button-24:hover,
-  .button-24:active {
-    background-color: initial;
-    background-position: 0 0;
-    color: #FF4742;
-  }
-  
-  .button-24:active {
-    opacity: .5;
-  }
-  
+.text{
+  font-family: 'Tenor Sans', sans-serif;
+  color: var(--beige);
+  font-size: 2em;
+  top: 50%;
+  justify-content: left; 
+  line-height: 110px;
+  margin-left: 10px;
+
+  /* margin-top: 70px;
+  margin-left: 20px; */
+  /* display: flex;
+  flex-direction: column;
+  /* position: absolute;
+
+  transform: translateY(-50%);
+  padding-left: auto;
+  margin-left: auto; */
+}
+

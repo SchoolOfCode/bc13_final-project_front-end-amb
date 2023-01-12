@@ -98,8 +98,11 @@ nav .menu-text a:hover {
 }
 
 text{
-  font-family: tenor sans;
+  font-family: 'Tenor Sans', sans-serif;
   color: var(--beige);
-  font-size: large;
-  font-weight: 600;
+  font-size: 2em;
+  margin-top: 70px;
+  margin-left: 20px;
+  
 }
+

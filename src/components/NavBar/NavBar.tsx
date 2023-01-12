@@ -7,21 +7,16 @@ import logo from '../../images/Logo.png';
 const Navbar = ({ pageSelect }: any) => {
   return (
     <nav>
-      <img className="logo" src={logo} alt="camels walking off into distance"></img>
-			<span className="text">TRAVEL HERD</span>
-      <li className="menu-item">
-        <button onClick={() => {pageSelect("dashboard")}}>dashboard</button>
-      </li>
-      <li className="menu-item">
-      <button onClick={() => {pageSelect("join")}}>join</button>
-      </li>
-      <li>
-      <button onClick={() => {pageSelect("view")}}>view</button>
-      </li>
-      <li>
-      <button onClick={() => {pageSelect("create")}}>create</button>
-      </li>
-      <div>
+      <div id="nav-left">
+        <img className="logo" src={logo} alt="camels walking off into distance"></img>
+			  <h2 className="text">TRAVEL HERD</h2>
+      </div>
+      <div id="nav-right">
+        <div id="dashboard-link-container">
+          <span className="dashboard-btn" onClick={() => {pageSelect("dashboard")}}>dashboard</span>
+          <span className="underline"></span>
+        </div>
+        
         <AuthButtons />
       </div>
       {/* <button className ="button-24">Log in</button> */}

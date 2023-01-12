@@ -25,14 +25,15 @@
     font-family: var(--font);
     margin: auto;
     border: 1px solid var(--light-orange);
+    font-size: 1.25rem;
     
 }
 
 .getStarted:hover,
 .getStarted:active {
     border: 3px solid var(--dark-orange);
-    color: var(--light-orange);
-}
+    font-size: 1.25rem;
+    }
 
 /* .flex-item > button {
     width: 100px;

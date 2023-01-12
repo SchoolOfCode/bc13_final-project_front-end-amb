@@ -33,6 +33,7 @@
 .getStarted:active {
     border: 3px solid var(--dark-orange);
     font-size: 1.25rem;
+    cursor: pointer;
     }
 
 /* .flex-item > button {

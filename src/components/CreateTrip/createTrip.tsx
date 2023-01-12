@@ -64,7 +64,7 @@ function onSubmit(data:any) {
             {...{ control, register, errors}}
         />
             
-        <input type="submit" value="submit"></input>
+        <input className= "submit-button" type="submit" value="submit"></input>
 
         
         

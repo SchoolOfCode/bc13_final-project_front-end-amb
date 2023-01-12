@@ -24,9 +24,9 @@ function handleSubmit(e:any) {
         <h2>join trip</h2>
         <form className="join-form-item" onSubmit={handleSubmit}>
             <label>Enter trip ID:
-                <input type="text" onChange={(e) => {setTripID(e.target.value)}} value={tripID}></input>
+                <input className="input-field" type="text" onChange={(e) => {setTripID(e.target.value)}} value={tripID}></input>
             </label>
-            <input type="submit" value="submit"></input>
+            <input className = "submit-button" type="submit" value="submit"></input>
         </form>
         <button className="join-cancel-button cancel-button" onClick={props.visibility}>cancel</button>
     </div>

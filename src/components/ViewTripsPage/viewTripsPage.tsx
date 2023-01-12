@@ -1,5 +1,5 @@
 import "./viewTripsPage.css"
-import Navbar from "../NavBar/NavBar";
+
 import TripCard from "./TripCard/TripCard";
 
 const tripsArr = [
@@ -95,7 +95,7 @@ const ViewTrips = (props:any) => {
        <div className="view-trip-form-item">
        
             {tripsArr.map((trip) => {
-                return (<div>
+                return (<div key={Math.random() * 10000}>
 
 
                     <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>

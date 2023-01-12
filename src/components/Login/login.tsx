@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
-import LoginButton from "../LoginButton/LoginButton";
+
 import './login.css'
-import Navbar from '../NavBar/NavBar';
+
 
 const Login = ({pageSelect}:any) => {
 

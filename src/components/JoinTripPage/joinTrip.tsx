@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './joinTrip.css'
-import Navbar from '../NavBar/NavBar';
+//import Navbar from '../NavBar/NavBar';
 
 const JoinTrip = (props:any) => {
 

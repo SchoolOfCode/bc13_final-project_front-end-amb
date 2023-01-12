@@ -17,7 +17,9 @@ const Login = ({pageSelect}:any) => {
        {/* <div className="flex-item">
         <LoginButton/>
         </div> */}
-        <button className="getStarted" onClick={() => {pageSelect("dashboard")}}>Get started</button>
+
+        <button className="getStarted" onClick={() => {pageSelect("dashboard")}}>get started</button>
+
       
     </div>)
 }

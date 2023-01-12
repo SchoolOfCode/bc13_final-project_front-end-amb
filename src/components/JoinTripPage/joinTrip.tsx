@@ -20,12 +20,17 @@ function handleSubmit(e:any) {
     return <div className="join-form">
         {/* <div className="join-form-item join-nav">
         <Navbar />
+
         </div> */}
+
+    
+        <h2>join trip</h2>
+
         <form className="join-form-item" onSubmit={handleSubmit}>
-            <label>Trip ID
-                <input type="text" placeholder='enter trip ID here...' onChange={(e) => {setTripID(e.target.value)}} value={tripID}></input>
+            <label>Enter trip ID:
+                <input className="input-field" type="text" onChange={(e) => {setTripID(e.target.value)}} value={tripID}></input>
             </label>
-            <input type="submit" value="Submit"></input>
+            <input className = "submit-button" type="submit" value="submit"></input>
         </form>
         <button className="join-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
     </div>

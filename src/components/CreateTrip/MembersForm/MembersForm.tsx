@@ -17,7 +17,7 @@ export default function MembersForm({ control, register}:any) {
             <div style={{listStyle:'none'}} key={item.id}>
 
               <div>
-              <label>Name 
+              <label>name 
               <input
                 name={`member[${index}].name`}            
                 {...register(`member[${index}].name`)}
@@ -25,7 +25,7 @@ export default function MembersForm({ control, register}:any) {
               </label>
               </div>
               <div>
-              <label>Email 
+              <label>email 
               <input
                 name={`member[${index}].email`}            
                 {...register(`member[${index}].email`)}
@@ -34,7 +34,7 @@ export default function MembersForm({ control, register}:any) {
               </div>
 
               <button type="button" onClick={() => remove(index)}>
-                Delete
+                delete
               </button>
 
             </div>
@@ -48,7 +48,7 @@ export default function MembersForm({ control, register}:any) {
             append(null);
           }}
         >
-          Add Member
+          add member
         </button>
 
     </>

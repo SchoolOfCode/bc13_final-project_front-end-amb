@@ -4,6 +4,7 @@ import TripCard from "./TripCard/TripCard";
 
 const tripsArr = [
 
+
      {
         Admin: "newUser",
         group: "Minty Blobfish",
@@ -52,6 +53,7 @@ const tripsArr = [
                 ],
         
      },
+
      {
         Admin: "newUser",
         group: "Kylie's Group",
@@ -95,7 +97,9 @@ const ViewTrips = (props:any) => {
             {tripsArr.map((trip) => {
                 return (<div>
 
+
                     <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
+
                 </div>)
             })}
         </div>
@@ -106,4 +110,4 @@ const ViewTrips = (props:any) => {
 
 }
 
-export default ViewTrips
+export default ViewTrips;

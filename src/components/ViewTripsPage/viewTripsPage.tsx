@@ -3,28 +3,82 @@ import Navbar from "../NavBar/NavBar";
 import TripCard from "./TripCard/TripCard";
 
 const tripsArr = [
-    {
-        group: 'Julia hen do',
-        date: '2023/06/03',
-        // endDate: '2023/06/06',
-        destination: 'Paris'
 
-    },
-
-    {
-        group: 'Work christmas meal',
-        date: '2023/12/18',
-        // endDate: '2023/12/18',
-        destination: 'London'
-    },
      {
-        group: 'Girls trip',
-        date: '2023/08/01',
-        // endDate: '2023/08/12',
-        destination: 'Ibiza'
+        Admin: "newUser",
+        group: "Minty Blobfish",
+        destination: "aaaaa",
+        date: [
+                {
+                    name: "2023-01-11"
+                }
+              ],
+        event: [
+                {
+                    type: "Accomodation",
+                    location: "location",
+                    date: "2023-01-13T11:11"
+                }
+               ],
+        member: [
+                {
+                    name: "aaa",
+                    email: "aaa@aaaa.com"
+                }
+                ],
+        
+     },
+     {
+        Admin: "newUser",
+        group: "Natasha's Group",
+        destination: "aaaaa",
+        date: [
+                {
+                    name: "2023-01-11"
+                }
+              ],
+        event: [
+                {
+                    type: "Accomodation",
+                    location: "location",
+                    date: "2023-01-13T11:11"
+                }
+               ],
+        member: [
+                {
+                    name: "aaa",
+                    email: "aaa@aaaa.com"
+                }
+                ],
+        
+     },
+     {
+        Admin: "newUser",
+        group: "Kylie's Group",
+        destination: "aaaaa",
+        date: [
+                {
+                    name: "2023-01-11"
+                }
+              ],
+        event: [
+                {
+                    type: "Accomodation",
+                    location: "location",
+                    date: "2023-01-13T11:11"
+                }
+               ],
+        member: [
+                {
+                    name: "aaa",
+                    email: "aaa@aaaa.com"
+                }
+                ],
+        
      }
 
 ]
+
 
 const ViewTrips = (props:any) => {
     return (

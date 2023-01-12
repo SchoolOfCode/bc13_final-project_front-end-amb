@@ -2,11 +2,13 @@
 import "./NavBar.css";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import Dashboard from "../Dashboard/dashboard";
+import logo from '../../images/Logo.png';
 
 const Navbar = ({ pageSelect }: any) => {
   return (
     <nav>
-      <h2>Travel Herd</h2>
+      <img className="logo" src={logo} alt="camels walking off into distance"></img>
+			<text>TRAVEL HERD</text>
       <li className="menu-item">
         <button onClick={() => {pageSelect("dashboard")}}>dashboard</button>
       </li>

@@ -6,20 +6,20 @@ const TripDetails = ({tripDetails}:any) => {
     console.log(tripDetails)
     return <div className="trip-details-page">
 
-        <div className="view-trip-form-item">
+        <div className="trip-details-form-item">
             <Navbar />
        </div>
 
 
-
-        {tripDetails.group && <div>
-        <h1>{tripDetails.group}</h1>
-        <p>Date: {tripDetails.date[0].name}</p>
-        <p>Destination: {tripDetails.destination}</p>
-        <p>Members: {tripDetails.member[0].name}</p>
-        <p>Itinerary: {tripDetails.event[0].type}</p>
-        </div>}
-      
+        <div className="trip-details">
+            {tripDetails.group && <div>
+            <h1>{tripDetails.group}</h1>
+            <p>Date: {tripDetails.date[0].name}</p>
+            <p>Destination: {tripDetails.destination}</p>
+            <p>Members: {tripDetails.member[0].name}</p>
+            <p>Itinerary: {tripDetails.event[0].type}</p>
+            </div>}
+        </div>
        
         </div>
 }

@@ -6,7 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const AuthButtons = () => {
 
-    const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+    const { isAuthenticated} = useAuth0() //user, , getAccessTokenSilently
 
 
     return <>

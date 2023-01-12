@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from 'react';
+//import React, {useState, useEffect} from 'react';
 import './App.css';
 import Dashboard from '../Dashboard/dashboard'
 
 import { Auth0Provider } from "@auth0/auth0-react";
-import { useAuth0 } from '@auth0/auth0-react'
+//import { useAuth0 } from '@auth0/auth0-react'
 
-let counter = 1;
+//let counter = 1;
 
 function App() {
 
-  const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+  //const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
 
 

@@ -10,3 +10,11 @@
     align-items: center;
     flex-direction: column;
 }
+
+.view-trip-form-item {
+    margin-bottom: auto;
+}
+
+.trip-details {
+    margin-bottom: auto;
+}

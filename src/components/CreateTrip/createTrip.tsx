@@ -5,9 +5,9 @@ import { useAuth0 } from '@auth0/auth0-react'
 import MembersForm from './MembersForm/MembersForm'
 import DateForm from './DateForm/DateForm'
 import ItineraryForm from './ItineraryForm/ItineraryForm'
-import Navbar from '../NavBar/NavBar';
+// import Navbar from '../NavBar/NavBar';
 
-const CreateTrip = ({setTripcancelButton, setTripDetails, tripDetailsVisibility}:any) => {
+const CreateTrip = ({setTripcancelButton, setTripDetails, tripDetailsVisibility, pageSelect}:any) => {
 
     const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
@@ -23,16 +23,16 @@ function onSubmit(data:any) {
     data.Admin = user?.sub  // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
     console.log(data) // TODO: Create a function that changes state in the dashboard component to 'data'.
     setTripDetails(data)
-    tripDetailsVisibility()
+    pageSelect("details")
 }
 
 
     return (<>
     <div className="createTripContainer">
-
+{/* 
     <div className="create-trip-item">
         <Navbar></Navbar>
-    </div>
+    </div> */}
 
     <h1>Create Trip </h1>
 
@@ -72,7 +72,9 @@ function onSubmit(data:any) {
         
         </div>
     </form>
-    <button className="create-cancel-button cancel-button" onClick={setTripcancelButton}>cancel</button>
+
+    <button className="create-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
+
     </div>
     </>)
 }

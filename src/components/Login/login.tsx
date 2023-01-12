@@ -3,21 +3,23 @@ import LoginButton from "../LoginButton/LoginButton";
 import './login.css'
 import Navbar from '../NavBar/NavBar';
 
-const Login = ({getStarted}:any) => {
+const Login = ({pageSelect}:any) => {
 
  
 
     return (
     <div className="login-page">
 
-<div className="login-item">
+{/* <div className="login-item">
         <Navbar></Navbar>
-    </div>
+    </div> */}
         
        {/* <div className="flex-item">
         <LoginButton/>
         </div> */}
-        <button className="getStarted" onClick={getStarted}>get started</button>
+
+        <button className="getStarted" onClick={() => {pageSelect("dashboard")}}>get started</button>
+
       
     </div>)
 }

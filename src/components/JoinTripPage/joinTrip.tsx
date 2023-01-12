@@ -12,23 +12,27 @@ function handleSubmit(e:any) {
 
     console.log(tripID)
 
-    props.visibility()
+    props.pageSelect("dashboard")
 
     setTripID("")
 }
 
     return <div className="join-form">
-        <div className="join-form-item join-nav">
+        {/* <div className="join-form-item join-nav">
         <Navbar />
-        </div>
+
+        </div> */}
+
+    
         <h2>join trip</h2>
+
         <form className="join-form-item" onSubmit={handleSubmit}>
             <label>Enter trip ID:
                 <input className="input-field" type="text" onChange={(e) => {setTripID(e.target.value)}} value={tripID}></input>
             </label>
             <input className = "submit-button" type="submit" value="submit"></input>
         </form>
-        <button className="join-cancel-button cancel-button" onClick={props.visibility}>cancel</button>
+        <button className="join-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
     </div>
 }
 

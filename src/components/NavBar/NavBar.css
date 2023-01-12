@@ -3,14 +3,14 @@ nav {
     height: 110px;
     display: flex;
     transform-style: preserve-3d;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     position: relative;
     /* margin: auto; */
     padding: 5px;
     flex-wrap: wrap;
     background-color: var(--green);
     /* overflow: hidden; */
-    
+    z-index: 3;
 }
 h2 {
     font-size: 1em;

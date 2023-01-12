@@ -17,7 +17,7 @@ const Login = ({getStarted}:any) => {
        {/* <div className="flex-item">
         <LoginButton/>
         </div> */}
-        <button className="getStarted" onClick={getStarted}>Get started</button>
+        <button className="getStarted" onClick={getStarted}>get started</button>
       
     </div>)
 }

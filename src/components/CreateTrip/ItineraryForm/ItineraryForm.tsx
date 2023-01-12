@@ -18,12 +18,12 @@ export default function ItineraryForm({ control, register}:any) {
 
               <select name={`event[${index}].type`}            
                 {...register(`event[${index}].type`)}>
-                <option value="">Select Option</option>
-                <option value="Restearant">Restearant</option>
-                <option value="Hotel">Hotel</option>
-                <option value="Attraction">Attraction</option>
-                <option value="Tour">Tour</option>
-                <option value="Concert">Concert</option>
+                <option value="">select option</option>
+                <option value="Restaurant">restaurant</option>
+                <option value="Hotel">hotel</option>
+                <option value="Attraction">attraction</option>
+                <option value="Tour">tour</option>
+                <option value="Concert">concert</option>
               </select>
 
               <input
@@ -38,7 +38,7 @@ export default function ItineraryForm({ control, register}:any) {
               />
 
               <button type="button" onClick={() => remove(index)}>
-                Delete
+                delete
               </button>
 
             </div>
@@ -52,7 +52,7 @@ export default function ItineraryForm({ control, register}:any) {
             append(null);
           }}
         >
-          Add Event
+          add event
         </button>
 
     </>

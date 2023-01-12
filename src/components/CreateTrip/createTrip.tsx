@@ -5,7 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import MembersForm from './MembersForm/MembersForm'
 import DateForm from './DateForm/DateForm'
 import ItineraryForm from './ItineraryForm/ItineraryForm'
-import Navbar from '../NavBar/NavBar';
+// import Navbar from '../NavBar/NavBar';
 
 const CreateTrip = ({setTripcancelButton, setTripDetails, tripDetailsVisibility, pageSelect}:any) => {
 
@@ -29,10 +29,10 @@ function onSubmit(data:any) {
 
     return (<>
     <div className="createTripContainer">
-
+{/* 
     <div className="create-trip-item">
         <Navbar></Navbar>
-    </div>
+    </div> */}
 
     <form className="create-trip-item" onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">

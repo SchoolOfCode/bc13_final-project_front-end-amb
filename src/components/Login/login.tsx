@@ -10,9 +10,9 @@ const Login = ({pageSelect}:any) => {
     return (
     <div className="login-page">
 
-<div className="login-item">
+{/* <div className="login-item">
         <Navbar></Navbar>
-    </div>
+    </div> */}
         
        {/* <div className="flex-item">
         <LoginButton/>

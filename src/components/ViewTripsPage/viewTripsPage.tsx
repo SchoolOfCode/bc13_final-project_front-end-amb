@@ -82,14 +82,12 @@ const tripsArr = [
 
 const ViewTrips = (props:any) => {
 
-    function handleChange() {
-        
-    }
+  
     return (
        <div className='view-trips-div'>
 
        <div className="view-trip-form-item">
-            <Navbar />
+            {/* <Navbar /> */}
        </div>
        
        <div className="view-trip-form-item">

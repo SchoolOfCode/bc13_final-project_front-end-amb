@@ -6,9 +6,9 @@ const TripDetails = ({tripDetails}:any) => {
     console.log(tripDetails)
     return <div className="trip-details-page">
 
-        <div className="trip-details-form-item">
+        {/* <div className="trip-details-form-item">
             <Navbar />
-       </div>
+       </div> */}
 
 
         <div className="trip-details">

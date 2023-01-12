@@ -18,9 +18,9 @@ function handleSubmit(e:any) {
 }
 
     return <div className="join-form">
-        <div className="join-form-item join-nav">
+        {/* <div className="join-form-item join-nav">
         <Navbar />
-        </div>
+        </div> */}
         <form className="join-form-item" onSubmit={handleSubmit}>
             <label>Trip ID
                 <input type="text" placeholder='enter trip ID here...' onChange={(e) => {setTripID(e.target.value)}} value={tripID}></input>

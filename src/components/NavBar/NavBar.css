@@ -90,7 +90,9 @@ nav .menu-text a:hover {
   display: fixed;
   margin-left: 9px;
   margin-right: auto;
+  padding-top: 10px ;
   width: 9%;
+  max-height: 80%;
 }
 
 text{

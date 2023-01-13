@@ -33,7 +33,7 @@ code {
 }
 
 .cancel-button {
-  margin: 13% 40px 0px 0px;
+  
   width: 100px;
   background: var(--green);
   border: 1px solid var(--light-orange);

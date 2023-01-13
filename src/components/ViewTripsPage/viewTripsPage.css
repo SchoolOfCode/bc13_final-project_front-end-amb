@@ -1,6 +1,6 @@
 .view-trips-div{
 
-    top: 0%;
+    top: 110px;
     left: 0%;
     width: 100vw;
     height: 100vh;
@@ -14,9 +14,6 @@
 
 .view-trip-form-item {
   
-    margin-bottom: auto;
+    margin-bottom: 0;
 }
 
-.view-trip-cancel-button {
-    margin-bottom: 8%;
-}

@@ -26,11 +26,11 @@ const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div id="dashboard-container">
       <section id="dashboard">
-        <div className="navbar-dashboard">
+        
           <Navbar pageSelect={handlePage}></Navbar>
-        </div>
+        
 
         <h1>Where are we going?</h1>
 

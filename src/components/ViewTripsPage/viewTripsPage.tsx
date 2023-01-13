@@ -88,10 +88,7 @@ const ViewTrips = (props:any) => {
     return (
        <div className='view-trips-div'>
 
-       <div className="view-trip-form-item">
-            {/* <Navbar /> */}
-       </div>
-       
+
        <div className="view-trip-form-item">
        
             {tripsArr.map((trip) => {

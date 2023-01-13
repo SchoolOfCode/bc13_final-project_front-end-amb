@@ -13,7 +13,8 @@
 }
 
 .view-trip-form-item {
-  
+    display: flex;
+    flex-direction: row;
     margin-bottom: 0;
 }
 

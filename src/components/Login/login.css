@@ -23,6 +23,7 @@
     height: 10%;
     background-color: var(--green);
     border-radius: var(--border-radius);
+    border-style: none;
     color: var(--beige);
     font-family: var(--font);
     font-size: 200%;

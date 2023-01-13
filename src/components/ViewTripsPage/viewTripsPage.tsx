@@ -31,7 +31,7 @@ const tripsArr = [
      },
      {
         Admin: "newUser",
-        group: "Natasha's Group",
+        group: "Hen Do",
         destination: "aaaaa",
         date: [
                 {
@@ -53,10 +53,9 @@ const tripsArr = [
                 ],
         
      },
-
      {
         Admin: "newUser",
-        group: "Kylie's Group",
+        group: "Stag Weekend",
         destination: "aaaaa",
         date: [
                 {

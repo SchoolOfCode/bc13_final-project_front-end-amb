@@ -85,16 +85,16 @@ const ViewTrips = (props:any) => {
 
   
     return (
+        
        <div className='view-trips-div'>
-
-
-       <div className="view-trip-form-item">
+        <h1>your trips</h1>
+        
+        <div className="view-trip-form-item">
        
             {tripsArr.map((trip) => {
                 return (<div key={Math.random() * 10000}>
 
-
-                    <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
+                    <TripCard className="trip-card" tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
 
                 </div>)
             })}

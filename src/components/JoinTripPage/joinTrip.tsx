@@ -24,7 +24,7 @@ function handleSubmit(e:any) {
         </div> */}
 
     
-        <h2>join trip</h2>
+        <h1>join trip</h1>
 
         <form className="join-form-item" onSubmit={handleSubmit}>
             <label>Enter trip ID:

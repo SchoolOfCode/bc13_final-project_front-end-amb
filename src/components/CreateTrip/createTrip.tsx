@@ -34,7 +34,7 @@ function onSubmit(data:any) {
         <Navbar></Navbar>
     </div> */}
 
-    <h1>Create Trip </h1>
+    <h1>create trip </h1>
 
     <form className="create-trip-item" onSubmit={handleSubmit(onSubmit)}>
     <div className="create-trip-form">

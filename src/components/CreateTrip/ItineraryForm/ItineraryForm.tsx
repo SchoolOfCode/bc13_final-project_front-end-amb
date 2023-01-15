@@ -1,23 +1,70 @@
 import React from "react";
 import { useFieldArray } from "react-hook-form";
 
-export default function ItineraryForm({ control, register}:any) {
+
+export default function ItineraryForm({ control, register, nestIndex}:any) {
   const { fields, append, remove} = useFieldArray({
     control,
-    name: "event"
+    name: `event[${nestIndex}].itinerary`
   });
 
 
   return (
-    <>
+    <div>
+     
       
-      
-        {fields.map((item, index) => {
+        {fields.map((item, k) => {
           return (
-            <div key={item.id}>
+            <div key={item.id} id="itinerary-page" className="form-page">
 
-              <select name={`event[${index}].type`}            
-                {...register(`event[${index}].type`)}>
+              <select id="itinerary-page-item" className="form-page-item" 
+                name={`event[${nestIndex}].itinerary[${k}].type`}            
+                {...register(`event[${nestIndex}].itinerary[${k}].type`)}>
+                <option value="">select option</option>
+                <option value="Restaurant">restaurant</option>
+                <option value="Hotel">hotel</option>
+                <option value="Attraction">attraction</option>
+                <option value="Tour">tour</option>
+                <option value="Concert">concert</option>
+              </select>
+
+              <input id="itinerary-page-item" className="form-page-item"
+                name={`event[${nestIndex}].itinerary[${k}].name`}            
+                {...register(`event[${nestIndex}].itinerary[${k}].name`)}
+              />
+              
+              <input id="itinerary-page-item" className="form-page-item"
+                type="datetime-local"
+                name={`event[${nestIndex}].itinerary[${k}].date_time`}            
+                {...register(`event[${nestIndex}].itinerary[${k}].date_time`)}
+              />
+
+              <button type="button" onClick={() => remove(k)}>
+                delete
+              </button>
+
+            </div>
+          );
+        })}
+      
+
+        <button className="page-alignment itinerary-button"
+          type="button"
+          onClick={() => {
+            append(null);
+          }}
+        >
+          add option
+        </button>
+
+    </div>
+  );
+}
+
+
+
+  {/* <select name={`event[${nestIndex}].nestedArray[0].field1`}            
+                {...register(`event[${nestIndex}].nestedArray[0].field1`)}>
                 <option value="">select option</option>
                 <option value="Restaurant">restaurant</option>
                 <option value="Hotel">hotel</option>
@@ -27,34 +74,12 @@ export default function ItineraryForm({ control, register}:any) {
               </select>
 
               <input
-                name={`event[${index}].location`}            
-                {...register(`event[${index}].location`)}
+                name={`event[${nestIndex}].nestedArray[0].field2`}            
+                {...register(`event[${nestIndex}].nestedArray[0].field2`)}
               />
               
               <input
                 type="datetime-local"
-                name={`event[${index}].date`}            
-                {...register(`event[${index}].date`)}
-              />
-
-              <button type="button" onClick={() => remove(index)}>
-                delete
-              </button>
-
-            </div>
-          );
-        })}
-      
-
-        <button
-          type="button"
-          onClick={() => {
-            append(null);
-          }}
-        >
-          add event
-        </button>
-
-    </>
-  );
-}
+                name={`event[${nestIndex}].nestedArray[0].field3`}            
+                {...register(`event[${nestIndex}].nestedArray[0].field3`)}
+              /> */}

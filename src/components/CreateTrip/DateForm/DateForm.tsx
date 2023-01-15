@@ -1,6 +1,7 @@
 import React from "react";
 import { useFieldArray } from "react-hook-form";
 
+
 export default function DateForm({ control, register}:any) {
   const { fields, append, remove} = useFieldArray({
     control,
@@ -10,16 +11,27 @@ export default function DateForm({ control, register}:any) {
 
   return (
     <>
+   
       
       
         {fields.map((item, index) => {
           return (
-            <div key={item.id}>
-              <input
+            <div key={item.id} id="date-page" className="form-page">
+              <label>date from
+              <input id="date-page-item" className="form-page-item"
                 type="date"
-                name={`date[${index}].name`}            
-                {...register(`date[${index}].name`)}
+                name={`date[${index}].from`}            
+                {...register(`date[${index}].from`)}
               />
+              </label>
+
+              <label>date to
+              <input  id="date-page-item" className="form-page-item"
+                type="date"
+                name={`date[${index}].to`}            
+                {...register(`date[${index}].to`)}
+              />
+              </label>
 
               <button type="button" onClick={() => remove(index)}>
                 delete
@@ -29,8 +41,8 @@ export default function DateForm({ control, register}:any) {
           );
         })}
       
-
-        <button
+      
+        <button className="page-alignment"
           type="button"
           onClick={() => {
             append(null);
@@ -38,7 +50,7 @@ export default function DateForm({ control, register}:any) {
         >
           add date
         </button>
-
-    </>
+       
+        </>
   );
 }

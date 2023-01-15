@@ -62,24 +62,3 @@ export default function ItineraryForm({ control, register, nestIndex}:any) {
 }
 
 
-
-  {/* <select name={`event[${nestIndex}].nestedArray[0].field1`}            
-                {...register(`event[${nestIndex}].nestedArray[0].field1`)}>
-                <option value="">select option</option>
-                <option value="Restaurant">restaurant</option>
-                <option value="Hotel">hotel</option>
-                <option value="Attraction">attraction</option>
-                <option value="Tour">tour</option>
-                <option value="Concert">concert</option>
-              </select>
-
-              <input
-                name={`event[${nestIndex}].nestedArray[0].field2`}            
-                {...register(`event[${nestIndex}].nestedArray[0].field2`)}
-              />
-              
-              <input
-                type="datetime-local"
-                name={`event[${nestIndex}].nestedArray[0].field3`}            
-                {...register(`event[${nestIndex}].nestedArray[0].field3`)}
-              /> */}

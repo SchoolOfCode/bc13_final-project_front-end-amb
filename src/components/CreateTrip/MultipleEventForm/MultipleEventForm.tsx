@@ -1,14 +1,14 @@
 import React from "react";
 import { useFieldArray } from "react-hook-form";
 import ItineraryForm from "../ItineraryForm/ItineraryForm";
-import {useForm} from 'react-hook-form'
+//import {useForm} from 'react-hook-form'
 
 
 export default function MultipleEventForm({ control, register, errors, setValue, getValues}:any) {
 
 
 
-  const { fields, append, remove, prepend} = useFieldArray({
+  const { fields, append, remove} = useFieldArray({
     control,
     name: "event"
   });

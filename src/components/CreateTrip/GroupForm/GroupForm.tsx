@@ -28,5 +28,3 @@ const GroupForm = ({register, errors}:any) => {
 }
 
 export default GroupForm
-
-// className="form-page">

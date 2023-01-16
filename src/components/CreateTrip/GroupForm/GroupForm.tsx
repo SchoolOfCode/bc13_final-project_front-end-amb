@@ -15,8 +15,8 @@ const GroupForm = ({register, errors}:any) => {
         </label>
             {errors.group && <p>This field needs to be completed.</p>}
 
-        <label> 
-        <input className="form-page-item"
+        <label className="form-page-label"> 
+        <input className="form-page-input-field"
             type="text"
             {...register("destination", {
                 required: true,

@@ -68,28 +68,27 @@
 }
 
 .form-page-label {
-    background: red;
     position: relative;
-    font-size: 85%;
+    font-size: 16px;
     margin-bottom: 5px;
-
-}
+    }
 
 .form-page-label .placeholder{
     position: absolute;
-    padding-top: calc(3% +15px);
-    left: 12px;
+    left: 0.25vw;
+    top: -1vh;
     font-weight: bold;
-    transform: translateY(-50%);
+    transition: top 0.4s ease;
+    padding: 5%;
 }
 
 .form-page-input-field {
     height: 3vh;
     color: var(--green);
-    font-size: 85%;
+    font-size: 16px;
     font-weight: bold;
     margin: 8px;
-    border: 2px solid var(--beige);
+    border: 2px inset var(--beige);
     -ms-appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -98,11 +97,14 @@
     padding: 12px;
     border-radius: 5px;
     width: 30vw !important;
-   }
+       }
 
-.form-page-input:focus{ 
-    border: 2px solid var(--green);
-}
+
+.form-page-input-field:focus + .placeholder{ 
+    top: -70%;
+    font-size: 12px;
+  }
+
 
 
 #date-page {

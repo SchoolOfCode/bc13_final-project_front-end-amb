@@ -115,10 +115,10 @@ const ViewTrips = ({setTripDetails, pageSelect, trip}:any) => {
             {tripsArr.map((trip) => {
                 return (<div key={Math.random() * 10000}>
 
-//REEEEE
-                    <TripCard tripDetails={setTripDetails} handlePage={pageSelect} trip={trip}></TripCard>
 
-                    <TripCard className="trip-card" tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
+                    <TripCard className="trip-card" tripDetails={setTripDetails} handlePage={pageSelect} trip={trip}></TripCard>
+
+                   
 
 
                 </div>)

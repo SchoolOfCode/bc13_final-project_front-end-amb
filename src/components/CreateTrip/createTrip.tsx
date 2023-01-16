@@ -123,9 +123,9 @@ function onSubmit(data: any) {
             
         <input className= "submit-button" type="submit" value="submit"></input>
 
-                
+        */}        
         </div>
-*/}
+
     <button className="create-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
 
     </div>

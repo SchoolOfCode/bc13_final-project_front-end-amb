@@ -16,9 +16,9 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap:3%;
+  gap:2%;
   flex-basis:50%;
-  padding: 0 0 0 3%;
+  padding: 0 0 0 1.5%;
 }
 
 #nav-right {
@@ -30,14 +30,26 @@ nav {
 }
 
 .logo{
-max-height:70%;
-
+max-height:90%;
 }
+
+
 
 h2 {
     margin:0;
     color: var(--beige);
 
+}
+
+.text{
+  font-family: 'Tenor Sans', sans-serif;
+  color: var(--beige);
+  font-size: 1.8em;
+  top: 50%;
+  justify-content: left; 
+  line-height: 110px;
+  margin-left: 10px;
+  font-weight: normal;
 }
 
 .dashboard-btn {
@@ -79,6 +91,8 @@ h2 {
     width: 100px;
     border-radius: 6px;
     font: var(--font);
+    color: var(--green);
+    font-weight: bold;
    
   }
   
@@ -128,14 +142,6 @@ nav .menu-text a:hover {
   max-height: 80%;
 }
 
-.text{
-  font-family: 'Tenor Sans', sans-serif;
-  color: var(--beige);
-  font-size: 2em;
-  top: 50%;
-  justify-content: left; 
-  line-height: 110px;
-  margin-left: 10px;
-} */
+ */
 
 

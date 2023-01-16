@@ -1,6 +1,7 @@
 import React from "react";
 import { useFieldArray } from "react-hook-form";
 
+
 export default function MembersForm({ control, register}:any) {
   const { fields, append, remove} = useFieldArray({
     control,
@@ -9,40 +10,39 @@ export default function MembersForm({ control, register}:any) {
 
 
   return (
-    <>
+    <div>
       
       
         {fields.map((item, index) => {
           return (
-            <div style={{listStyle:'none'}} key={item.id}>
+            <div id="date-page" className="form-page" key={item.id}>
 
-              <div>
+         
               <label>name 
-              <input
+              <input id="member-page-item" className="form-page-item"
                 name={`member[${index}].name`}            
                 {...register(`member[${index}].name`)}
               />
               </label>
-              </div>
-              <div>
+      
               <label>email 
-              <input
+              <input id="member-page-item" className="form-page-item"
                 name={`member[${index}].email`}            
                 {...register(`member[${index}].email`)}
               />
               </label>
-              </div>
+              
 
               <button type="button" onClick={() => remove(index)}>
                 delete
               </button>
-
+          
             </div>
           );
         })}
       
 
-        <button
+        <button className="page-alignment"
           type="button"
           onClick={() => {
             append(null);
@@ -51,6 +51,6 @@ export default function MembersForm({ control, register}:any) {
           add member
         </button>
 
-    </>
+    </div>
   );
 }

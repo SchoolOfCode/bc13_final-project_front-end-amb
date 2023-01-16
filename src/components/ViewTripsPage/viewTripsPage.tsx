@@ -60,18 +60,39 @@ const tripsArr = [
         date: [
                 {
                     name: "2023-01-11"
+                },
+                {
+                    name: "2050-01-11"
                 }
               ],
         event: [
                 {
                     type: "Accomodation",
-                    location: "location",
+                    location: "salisbury",
+                    date: "2023-01-13T11:11"
+                },
+                {
+                    type: "Accomodation",
+                    location: "london",
+                    date: "2023-01-13T11:11"
+                },
+                {
+                    type: "Accomodation",
+                    location: "devon",
                     date: "2023-01-13T11:11"
                 }
                ],
         member: [
                 {
                     name: "aaa",
+                    email: "aaa@aaaa.com"
+                },
+                {
+                    name: "bbb",
+                    email: "aaa@aaaa.com"
+                },
+                {
+                    name: "ccc",
                     email: "aaa@aaaa.com"
                 }
                 ],
@@ -81,7 +102,7 @@ const tripsArr = [
 ]
 
 
-const ViewTrips = (props:any) => {
+const ViewTrips = ({setTripDetails, pageSelect, trip}:any) => { 
 
   
     return (
@@ -94,12 +115,16 @@ const ViewTrips = (props:any) => {
             {tripsArr.map((trip) => {
                 return (<div key={Math.random() * 10000}>
 
+//REEEEE
+                    <TripCard tripDetails={setTripDetails} handlePage={pageSelect} trip={trip}></TripCard>
+
                     <TripCard className="trip-card" tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
+
 
                 </div>)
             })}
         </div>
-        <button className="view-trip-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
+        <button className="view-trip-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
         </div>
         
     )

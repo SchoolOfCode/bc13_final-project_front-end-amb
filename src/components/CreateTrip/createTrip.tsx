@@ -51,7 +51,7 @@ function onSubmit(data: any) {
     next()
 
     if(isLastStep){
-        setTripDetails(data)
+        setTripDetails(data)    // TODO: maybe use local storage to save the details of the form while logging in?
         pageSelect("details")
     }
   
@@ -83,47 +83,7 @@ function onSubmit(data: any) {
 
             </form>
 
-{/* 
-    <div className="create-trip-item">
-        <Navbar></Navbar>
-    </div> 
-
-    <h1>create trip </h1>
-
-    <form className="create-trip-item" onSubmit={handleSubmit(onSubmit)}>
-    <div className="create-trip-form">
-        <label>Trip name</label>
-        <input
-            placeholder='Trip name'
-            type="text"       
-            {...register("group", {
-                required: true,
-                minLength: 3,
-            })}/>
-            {errors.group && <p>This field needs to be completed.</p>}
-
-        <label>destination</label>
-        <input
-            type="text"
-            {...register("destination", {
-                required: true,
-                minLength: 3,
-            })}/>
-            {errors.destination && <p>This field needs to be completed.</p>}
-
-        <DateForm
-            {...{ control, register, errors}}
-        />
-        <MembersForm
-            {...{ control, register, errors}}
-        />
-        <ItineraryForm
-            {...{ control, register, errors}}
-        />
-            
-        <input className= "submit-button" type="submit" value="submit"></input>
-
-        */}        
+     
         </div>
 
     <button className="create-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>

@@ -8,6 +8,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../Login/login";
 //import LogoutButton from "../LogoutButton/LogoutButton";
 import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/footer";
+
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
 import { ImBinoculars } from "react-icons/im";
@@ -68,6 +70,7 @@ const Dashboard = () => {
             <p>trips</p>
           </div>
         </div>
+        <Footer></Footer>
       </section>
 
       <div className={ page === "login" ? "open" : "closed" }>

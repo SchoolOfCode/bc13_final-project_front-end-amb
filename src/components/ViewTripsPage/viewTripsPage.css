@@ -17,4 +17,16 @@
     flex-direction: row;
     margin-bottom: 0;
 }
+.trip-card {
+    background: var(--red-brown);
+    color: var(--beige);
+    border: 3px solid var(--red-brown);
+}
 
+.trip-card:hover{
+        background-color: var(--green);
+        color: var(--beige);
+        border: 3px solid var(--green);
+        cursor: pointer;
+        background-image: none;
+}

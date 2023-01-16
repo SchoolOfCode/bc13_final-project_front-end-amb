@@ -67,7 +67,23 @@
     
 }
 
-.form-page-item {
+.form-page-label {
+    background: red;
+    position: relative;
+    font-size: 85%;
+    margin-bottom: 5px;
+
+}
+
+.form-page-label .placeholder{
+    position: absolute;
+    padding-top: calc(3% +15px);
+    left: 12px;
+    font-weight: bold;
+    transform: translateY(-50%);
+}
+
+.form-page-input-field {
     height: 3vh;
     color: var(--green);
     font-size: 85%;
@@ -84,16 +100,7 @@
     width: 30vw !important;
    }
 
-.placeholder{
-    color: var(--green);
-    font-size: 85%;
-    font-family: var(--font);
-}
-
-.form-page-item 
-
-
-.form-page-item:focus{ 
+.form-page-input:focus{ 
     border: 2px solid var(--green);
 }
 

@@ -62,7 +62,7 @@ function onSubmit(data: any) {
     return (<>
     <div className="createTripContainer">
 
-    <h1 className='create-trip-h1'>Create Trip </h1>
+    <h1 className='create-trip-h1'>create trip </h1>
 
         <div className="create-trip-form">
               

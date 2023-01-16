@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .createTripContainer {
     top: 110px;
     left: 0%;
@@ -8,28 +12,34 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-image: url(../../images/travel-bg.png);
+    background-size: cover;
 }
 
 .create-trip-form {
     position: relative;
     background: var(--beige);
-    border: 1px solid black;
+    border: 3px solid var(--dark-orange);
     padding: 2rem;
     margin: 1rem;
     border-radius: .5rem;
-    font-family: Arial;
+    font-family: var(--font);
     width: auto;
     min-width: 80vw;
     line-height: 1.4rem;
     max-height: 45vh;
-}
+    color: var(--green);
+   }
 
 .page-counter {
     position: absolute;
     top: .5rem;
     right: .5rem;
+    font-family: var(--font);
+    font-size: 1rem;
 }
 
+/* format next button in here */
 .change-page-buttons {
     margin-top: 1rem;
     display: flex;
@@ -53,16 +63,35 @@
 }
 
 .form-page-item {
-    width: 40vw;
     height: 3vh;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    color: black;
-    font-size: 100%;
+    color: var(--green);
+    font-size: 85%;
     font-weight: bold;
     margin: 8px;
+    border: 2px solid var(--beige);
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--beige);
+    padding: 12px;
+    border-radius: 5px;
+    width: 30vw !important;
+   }
+
+.placeholder{
+    color: var(--green);
+    font-size: 85%;
+    font-family: var(--font);
 }
+
+.form-page-item
+
+
+.form-page-item:focus{ 
+    border: 2px solid var(--green);
+}
+
 
 #date-page {
     flex-direction: row;
@@ -78,13 +107,6 @@
     color: var(--green);
 } 
 
-
-.create-trip-form input{
-    width:10%;
-    margin: 8px;
-    border: 10px solid red;
-    border-radius: 4px;
-}
 
 #itinerary-page {
     flex-wrap: wrap;
@@ -112,14 +134,3 @@
     min-width: 100px;
     margin-left: 4%;
 }
-
-/* .create-trip-form > input {
-    width: 50%;
-    height: 40px;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--dark-orange);
-    margin: 5px;
-    padding: 5px;
-    font-size: 1.2rem;
-} */
-

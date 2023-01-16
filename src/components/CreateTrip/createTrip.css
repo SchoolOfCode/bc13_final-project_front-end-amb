@@ -31,6 +31,10 @@
     color: var(--green);
    }
 
+   #groupName {
+    color: var(--green)
+   }
+
 .page-counter {
     position: absolute;
     top: .5rem;
@@ -60,6 +64,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
 }
 
 .form-page-item {
@@ -85,7 +90,7 @@
     font-family: var(--font);
 }
 
-.form-page-item
+.form-page-item 
 
 
 .form-page-item:focus{ 
@@ -134,3 +139,4 @@
     min-width: 100px;
     margin-left: 4%;
 }
+

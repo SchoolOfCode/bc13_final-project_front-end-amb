@@ -3,7 +3,7 @@
 const GroupForm = ({register, errors}:any) => {
     return (
        <div className="form-page">
-        <h2>group name & destination</h2>
+        <h2 id="groupName">group name & destination</h2>
         <label>  
         <input className="form-page-item"
             type="text"       

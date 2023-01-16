@@ -40,6 +40,7 @@ function onSubmit(data:any) {
     <div className="create-trip-form">
         <label>Trip name</label>
         <input
+            placeholder='Trip name'
             type="text"       
             {...register("group", {
                 required: true,

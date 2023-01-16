@@ -9,28 +9,12 @@ const TripDetails = ({tripDetails}:any) => {
     console.log(tripDetails)    // TODO: conditionally render the fields of the form depending on how many choices the trip creator has entered - if more than 1, map.
 
                                   // TODO: Create a vote box component that takes in all the options and renders a quiz type popup
-    function openClosePopup() {
+  
 
-
-        return !dateVote && <div className="vote-container">{renderFields(tripDetails.date)}<p>hth</p></div>
-    }
-
-    function renderFields(fields:any) {  // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
+    // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
                                         // maybe have the functionality in a seperate component that we render instead of a div?
        
-        return fields.map((field:any) => {
-            
-            return <div key={Math.random() * 100}>
-                        <p>from: {field['from']}  to: {field['to']}</p>     
-                        <button onClick={() => {closePopup()
-                        }}>vote</button>
-                    </div>
-        })
-    }
-
-    function closePopup() {
-        setDateVote(true)
-    }
+  
 
     return <div className="trip-details-page">
 
@@ -39,7 +23,7 @@ const TripDetails = ({tripDetails}:any) => {
                 <h1>{tripDetails.group}</h1>
 
 
-                {tripDetails.date.length > 1 ?  <button onClick={openClosePopup}>vote on the dates!</button> : 
+                {tripDetails.date.length > 1 ?  <button>vote on the dates!</button> : 
                                                 <p>date from: {tripDetails.date[0].from} date to: {tripDetails.date[0].to}</p>}
 
                 <p>destination: {tripDetails.destination}</p>

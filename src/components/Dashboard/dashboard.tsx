@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const [currentTrip, setCurrentTrip] = useState({});
 
-  const [page, setPage] = useState("login")
+  const [page, setPage] = useState("details")
 
   const { isAuthenticated } = useAuth0(); // user, , getAccessTokenSilently
 

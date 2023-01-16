@@ -1,13 +1,15 @@
 import './tripDetailsPage.css'
 import {useState} from 'react'
+import VoteWrapper from './VoteWrapper/VoteWrapper'
 
 
-const TripDetails = ({tripDetails}:any) => {
+
+const TripDetails = ({tripDetails1}:any) => {
 
     const [dateVote, setDataVote] = useState(false)
     const [itinereryVote, setItineraryVote] = useState(false)
 
-    console.log(tripDetails)    // TODO: conditionally render the fields of the form depending on how many choices the trip creator has entered - if more than 1, map.
+        // TODO: conditionally render the fields of the form depending on how many choices the trip creator has entered - if more than 1, map.
 
                                   // TODO: Create a vote box component that takes in all the options and renders a quiz type popup
   
@@ -16,25 +18,115 @@ const TripDetails = ({tripDetails}:any) => {
                                         // maybe have the functionality in a seperate component that we render instead of a div?
        
 
+
+
+
+
+    const tripDetails = {
+        group: 'holiday',
+        date: [
+                {
+                    from: '2023-01-01',
+                    to: '2023-01-02'
+                },
+                {
+                    from: '2023-02-02',
+                    to: '2023-02-03'
+                }
+              ],
+        destination: 'jamaica',
+        member: [
+                    {
+                        name: 'celia',
+                        email: 'celia@gmail.com'
+                    },
+                    {
+                        name: 'lewis',
+                        email: 'lewis@gmail.com'
+                    },
+                    {
+                        name: 'Atyib',
+                        email: 'atyib@gmail.com'
+                    },
+                    {
+                        name: 'Kylie',
+                        email: 'kylie@gmail.com'
+                    },
+                    {
+                        name: 'Dionne',
+                        email: 'dionne@gmail.com'
+                    },
+                    {
+                        name: 'Natasha',
+                        email: 'natasha@gmail.com'
+                    }
+                ],
+        event: [
+                   {
+                       itinerary: [ 
+                                    {
+                                        type: 'hotel',
+                                        name: 'big place',
+                                        date_time: "2023-11-11T11:11"
+                                    },
+                                    {
+                                        type: 'hotel',
+                                        name: 'big place',
+                                        date_time: "2023-11-11T11:11"
+                                    }
+                                  ]
+                    },
+                    {
+                        itinerary: [
+                                    {
+                                        type: 'restaurant',
+                                        name: 'vegan',
+                                        date_time: "2023-11-11T11:11"
+                                    },
+                                    {
+                                        type: 'restaurant',
+                                        name: 'fish',
+                                        date_time: "2022-11-11T11:11"
+                                    }
+
+                                    ]
+                    }
+                    
+            ]    
+        }
+        console.log(tripDetails)
+
     function handleDate() {
         setDataVote(current => !current)
-    }
-
-    function registerVote(vote:any) {
-        console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice
-        alert("your vote has been registered.")
-        handleDate()
     }
 
     function handleItinerary() {
         setItineraryVote(current => !current)
     }
+
+    function handleAll() {
+        setDataVote(false)
+        setItineraryVote(false)
+    }
+
+    function registerVote(vote:any) {
+        console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice
+        alert("your vote has been registered.")
+        handleAll()
+    }
+
+    function registerItineraryItem(item:any) {
+        console.log(item.type)
+        alert("your vote has been registered")
+    }
+
+    
   
 
     return <div className="trip-details-page">
 
-            <div className="trip-details">  
-                {tripDetails.group && <div>
+            <div className="details-layout">  
+                {tripDetails.group && <div className="details-layout">
                 <h1>{tripDetails.group}</h1>
 
                 <p>destination: {tripDetails.destination}</p>
@@ -42,91 +134,45 @@ const TripDetails = ({tripDetails}:any) => {
                 {tripDetails.date.length > 1 ?  <button onClick={handleDate}>vote on the dates!</button> : 
                                                 <p>date from: {tripDetails.date[0].from} date to: {tripDetails.date[0].to}</p>}
 
-                {dateVote && <div style={{position: 'fixed', width: 'auto', margin: 'auto', height: 'auto', background: 'white', padding: '20px'}}>
+                {dateVote && <VoteWrapper title="vote on the dates">
                     
-                    {tripDetails.date.map((d:any) => {
-                        // TODO: will change to date id
-                        return <div onClick={() => {registerVote(d)}}>   
-                            <span>from: {d.to} to: {d.from}</span>
-                            </div>
-                    })}
-                    <button onClick={handleDate}>close</button>
-                    </div>}
+                     {tripDetails.date.map((d:any) => { 
+                          // TODO: will change to date id
+                         return <div onClick={() => {registerVote(d)}}>   
+                             <span className='clicked-event'>from: {d.to} to: {d.from}</span>
+                             </div>
+                     })}
+                     <button className="vote-form-button" onClick={handleDate}>close</button>
+                     </VoteWrapper>}
 
                 
                     
                 <p>trip members:</p>
                 {tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>{tripDetails.member[0].name}</p>}
 
-                {tripDetails.event.length > 1 ? <button onClick={handleItinerary}>vote on itinerary</button> : 
-                                                <p>itinerary: {tripDetails.event[0].type}</p>}
+                {tripDetails.event.length > 1 ? <button onClick={handleItinerary}>vote on itinerary!</button> : 
+                                                <p>itinerary: {tripDetails.event[0].itinerary[0].type}</p>}
 
-                {itinereryVote && <div style={{position: 'fixed', width: 'auto', margin: 'auto', top: '10%', height: 'auto', background: 'white', padding: '20px'}}>
+                {itinereryVote && <VoteWrapper title="vote on the itinerary">
                         {tripDetails.event.map((events:any) => {
-                            return events.itinerary.map((event:any) => {
-                                return <div>
-                                    <h6>event</h6>
-                                    <span>{event.type}-{event.name} - {event.date_time}</span>
+                           return <div>
+                            <p>event</p>
+                            { events.itinerary.map((event:any) => {
+                                return <div>  
+                                                                    
+                                    <span  id='clicked-event' onClick={() => {registerItineraryItem(event)}}>{event.type} - {event.name} - {event.date_time}</span>
                                 </div>
-                            })
                         })}
-                    </div>}
+                            </div>
+                        })}
+                        <button className="vote-form-button" onClick={handleItinerary}>close</button>
+                    </VoteWrapper>}
 
                 </div>}
             </div>
-       
-        </div>
+           
+       </div> 
 }
 
 export default TripDetails
 
-
-// date: Array [ {…} ]
-// ​​
-// 0: Object { from: "2023-01-20", to: "2023-01-23" }
-// ​​​
-// from: "2023-01-20"
-// ​​​
-// to: "2023-01-23"
-// ​​​
-// <prototype>: Object { … }
-// ​​
-// length: 1
-// ​​
-// <prototype>: Array []
-// ​
-// destination: "aaaaa"
-// ​
-// event: Array [ {…} ]
-// ​​
-// 0: Object { itinerary: (2) […] }
-// ​​​
-// itinerary: Array [ {…}, {…} ]
-// ​​​​
-// 0: Object { type: "Restaurant", name: "aaa", date_time: "2023-01-24T11:11" }
-// ​​​​
-// 1: Object { type: "Hotel", name: "bbb", date_time: "2023-01-22T22:22" }
-// ​​​​
-// length: 2
-// ​​​​
-// <prototype>: Array []
-// ​​​
-// <prototype>: Object { … }
-// ​​
-// length: 1
-// ​​
-// <prototype>: Array []
-// ​
-// group: "aaaaa"
-// ​
-// member: Array [ {…} ]
-// ​​
-// 0: Object { name: "aaaa", email: "aaaaa" }
-// ​​​
-// email: "aaaaa"
-// ​​​
-// name: "aaaa"
-// ​​​
-// <prototype>: Object { … }
-// ​​
-// length: 1

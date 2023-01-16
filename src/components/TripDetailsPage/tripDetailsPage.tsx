@@ -4,7 +4,8 @@ import {useState} from 'react'
 
 const TripDetails = ({tripDetails}:any) => {
 
-    const [dateVote, setDateVote] = useState(false)
+    const [dateVote, setDataVote] = useState(false)
+    const [itinereryVote, setItineraryVote] = useState(false)
 
     console.log(tripDetails)    // TODO: conditionally render the fields of the form depending on how many choices the trip creator has entered - if more than 1, map.
 
@@ -14,6 +15,20 @@ const TripDetails = ({tripDetails}:any) => {
     // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
                                         // maybe have the functionality in a seperate component that we render instead of a div?
        
+
+    function handleDate() {
+        setDataVote(current => !current)
+    }
+
+    function registerVote(vote:any) {
+        console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice
+        alert("your vote has been registered.")
+        handleDate()
+    }
+
+    function handleItinerary() {
+        setItineraryVote(current => !current)
+    }
   
 
     return <div className="trip-details-page">
@@ -22,16 +37,40 @@ const TripDetails = ({tripDetails}:any) => {
                 {tripDetails.group && <div>
                 <h1>{tripDetails.group}</h1>
 
+                <p>destination: {tripDetails.destination}</p>
 
-                {tripDetails.date.length > 1 ?  <button>vote on the dates!</button> : 
+                {tripDetails.date.length > 1 ?  <button onClick={handleDate}>vote on the dates!</button> : 
                                                 <p>date from: {tripDetails.date[0].from} date to: {tripDetails.date[0].to}</p>}
 
-                <p>destination: {tripDetails.destination}</p>
+                {dateVote && <div style={{position: 'fixed', width: 'auto', margin: 'auto', height: 'auto', background: 'white', padding: '20px'}}>
+                    
+                    {tripDetails.date.map((d:any) => {
+                        // TODO: will change to date id
+                        return <div onClick={() => {registerVote(d)}}>   
+                            <span>from: {d.to} to: {d.from}</span>
+                            </div>
+                    })}
+                    <button onClick={handleDate}>close</button>
+                    </div>}
+
+                
                     
                 <p>trip members:</p>
                 {tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>{tripDetails.member[0].name}</p>}
 
-                {tripDetails.event.length > 1 ? <button>vote on itinerary</button> : <p>itinerary: {tripDetails.event[0].type}</p>}
+                {tripDetails.event.length > 1 ? <button onClick={handleItinerary}>vote on itinerary</button> : 
+                                                <p>itinerary: {tripDetails.event[0].type}</p>}
+
+                {itinereryVote && <div style={{position: 'fixed', width: 'auto', margin: 'auto', top: '10%', height: 'auto', background: 'white', padding: '20px'}}>
+                        {tripDetails.event.map((events:any) => {
+                            return events.itinerary.map((event:any) => {
+                                return <div>
+                                    <h6>event</h6>
+                                    <span>{event.type}-{event.name} - {event.date_time}</span>
+                                </div>
+                            })
+                        })}
+                    </div>}
 
                 </div>}
             </div>

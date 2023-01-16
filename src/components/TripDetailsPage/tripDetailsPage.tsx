@@ -45,7 +45,7 @@ const TripDetails = ({tripDetails}:any) => {
                 <p>destination: {tripDetails.destination}</p>
                     
                 <p>trip members:</p>
-                {tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>Members: {tripDetails.member[0].name}</p>}
+                {tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>{tripDetails.member[0].name}</p>}
 
                 {tripDetails.event.length > 1 ? <button>vote on itinerary</button> : <p>itinerary: {tripDetails.event[0].type}</p>}
 

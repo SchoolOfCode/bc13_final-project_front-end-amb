@@ -75,8 +75,8 @@ function onSubmit(data: any) {
                 {step}
 
                 <div className='change-page-buttons'>               
-                    {!isFirstStep && <button type="button" onClick={back}>back</button>}
-                    <button type="submit">
+                    {!isFirstStep && <button className="button" type="button" onClick={back}>back</button>}
+                    <button className="button" type="submit">
                         {isLastStep ? "finish" : "next"}
                     </button>
                 </div>

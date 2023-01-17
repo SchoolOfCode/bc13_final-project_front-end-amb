@@ -101,3 +101,20 @@ code {
 .input-field {
   border-color: 2px solid var(--dark-orange);
 }
+
+.button {
+    width: 10vw;
+    height: 5vh;
+    border-radius: var(--border-radius);
+    background: var(--green);
+    border: 2px solid var(--green);
+    color: var(--beige);
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+
+.button:hover {
+  border-color: var(--dark-orange);
+  color: var(--beige);
+}

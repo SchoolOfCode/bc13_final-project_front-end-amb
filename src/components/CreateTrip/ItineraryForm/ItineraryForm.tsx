@@ -8,7 +8,7 @@ export default function ItineraryForm({ control, register, nestIndex}:any) {
     name: `event[${nestIndex}].itinerary`
   });
 
-
+//[${nestIndex}]
   return (
     <div>
      
@@ -17,8 +17,11 @@ export default function ItineraryForm({ control, register, nestIndex}:any) {
           return (
             <div key={item.id} id="itinerary-page" className="form-page">
 
+
               <select id="itinerary-page-item" className="form-page-input-field" 
-                name={`event[${nestIndex}].itinerary[${k}].type`}            
+                         
+                name={`event.itinerary[${k}].type`}            
+
                 {...register(`event[${nestIndex}].itinerary[${k}].type`)}>
                 <option value="">select option</option>
                 <option value="Restaurant">restaurant</option>
@@ -28,14 +31,15 @@ export default function ItineraryForm({ control, register, nestIndex}:any) {
                 <option value="Concert">concert</option>
               </select>
 
-              <input id="itinerary-page-item" className="form-page-input-field"
-                name={`event[${nestIndex}].itinerary[${k}].name`}            
+
+              <input id="itinerary-page-item" className="form-page-input-field"              
+                name={`event.itinerary[${k}].name`}            
                 {...register(`event[${nestIndex}].itinerary[${k}].name`)}
               />
               
               <input id="itinerary-page-item" className="form-page-input-field"
                 type="datetime-local"
-                name={`event[${nestIndex}].itinerary[${k}].date_time`}            
+                name={`event.itinerary[${k}].date_time`}            
                 {...register(`event[${nestIndex}].itinerary[${k}].date_time`)}
               />
 

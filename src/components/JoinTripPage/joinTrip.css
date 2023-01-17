@@ -12,7 +12,9 @@
  
 }
 
-
+.join-h2 {
+    color: var(--green);
+}
 
 .join-cancel-button {
     margin-bottom: 10%;

@@ -18,18 +18,20 @@ export default function MembersForm({ control, register}:any) {
             <div id="date-page" className="form-page" key={item.id}>
 
          
-              <label>name 
-              <input id="member-page-item" className="form-page-item"
+              <label  className="form-page-label"> 
+              <input placeholder="&nbsp;" id="member-page-item" className="form-page-input-field"
                 name={`member[${index}].name`}            
                 {...register(`member[${index}].name`)}
               />
+              <span className="placeholder">name</span> 
               </label>
       
-              <label>email 
-              <input id="member-page-item" className="form-page-item"
+              <label  className="form-page-label">
+              <input placeholder="&nbsp;" id="member-page-item" className="form-page-input-field"
                 name={`member[${index}].email`}            
                 {...register(`member[${index}].email`)}
               />
+              <span className="placeholder">email</span> 
               </label>
               
 

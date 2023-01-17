@@ -3,26 +3,28 @@
 const GroupForm = ({register, errors}:any) => {
     return (
        <div className="form-page">
-        <h2 style={{color: 'black'}}>group name & destination</h2>
-        <label>trip name:  
-        <input className="form-page-item"
+        <h2 id="groupName">group name & destination</h2>
+        <label className="form-page-label">  
+        <input placeholder="&nbsp;" className="form-page-input-field"
             type="text"       
             {...register("group", {
                 required: true,
                 minLength: 3,
             })}/>
+        <span className="placeholder">trip name</span>  
         </label>
-            {errors.group && <p>This field needs to be completed.</p>}
+            {errors.group && <p className="error-p-tag">This field needs to be completed.</p>}
 
-        <label>destination: 
-        <input className="form-page-item"
+        <label className="form-page-label"> 
+        <input placeholder="&nbsp;" className="form-page-input-field"
             type="text"
             {...register("destination", {
                 required: true,
                 minLength: 3,
             })}/>
+            <span className="placeholder">destination</span>  
         </label>
-            {errors.destination && <p>This field needs to be completed.</p>}
+            {errors.destination && <p className="error-p-tag">This field needs to be completed.</p>}
         </div>
     )
 }

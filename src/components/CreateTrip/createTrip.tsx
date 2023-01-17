@@ -66,7 +66,7 @@ function onSubmit(data: any) {
     return (<>
     <div className="createTripContainer">
 
-    <h1 className='create-trip-h1'>Create Trip </h1>
+    <h1 className='create-trip-h1'>create trip </h1>
 
         <div className="create-trip-form">
               
@@ -79,8 +79,8 @@ function onSubmit(data: any) {
                 {step}
 
                 <div className='change-page-buttons'>               
-                    {!isFirstStep && <button type="button" onClick={back}>back</button>}
-                    <button type="submit">
+                    {!isFirstStep && <button className="button" type="button" onClick={back}>back</button>}
+                    <button className="button" type="submit">
                         {isLastStep ? "finish" : "next"}
                     </button>
                 </div>

@@ -17,23 +17,23 @@ export default function DateForm({ control, register}:any) {
         {fields.map((item, index) => {
           return (
             <div key={item.id} id="date-page" className="form-page">
-              <label>date from
-              <input id="date-page-item" className="form-page-item"
+              <label className="form-page-label">date from: 
+              <input id="date-page-item" className="form-page-input-field"
                 type="date"
                 name={`date[${index}].from`}            
                 {...register(`date[${index}].from`)}
               />
               </label>
 
-              <label>date to
-              <input  id="date-page-item" className="form-page-item"
+              <label className="form-page-label">date to: 
+              <input  id="date-page-item" className="form-page-input-field"
                 type="date"
                 name={`date[${index}].to`}            
                 {...register(`date[${index}].to`)}
               />
               </label>
 
-              <button type="button" onClick={() => remove(index)}>
+              <button className="button" type="button" onClick={() => remove(index)}>
                 delete
               </button>
 
@@ -42,7 +42,7 @@ export default function DateForm({ control, register}:any) {
         })}
       
       
-        <button className="page-alignment"
+        <button className="page-alignment button"
           type="button"
           onClick={() => {
             append(null);

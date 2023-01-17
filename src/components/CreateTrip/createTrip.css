@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .createTripContainer {
     top: 110px;
     left: 0%;
@@ -8,28 +12,38 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-image: url(../../images/travel-bg.png);
+    background-size: cover;
 }
 
 .create-trip-form {
     position: relative;
     background: var(--beige);
-    border: 1px solid black;
+    border: 3px solid var(--dark-orange);
     padding: 2rem;
     margin: 1rem;
     border-radius: .5rem;
-    font-family: Arial;
+    font-family: var(--font);
     width: auto;
     min-width: 80vw;
     line-height: 1.4rem;
     max-height: 45vh;
-}
+    color: var(--green);
+   }
+
+   #groupName {
+    color: var(--green)
+   }
 
 .page-counter {
     position: absolute;
     top: .5rem;
     right: .5rem;
+    font-family: var(--font);
+    font-size: 1rem;
 }
 
+/* format next button in here */
 .change-page-buttons {
     margin-top: 1rem;
     display: flex;
@@ -50,19 +64,72 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    
 }
 
-.form-page-item {
-    width: 40vw;
+.form-page-label {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-top: 15px solid transparent;
+    }
+
+.form-page-label .placeholder{
+    position: absolute;
+    left: 0.25vw;
+    top: -1vh;
+    font-weight: bold;
+    transition: top 0.3s ease, font-size 0.3s ease;
+    padding: 5%;
+    }
+
+.form-page-input-field {
     height: 3vh;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    color: black;
-    font-size: 100%;
+    color: var(--green);
+    font-size: 16px;
     font-weight: bold;
     margin: 8px;
+    border: 2px inset var(--beige);
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--beige);
+    padding: 12px;
+    border-radius: 5px;
+    width: 30vw !important;
+           }
+
+
+.form-page-label input:not(:placeholder-shown) + .placeholder,
+.form-page-label input:focus +.placeholder{
+    top: -70%;
+    font-size: 12px;
 }
+
+.form-page-input-field:focus {
+    outline: none;
+    border: 2px solid var(--green);
+}
+
+.error-p-tag {
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--green);
+    position: absolute;
+    }
+
+/* .form-page .error-p-tag {
+    width: 250px;
+    padding: 0 8px;
+    font-size: 12px;
+    height: 24px;
+      }
+
+.form-page .error-message:empty {
+    opacity: 0;
+      } */
 
 #date-page {
     flex-direction: row;
@@ -78,13 +145,6 @@
     color: var(--green);
 } 
 
-
-.create-trip-form input{
-    width:10%;
-    margin: 8px;
-    border: 10px solid red;
-    border-radius: 4px;
-}
 
 #itinerary-page {
     flex-wrap: wrap;
@@ -112,14 +172,3 @@
     min-width: 100px;
     margin-left: 4%;
 }
-
-/* .create-trip-form > input {
-    width: 50%;
-    height: 40px;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--dark-orange);
-    margin: 5px;
-    padding: 5px;
-    font-size: 1.2rem;
-} */
-

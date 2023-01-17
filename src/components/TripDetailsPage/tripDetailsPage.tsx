@@ -7,19 +7,12 @@ import VoteWrapper from './VoteWrapper/VoteWrapper'
 const TripDetails = ({tripDetails1}:any) => {
 
     const [dateVote, setDataVote] = useState(false)
-    const [itinereryVote, setItineraryVote] = useState(false)
-
-        // TODO: conditionally render the fields of the form depending on how many choices the trip creator has entered - if more than 1, map.
-
-                                  // TODO: Create a vote box component that takes in all the options and renders a quiz type popup
+    const [itinereryVote, setItineraryVote] = useState(false)                             
   
 
     // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
                                         // maybe have the functionality in a seperate component that we render instead of a div?
        
-
-
-
 
 
     const tripDetails = {
@@ -61,29 +54,59 @@ const TripDetails = ({tripDetails1}:any) => {
                         email: 'natasha@gmail.com'
                     }
                 ],
+                
+
+                restaurant:
+                  [
+                    {
+                        id: 1,
+                        name: 'name'
+                    },
+                    {
+                        id: 2,
+                        name: 'name'
+                    },
+
+                ],
+                
+                accomodation: [
+                    {
+
+                    },
+                    {
+
+                    }
+                ],
+
         event: [
                    {
+                       id: 101,
                        itinerary: [ 
                                     {
+                                        id: 1,
                                         type: 'hotel',
                                         name: 'big place',
                                         date_time: "2023-11-11T11:11"
                                     },
                                     {
+                                        id: 2,
                                         type: 'hotel',
-                                        name: 'big place',
+                                        name: 'little place',
                                         date_time: "2023-11-11T11:11"
                                     }
                                   ]
                     },
                     {
+                        id: 102,
                         itinerary: [
                                     {
+                                        id: 1,
                                         type: 'restaurant',
                                         name: 'vegan',
                                         date_time: "2023-11-11T11:11"
                                     },
                                     {
+                                        id: 2,
                                         type: 'restaurant',
                                         name: 'fish',
                                         date_time: "2022-11-11T11:11"
@@ -94,7 +117,8 @@ const TripDetails = ({tripDetails1}:any) => {
                     
             ]    
         }
-        console.log(tripDetails)
+
+        //console.log(tripDetails)
 
     function handleDate() {
         setDataVote(current => !current)

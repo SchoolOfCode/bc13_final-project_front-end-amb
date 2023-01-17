@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import {useForm} from 'react-hook-form'
 import './createTrip.css'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -7,12 +7,16 @@ import DateForm from './DateForm/DateForm'
 import GroupForm from './GroupForm/GroupForm'
 import MultipleEventForm from './MultipleEventForm/MultipleEventForm'
 import useMultistepForm from './Hooks/useMultistepForm'
+import NewForm from './AnotherFuckingForm/NewForm'
+import CategoryForm from './Another FormAgain/CategoryForm'
 
 
 // import Navbar from '../NavBar/NavBar';
 
 
 const CreateTrip = ({setTripDetails, pageSelect}:any) => {
+
+    const [object, setObject] = useState({})
 
     const {
         register,
@@ -32,10 +36,10 @@ const CreateTrip = ({setTripDetails, pageSelect}:any) => {
         back,
         next
     } = useMultistepForm([ 
-    <GroupForm {...{register, errors}}/>, 
-    <DateForm {...{ control, register, errors}}/>, 
-    <MembersForm {...{ control, register, errors}}/>, 
-    <MultipleEventForm {...{ control, register, errors, getValues, setValue}}/>
+       
+    <NewForm ActualObj={object} CreatingObj={setObject}/>,
+    <CategoryForm ActualObj={object}/>,
+    
 ])
 
     const { user} = useAuth0() //, isAuthenticated, getAccessTokenSilently
@@ -96,3 +100,7 @@ export default CreateTrip
 
 
 
+{/* <GroupForm {...{register, errors}}/>, 
+    <DateForm {...{ control, register, errors}}/>, 
+    <MembersForm {...{ control, register, errors}}/>, 
+    <MultipleEventForm {...{ control, register, errors, getValues, setValue}}/> */}

@@ -18,7 +18,7 @@ export default function DateForm({ control, register}:any) {
           return (
             <div key={item.id} id="date-page" className="form-page">
               <label>date from
-              <input id="date-page-item" className="form-page-item"
+              <input id="date-page-item" className="form-page-input-field"
                 type="date"
                 name={`date[${index}].from`}            
                 {...register(`date[${index}].from`)}
@@ -26,7 +26,7 @@ export default function DateForm({ control, register}:any) {
               </label>
 
               <label>date to
-              <input  id="date-page-item" className="form-page-item"
+              <input  id="date-page-item" className="form-page-input-field"
                 type="date"
                 name={`date[${index}].to`}            
                 {...register(`date[${index}].to`)}

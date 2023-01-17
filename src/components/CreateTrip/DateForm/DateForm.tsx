@@ -33,7 +33,7 @@ export default function DateForm({ control, register}:any) {
               />
               </label>
 
-              <button type="button" onClick={() => remove(index)}>
+              <button className="button" type="button" onClick={() => remove(index)}>
                 delete
               </button>
 
@@ -42,7 +42,7 @@ export default function DateForm({ control, register}:any) {
         })}
       
       
-        <button className="page-alignment"
+        <button className="page-alignment button"
           type="button"
           onClick={() => {
             append(null);

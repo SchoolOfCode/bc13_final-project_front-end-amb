@@ -25,7 +25,7 @@ function handleSubmit(e:any) {
 
     
         <h1>join trip</h1>
-        <h2>ask your trip organiser for the ID of your trip to see details and add your votes</h2>
+        <h2 className='join-h2'>ask your trip organiser for the ID of your trip to see details and add your votes</h2>
 
         <form className="join-form-item" onSubmit={handleSubmit}>
             <label>Enter trip ID:

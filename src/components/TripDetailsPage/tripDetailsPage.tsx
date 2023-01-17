@@ -22,7 +22,7 @@ const TripDetails = ({tripDetails}:any) => {
             
             return <div key={Math.random() * 100}>
                         <p>from: {field['from']}  to: {field['to']}</p>     
-                        <button onClick={() => {closePopup()
+                        <button className="button" onClick={() => {closePopup()
                         }}>vote</button>
                     </div>
         })

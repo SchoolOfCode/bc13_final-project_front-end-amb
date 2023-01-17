@@ -9,6 +9,7 @@ import Login from "../Login/login";
 //import LogoutButton from "../LogoutButton/LogoutButton";
 import Navbar from "../NavBar/NavBar";
 import Footer from "../Footer/footer";
+// import Backpack from "../../images/backpack.png"
 
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
@@ -69,6 +70,7 @@ const Dashboard = () => {
             <p>view</p>
             <p>trips</p>
           </div>
+          {/* <img src={Backpack} alt="backpack"></img> */}
         </div>
         <Footer></Footer>
       </section>

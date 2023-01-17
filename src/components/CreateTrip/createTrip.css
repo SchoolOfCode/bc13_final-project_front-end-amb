@@ -70,6 +70,7 @@
 .form-page-label {
     position: relative;
     font-size: 16px;
+    font-weight: bold;
     margin-bottom: 5px;
     border-top: 15px solid transparent;
     }
@@ -112,14 +113,23 @@
     border: 2px solid var(--green);
 }
 
-/* p - MUST RENAME! {
+.error-p-tag {
     font-size: 10px;
     font-weight: bold;
     color: var(--green);
     position: absolute;
-    left: ;
-    top: 10px;
-} */
+    }
+
+/* .form-page .error-p-tag {
+    width: 250px;
+    padding: 0 8px;
+    font-size: 12px;
+    height: 24px;
+      }
+
+.form-page .error-message:empty {
+    opacity: 0;
+      } */
 
 #date-page {
     flex-direction: row;

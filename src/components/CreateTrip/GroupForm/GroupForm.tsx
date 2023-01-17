@@ -13,7 +13,7 @@ const GroupForm = ({register, errors}:any) => {
             })}/>
         <span className="placeholder">trip name</span>  
         </label>
-            {errors.group && <p>This field needs to be completed.</p>}
+            {errors.group && <p className="error-p-tag">This field needs to be completed.</p>}
 
         <label className="form-page-label"> 
         <input placeholder="&nbsp;" className="form-page-input-field"
@@ -24,7 +24,7 @@ const GroupForm = ({register, errors}:any) => {
             })}/>
             <span className="placeholder">destination</span>  
         </label>
-            {errors.destination && <p>This field needs to be completed.</p>}
+            {errors.destination && <p className="error-p-tag">This field needs to be completed.</p>}
         </div>
     )
 }

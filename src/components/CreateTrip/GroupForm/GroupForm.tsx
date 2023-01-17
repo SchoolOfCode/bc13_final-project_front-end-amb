@@ -5,7 +5,7 @@ const GroupForm = ({register, errors}:any) => {
        <div className="form-page">
         <h2 id="groupName">group name & destination</h2>
         <label className="form-page-label">  
-        <input className="form-page-input-field"
+        <input placeholder="&nbsp;" className="form-page-input-field"
             type="text"       
             {...register("group", {
                 required: true,
@@ -16,7 +16,7 @@ const GroupForm = ({register, errors}:any) => {
             {errors.group && <p>This field needs to be completed.</p>}
 
         <label className="form-page-label"> 
-        <input className="form-page-input-field"
+        <input placeholder="&nbsp;" className="form-page-input-field"
             type="text"
             {...register("destination", {
                 required: true,

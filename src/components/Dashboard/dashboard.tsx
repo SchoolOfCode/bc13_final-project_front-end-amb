@@ -13,6 +13,7 @@ import Footer from "../Footer/footer";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
 import { ImBinoculars } from "react-icons/im";
+import userEvent from "@testing-library/user-event";
 
 const Dashboard = () => {
 
@@ -20,11 +21,29 @@ const Dashboard = () => {
 
   const [page, setPage] = useState("dashboard")
 
-  const { isAuthenticated } = useAuth0(); // user, , getAccessTokenSilently
+  const { isAuthenticated, user } = useAuth0(); // user, , getAccessTokenSilently
+
+
+
+  const id = user?.sub
+
+  function openTripsPage(){
+    getAllTrips(id);
+    handlePage("view");
+  }
+console.log(id)
+
+  async function getAllTrips(id:any){
+    const res = await fetch(`http://localhost:3001/api/trip/${id}`)
+    const json = await res.json()
+    console.log(json)
+  }
 
   function handlePage(page:string) {
     console.log(page)
     setPage(page)
+  
+  
   }
 
   return (
@@ -62,7 +81,7 @@ const Dashboard = () => {
           <div
             className="dashboard-container"
             onClick={() => {
-              handlePage("view");
+              openTripsPage();
             }}
           >
             <ImBinoculars className="icon" />

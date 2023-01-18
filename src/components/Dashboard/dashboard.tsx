@@ -8,9 +8,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../Login/login";
 //import LogoutButton from "../LogoutButton/LogoutButton";
 import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/footer";
+// import Backpack from "../../images/backpack.png"
+
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
 import { ImBinoculars } from "react-icons/im";
+import userEvent from "@testing-library/user-event";
 
 const Dashboard = () => {
 
@@ -18,19 +22,40 @@ const Dashboard = () => {
 
   const [page, setPage] = useState("login")
 
-  const { isAuthenticated } = useAuth0(); // user, , getAccessTokenSilently
+  const { isAuthenticated, user } = useAuth0(); // user, , getAccessTokenSilently
+
+  const [tripData, setTripData] = useState([])
+
+
+
+  const id = user?.sub
+
+  function openTripsPage(){
+    getAllTrips(id);
+    handlePage("view");
+  }
+console.log(id)
+
+  async function getAllTrips(id:any){
+    const res = await fetch(`http://localhost:3001/api/trip/${id}`)
+    const json = await res.json()
+    console.log(json)
+    setTripData(json.payload)
+  }
 
   function handlePage(page:string) {
     console.log(page)
     setPage(page)
+  
+  
   }
 
   return (
-    <div>
+    <div id="dashboard-container">
       <section id="dashboard">
-        <div className="navbar-dashboard">
+        
           <Navbar pageSelect={handlePage}></Navbar>
-        </div>
+        
 
         <h1>Where are we going?</h1>
 
@@ -60,19 +85,22 @@ const Dashboard = () => {
           <div
             className="dashboard-container"
             onClick={() => {
-              handlePage("view");
+              openTripsPage();
             }}
           >
             <ImBinoculars className="icon" />
             <p>view</p>
             <p>trips</p>
           </div>
+          {/* <img src={Backpack} alt="backpack"></img> */}
         </div>
+        <Footer></Footer>
       </section>
 
       <div className={ page === "login" ? "open" : "closed" }>
         {!isAuthenticated && <Login pageSelect={handlePage}></Login>}
       </div>
+      
 
       <div className={ page === "create" ? "open" : "closed" }>
         <CreateTrip
@@ -85,6 +113,7 @@ const Dashboard = () => {
         <ViewTrips
           setTripDetails={setCurrentTrip}
           pageSelect={handlePage}
+          tripData={tripData}
         ></ViewTrips>
       </div>
 

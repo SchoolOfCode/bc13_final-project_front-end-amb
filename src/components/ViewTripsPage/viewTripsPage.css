@@ -1,6 +1,6 @@
 .view-trips-div{
 
-    top: 0%;
+    top: 110px;
     left: 0%;
     width: 100vw;
     height: 100vh;
@@ -13,10 +13,21 @@
 }
 
 .view-trip-form-item {
-  
-    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    margin-bottom: 20%;
+}
+.trip-card {
+    background: var(--red-brown);
+    color: var(--beige);
+    border: 3px solid var(--red-brown);
 }
 
-.view-trip-cancel-button {
-    margin-bottom: 8%;
+.trip-card:hover{
+        background-color: var(--green);
+        color: var(--beige);
+        border: 3px solid var(--green);
+        cursor: pointer;
+        background-image: none;
 }

@@ -12,6 +12,8 @@
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   height: 100vh;
   background-color: var(--beige);
   color: var(--green);
@@ -24,18 +26,11 @@ code {
     monospace;
 }
 
-.button:hover,
-.button:active {
-    border: 3px solid var(--dark-orange);
-    color: var(--light-orange);
-}
-
 .cancel-button {
-  margin: 13% 40px 0px 0px;
-  width: 100px;
+  width: 10vw;
   background: var(--green);
-  border: 1px solid var(--light-orange);
-  border-radius: 6px;
+  border: 2px solid var(--beige);
+  border-radius: var(--border-radius);
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
   transform: scale(0.8);
@@ -43,12 +38,11 @@ code {
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 16px;
-  height: 70px;
-  min-height: 20px;
+  height: 6vh;
+  min-height: 10px;
   outline: 0;
-  padding: 12px 14px;
   text-align: center;
   text-rendering: geometricprecision;
   text-transform: none;
@@ -62,15 +56,15 @@ code {
 
 .cancel-button:hover,
 .cancel-button:active {
-    border: 3px solid var(--dark-orange);
+    border: 2px solid var(--dark-orange);
 }
 
 .submit-button{
   margin: 13% 40px 0px 0px;
   width: 100px;
   background: var(--green);
-  border: 1px solid var(--light-orange);
-  border-radius: 6px;
+  border: 2px solid var(--beige);
+  border-radius: var(--border-radius);
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
   transform: scale(0.8);
@@ -98,4 +92,21 @@ code {
 
 .input-field {
   border-color: 2px solid var(--dark-orange);
+}
+
+.button {
+    width: 8vw;
+    height: 5vh;
+    border-radius: var(--border-radius);
+    background: var(--green);
+    border: 2px solid var(--beige);
+    color: var(--beige);
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+    border: 2px solid var(--dark-orange);
+    color: var(--beige);
 }

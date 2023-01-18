@@ -11,10 +11,51 @@
     flex-direction: column;
 }
 
-.view-trip-form-item {
-    margin-bottom: auto;
+#vote-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    top: 15%;
+    left: 30%;
+    position: fixed;
+    width: 40%;
+    height: 60%;
+    margin: auto;
+    background: var(--beige);
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 1rem;
 }
 
-.trip-details {
-    margin-bottom: auto;
+.details-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--beige);
+    height: 70%;
+    width: 70%
+}
+
+.vote-form-button {
+    margin-top: auto;
+}
+
+#h2-vote-form {
+    color:green;
+    text-decoration: underline;
+}
+
+label {
+    display: block;
+    /* background: lightgrey;
+    width: 100px;
+    height: 100px; */
+}
+
+#highlighted:checked + label {
+    background: blue;
+    color: white;
 }

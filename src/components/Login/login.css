@@ -9,6 +9,21 @@
     align-items:center;
     display: flex;
     flex-direction: column;
+    background-image: url(../../images/travel-bg.png);
+    background-size: cover;
+    
+    
+}
+
+.sloganBox {
+    background-color: #f9f7dc;
+    position: relative;
+    margin-top: 18%;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+  border: 1px transparent;
+  padding-bottom: 0.2cm;
+
 }
 
 .flex-item {
@@ -17,24 +32,46 @@
 }
 
 .getStarted {
-    width: 10%;
+    width: auto;
     height: 10%;
-    background-color: var(--green);
+    background-color: var(--light-orange);
     border-radius: var(--border-radius);
+    border-style: none;
     color: var(--beige);
     font-family: var(--font);
+    font-size: 150%;
     margin: auto;
-    border: 1px solid var(--light-orange);
-    font-size: 1.25rem;
-    
-}
+    margin-top: 2.5%;
+    margin-bottom: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
+  height: 40px;
+} 
 
 .getStarted:hover,
 .getStarted:active {
     border: 3px solid var(--dark-orange);
-    font-size: 1.25rem;
     cursor: pointer;
     }
+
+  .slogan {
+  
+  
+    color: #511011;
+    margin-bottom: 1%;
+    /* margin-top: 20%; */
+    font-size: 105%;
+   
+    display: flex;
+  flex-direction: column;
+    align-items: center;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    line-height: 0.8cm;
+    
+    
+  
+  }
 
 /* .flex-item > button {
     width: 100px;

@@ -1,44 +1,174 @@
-.createTripContainer {
-    /* height: 100vh;
-    width: 100vw;
-    position: fixed;
-    background-color: var(--beige); */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
-    top: 0%;
+.createTripContainer {
+    top: 110px;
     left: 0%;
     width: 100vw;
     height: 100vh;
     position: fixed;
     background: var(--beige);
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10%;
-    
+    background-image: url(../../images/travel-bg.png);
+    background-size: cover;
 }
 
 .create-trip-form {
-    
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+    position: relative;
+    background: var(--beige);
+    border: 3px solid var(--dark-orange);
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    font-family: var(--font);
+    width: auto;
+    min-width: 80vw;
+    line-height: 1.4rem;
+    max-height: 45vh;
+    color: var(--green);
+   }
+
+   #groupName {
+    color: var(--green)
+   }
+
+.page-counter {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    font-family: var(--font);
+    font-size: 1rem;
 }
 
-/* .create-trip-item {
-    margin-bottom: auto;
+/* format next button in here */
+.change-page-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+    justify-content: flex-end;
+}
 
-
-.create-cancel-button {
-    margin-bottom: 10%;
-
-
-
-h1 {
+.create-trip-h1 {
     font-size: 400%;
     font-weight: 600;
-    margin-bottom: 10%;
-} */
+    margin-bottom: 2%;
+    margin-top: 3%;
+} 
 
+.form-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.form-page-label {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-top: 15px solid transparent;
+    }
+
+.form-page-label .placeholder{
+    position: absolute;
+    left: 0.25vw;
+    top: -1vh;
+    font-weight: bold;
+    transition: top 0.3s ease, font-size 0.3s ease;
+    padding: 5%;
+    }
+
+.form-page-input-field {
+    height: 3vh;
+    color: var(--green);
+    font-size: 16px;
+    font-weight: bold;
+    margin: 8px;
+    border: 2px inset var(--beige);
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--beige);
+    padding: 12px;
+    border-radius: 5px;
+    width: 30vw !important;
+           }
+
+
+.form-page-label input:not(:placeholder-shown) + .placeholder,
+.form-page-label input:focus +.placeholder{
+    top: -70%;
+    font-size: 12px;
+}
+
+.form-page-input-field:focus {
+    outline: none;
+    border: 2px solid var(--green);
+}
+
+.error-p-tag {
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--green);
+    position: absolute;
+    }
+
+/* .form-page .error-p-tag {
+    width: 250px;
+    padding: 0 8px;
+    font-size: 12px;
+    height: 24px;
+      }
+
+.form-page .error-message:empty {
+    opacity: 0;
+      } */
+
+#date-page {
+    flex-direction: row;
+}
+
+#date-page-item {
+    width: 10vw;
+}
+
+#member-page-item {
+    width: 30vw;
+    flex-wrap: wrap;
+    color: var(--green);
+} 
+
+
+#itinerary-page {
+    flex-wrap: wrap;
+    height: 5vh;
+    gap:1px;
+}
+
+
+#itinerary-page-item {
+    width: 20vw;
+}
+
+.page-alignment {
+    margin-left: 47%;
+    margin-top: 2%;
+}
+
+.scroll-page {
+    overflow-y: scroll;
+    height: 350px;
+}
+
+.itinerary-button {
+    min-height: 25px;
+    min-width: 100px;
+    margin-left: 4%;
+}

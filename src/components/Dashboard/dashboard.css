@@ -7,6 +7,10 @@
     
 }
 
+#dashboard-container{
+    width:100%;
+}
+
 #dashboard-btn-container{
     /* use below for separating out containers on screen */
     border:0px solid black;
@@ -34,8 +38,14 @@
     align-items: center;
     border-radius: var(--border-radius);
     text-align: center;
-    ;
+    border: 3px solid var(--dark-orange);
     cursor: pointer
+}
+
+#dashboard-btn-container div:hover{
+    background-color: var(--green);
+    color: var(--beige);
+    border: 3px solid var(--green);
 }
 
 h1 {
@@ -54,13 +64,11 @@ h1 {
     font-size: 300%;
 }
 
-.dashboard-container {
-   
-    border: 3px solid var(--dark-orange);
-}
+
 
 .navbar-dashboard {
     margin-bottom: auto;
+    width: 100%;
 }
 
 .open {

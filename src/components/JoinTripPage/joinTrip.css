@@ -1,19 +1,19 @@
 .join-form {
-    top: 0%;
+    top: 110px;
     left: 0%;
     width: 100vw;
     height: 100vh;
     position: fixed;
     background: var(--beige);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
  
 }
 
-.join-form-item {
-    margin-bottom: auto;
+.join-h2 {
+    color: var(--green);
 }
 
 .join-cancel-button {

@@ -31,7 +31,7 @@ const tripsArr = [
      },
      {
         Admin: "newUser",
-        group: "Natasha's Group",
+        group: "Hen Do",
         destination: "aaaaa",
         date: [
                 {
@@ -53,26 +53,46 @@ const tripsArr = [
                 ],
         
      },
-
      {
         Admin: "newUser",
-        group: "Kylie's Group",
+        group: "Stag Weekend",
         destination: "aaaaa",
         date: [
                 {
                     name: "2023-01-11"
+                },
+                {
+                    name: "2050-01-11"
                 }
               ],
         event: [
                 {
                     type: "Accomodation",
-                    location: "location",
+                    location: "salisbury",
+                    date: "2023-01-13T11:11"
+                },
+                {
+                    type: "Accomodation",
+                    location: "london",
+                    date: "2023-01-13T11:11"
+                },
+                {
+                    type: "Accomodation",
+                    location: "devon",
                     date: "2023-01-13T11:11"
                 }
                ],
         member: [
                 {
                     name: "aaa",
+                    email: "aaa@aaaa.com"
+                },
+                {
+                    name: "bbb",
+                    email: "aaa@aaaa.com"
+                },
+                {
+                    name: "ccc",
                     email: "aaa@aaaa.com"
                 }
                 ],
@@ -82,28 +102,29 @@ const tripsArr = [
 ]
 
 
-const ViewTrips = (props:any) => {
+const ViewTrips = ({setTripDetails, tripData, pageSelect, trip}:any) => { 
 
   
     return (
+        
        <div className='view-trips-div'>
-
-       <div className="view-trip-form-item">
-            {/* <Navbar /> */}
-       </div>
+        <h1>your trips</h1>
+        
+        <div className="view-trip-form-item">
        
-       <div className="view-trip-form-item">
-       
-            {tripsArr.map((trip) => {
+            {tripData.map((trip:any) => {
                 return (<div key={Math.random() * 10000}>
 
 
-                    <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
+                    <TripCard className="trip-card" tripDetails={setTripDetails} handlePage={pageSelect} trip={trip}></TripCard>
+
+                   
+
 
                 </div>)
             })}
         </div>
-        <button className="view-trip-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
+        <button className="view-trip-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
         </div>
         
     )

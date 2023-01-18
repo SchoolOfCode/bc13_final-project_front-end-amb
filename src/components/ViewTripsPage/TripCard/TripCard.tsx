@@ -1,7 +1,7 @@
 import './TripCard.css'
 
 const TripCard = ({trip, handlePage, tripDetails}:any) => {
-
+console.log(trip)
 function handleClick() {
     handlePage("details")
     tripDetails(trip)
@@ -10,7 +10,7 @@ function handleClick() {
 
     return (
     <div className="trip-card" onClick={handleClick}>
-        <h3>{trip.group}</h3> 
+        <h3>{trip?trip.trip_name:null}</h3> 
     </div>)
 }
 //, tripDetailsVisibility   

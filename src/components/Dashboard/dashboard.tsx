@@ -20,9 +20,11 @@ const Dashboard = () => {
 
   const [currentTrip, setCurrentTrip] = useState({});
 
-  const [page, setPage] = useState("dashboard")
+  const [page, setPage] = useState("login")
 
   const { isAuthenticated, user } = useAuth0(); // user, , getAccessTokenSilently
+
+  const [tripData, setTripData] = useState({})
 
 
 
@@ -38,6 +40,7 @@ console.log(id)
     const res = await fetch(`http://localhost:3001/api/trip/${id}`)
     const json = await res.json()
     console.log(json)
+    setTripData(json.payload)
   }
 
   function handlePage(page:string) {
@@ -97,6 +100,7 @@ console.log(id)
       <div className={ page === "login" ? "open" : "closed" }>
         {!isAuthenticated && <Login pageSelect={handlePage}></Login>}
       </div>
+      
 
       <div className={ page === "create" ? "open" : "closed" }>
         <CreateTrip
@@ -109,6 +113,7 @@ console.log(id)
         <ViewTrips
           setTripDetails={setCurrentTrip}
           pageSelect={handlePage}
+          tripData={tripData}
         ></ViewTrips>
       </div>
 

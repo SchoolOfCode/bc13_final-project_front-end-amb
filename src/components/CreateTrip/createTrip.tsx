@@ -37,33 +37,29 @@ const CreateTrip = ({setTripDetails, pageSelect}:any) => {
         next
     } = useMultistepForm([ 
        
-    <NewForm ActualObj={object} CreatingObj={setObject}/>,
+      <NewForm ActualObj={object} CreatingObj={setObject}/>,
     <CategoryForm ActualObj={object}/>,
     
 ])
 
     const { user} = useAuth0() //, isAuthenticated, getAccessTokenSilently
 
-
-
 function onSubmit(data: any) {
     if(user?.sub){
-    data.Admin = user?.sub  // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
-                            // TODO: Create a function that changes state in the dashboard component to 'data'.
+    data.Admin = user?.sub  
+                            
     }
     console.log(data)
     next()
 
-    if(isLastStep){
+    if(isLastStep){             // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
         setTripDetails(data)    // TODO: maybe use local storage to save the details of the form while logging in?
-        pageSelect("details")
+        pageSelect("details")   // TODO: Create a function that changes state in the dashboard component to 'data'.
     }
-  
-    
 }
 
-
     return (<>
+    
     <div className="createTripContainer">
 
     <h1 className='create-trip-h1'>create trip </h1>
@@ -87,7 +83,6 @@ function onSubmit(data: any) {
 
             </form>
 
-     
         </div>
 
     <button className="create-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
@@ -100,7 +95,11 @@ export default CreateTrip
 
 
 
-{/* <GroupForm {...{register, errors}}/>, 
-    <DateForm {...{ control, register, errors}}/>, 
-    <MembersForm {...{ control, register, errors}}/>, 
-    <MultipleEventForm {...{ control, register, errors, getValues, setValue}}/> */}
+
+
+// <GroupForm {...{register, errors}}/>, 
+// <DateForm {...{ control, register, errors}}/>, 
+// <MembersForm {...{ control, register, errors}}/>, 
+// <MultipleEventForm {...{ control, register, errors, getValues, setValue}}/> 
+
+  

@@ -20,7 +20,7 @@ export default function ItineraryForm({ control, register, nestIndex}:any) {
 
               <select id="itinerary-page-item" className="form-page-input-field" 
                          
-                name={`event.itinerary[${k}].type`}            
+                name={`event[${nestIndex}].itinerary[${k}].type`}            
 
                 {...register(`event[${nestIndex}].itinerary[${k}].type`)}>
                 <option value="">select option</option>
@@ -33,13 +33,13 @@ export default function ItineraryForm({ control, register, nestIndex}:any) {
 
 
               <input id="itinerary-page-item" className="form-page-input-field"              
-                name={`event.itinerary[${k}].name`}            
+                name={`event[${nestIndex}].itinerary[${k}].name`}            
                 {...register(`event[${nestIndex}].itinerary[${k}].name`)}
               />
               
               <input id="itinerary-page-item" className="form-page-input-field"
                 type="datetime-local"
-                name={`event.itinerary[${k}].date_time`}            
+                name={`event[${nestIndex}].itinerary[${k}].date_time`}            
                 {...register(`event[${nestIndex}].itinerary[${k}].date_time`)}
               />
 

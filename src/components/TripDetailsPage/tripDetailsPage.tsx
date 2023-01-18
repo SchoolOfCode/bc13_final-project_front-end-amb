@@ -124,19 +124,19 @@ const TripDetails = ({tripDetails1}:any) => {
         setDataVote(current => !current)
     }
 
-//css merge conflict
-    function renderFields(fields:any) {  // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
-                                        // maybe have the functionality in a seperate component that we render instead of a div?
+// //css merge conflict
+//     function renderFields(fields:any) {  // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
+//                                         // maybe have the functionality in a seperate component that we render instead of a div?
        
-        return fields.map((field:any) => {
+//         return fields.map((field:any) => {
             
-            return <div key={Math.random() * 100}>
-                        <p>from: {field['from']}  to: {field['to']}</p>     
-                        <button className="button" onClick={() => {closePopup()
-                        }}>vote</button>
-                    </div>
-        })
-//development merge conflict
+//             return <div key={Math.random() * 100}>
+//                         <p>from: {field['from']}  to: {field['to']}</p>     
+//                         <button className="button" onClick={() => {closePopup()
+//                         }}>vote</button>
+//                     </div>
+//         })}
+// //development merge conflict
     function handleItinerary() {
         setItineraryVote(current => !current)
     }
@@ -169,7 +169,7 @@ const TripDetails = ({tripDetails1}:any) => {
 
                 <p>destination: {tripDetails.destination}</p>
 
-                {tripDetails.date.length > 1 ?  <button onClick={handleDate}>vote on the dates!</button> : 
+                {tripDetails.date.length > 1 ?  <button className="button" onClick={handleDate}>vote on the dates!</button> : 
                                                 <p>date from: {tripDetails.date[0].from} date to: {tripDetails.date[0].to}</p>}
 
                 {dateVote && <VoteWrapper title="vote on the dates">
@@ -180,7 +180,7 @@ const TripDetails = ({tripDetails1}:any) => {
                              <span className='clicked-event'>from: {d.to} to: {d.from}</span>
                              </div>
                      })}
-                     <button className="vote-form-button" onClick={handleDate}>close</button>
+                     <button className="vote-form-button button" onClick={handleDate}>close</button>
                      </VoteWrapper>}
 
                 
@@ -188,7 +188,7 @@ const TripDetails = ({tripDetails1}:any) => {
                 <p>trip members:</p>
                 {tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>{tripDetails.member[0].name}</p>}
 
-                {tripDetails.event.length > 1 ? <button onClick={handleItinerary}>vote on itinerary!</button> : 
+                {tripDetails.event.length > 1 ? <button className="button" onClick={handleItinerary}>vote on itinerary!</button> : 
                                                 <p>itinerary: {tripDetails.event[0].itinerary[0].type}</p>}
 
                 {itinereryVote && <VoteWrapper title="vote on the itinerary">

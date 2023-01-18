@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   const { isAuthenticated, user } = useAuth0(); // user, , getAccessTokenSilently
 
-  const [tripData, setTripData] = useState({})
+  const [tripData, setTripData] = useState([])
 
 
 

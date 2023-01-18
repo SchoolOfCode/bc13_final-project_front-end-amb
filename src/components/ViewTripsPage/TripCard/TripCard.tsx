@@ -1,7 +1,7 @@
 import './TripCard.css'
 
 const TripCard = ({trip, handlePage, tripDetails}:any) => {
-
+console.log(trip)
 function handleClick() {
     handlePage("details")
     tripDetails(trip)

@@ -112,7 +112,7 @@ const ViewTrips = ({setTripDetails, tripData, pageSelect, trip}:any) => {
         
         <div className="view-trip-form-item">
        
-            {tripsArr.map((trip:any) => {
+            {tripData.map((trip:any) => {
                 return (<div key={Math.random() * 10000}>
 
 

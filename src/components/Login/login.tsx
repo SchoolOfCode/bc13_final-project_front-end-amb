@@ -18,11 +18,11 @@ const Login = ({pageSelect}:any) => {
         </div> */}
 <div className='sloganBox'>
         
-        <h1 className='slogan'>
+        <div className='slogan'>
 
-Feeling decision-fatigued? <b></b> Let everyone else decide, with a vote. <br></br> <li></li>
+<p>Feeling decision-fatigued?</p> <p>Let everyone else decide, with a vote.</p> <br></br> <li></li>
 
-Don’t want to be the one to bring up money? <b></b> State your budget, anonymously. <br></br> <li></li> Getting ignored in the group chat? <b></b> Have your preferences heard, with Travel Herd. </h1>
+<p>Not sure how to bring up money?</p> <b></b> <p>State your budget, anonymously.</p> <br></br> <li></li> <p>Getting ignored in the group chat?</p> <b></b> <p>Have your preferences heard, with Travel Herd.</p> </div>
  </div>
 
         <button className="getStarted" onClick={() => {pageSelect("dashboard")}}>get started</button>

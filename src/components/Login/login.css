@@ -21,8 +21,9 @@
     margin-top: 18%;
     padding-left: 0.5cm;
     padding-right: 0.5cm;
-  border: 1px transparent;
+  border: 1px solid;
   padding-bottom: 0.2cm;
+
 
 }
 
@@ -67,11 +68,13 @@
     align-items: center;
     /* margin-left: 10%;
     margin-right: 10%; */
-    line-height: 0.8cm;
+    line-height: 0.2cm;
     
     
   
   }
+
+ 
 
 /* .flex-item > button {
     width: 100px;

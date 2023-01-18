@@ -1,16 +1,17 @@
 import './TripCard.css'
 
-const TripCard = ({trip, handlePage, tripDetails}:any) => {
-console.log(trip)
+const TripCard = ({tripObject, handlePage, tripDetails,getTripDetail}:any) => {
+console.log(tripObject)
 function handleClick() {
     handlePage("details")
-    tripDetails(trip)
+    tripDetails(tripObject)
+    getTripDetail(tripObject.trip_id)
     
 }
 
     return (
     <div className="trip-card" onClick={handleClick}>
-        <h3>{trip?trip.trip_name:null}</h3> 
+        <h3>{tripObject?tripObject.trip_name:null}</h3> 
     </div>)
 }
 //, tripDetailsVisibility   

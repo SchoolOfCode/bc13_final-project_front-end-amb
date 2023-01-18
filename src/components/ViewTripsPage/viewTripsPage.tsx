@@ -1,6 +1,7 @@
 import "./viewTripsPage.css"
 
 import TripCard from "./TripCard/TripCard";
+import { AiOutlineConsoleSql } from "react-icons/ai";
 
 const tripsArr = [
 
@@ -102,9 +103,13 @@ const tripsArr = [
 ]
 
 
-const ViewTrips = ({setTripDetails, tripData, pageSelect, trip}:any) => { 
+const ViewTrips = ({setTripDetails, tripData, pageSelect}:any) => { 
 
-  
+  function getTripDetail(trip_id:any){
+    console.log(trip_id)
+    
+  }
+
     return (
         
        <div className='view-trips-div'>
@@ -116,7 +121,7 @@ const ViewTrips = ({setTripDetails, tripData, pageSelect, trip}:any) => {
                 return (<div key={Math.random() * 10000}>
 
 
-                    <TripCard className="trip-card" tripDetails={setTripDetails} handlePage={pageSelect} trip={trip}></TripCard>
+                    <TripCard className="trip-card" tripDetails={setTripDetails} handlePage={pageSelect} tripObject={trip} getTripDetail={getTripDetail}></TripCard>
 
                    
 

@@ -7,7 +7,8 @@ import VoteWrapper from './VoteWrapper/VoteWrapper'
 const TripDetails = ({tripDetails1}:any) => {
 
     const [dateVote, setDataVote] = useState(false)
-    const [itinereryVote, setItineraryVote] = useState(false)                             
+    const [itinereryVote, setItineraryVote] = useState(false)    
+    
   
 
     // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..

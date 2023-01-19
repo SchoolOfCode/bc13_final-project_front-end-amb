@@ -103,12 +103,16 @@ import { AiOutlineConsoleSql } from "react-icons/ai";
 // ]
 
 
-const ViewTrips = ({tripData, pageSelect}:any) => { 
+const ViewTrips = ({tripData, pageSelect, handlePage}:any) => { 
 
   function getTripDetail(trip_id:any){
     console.log(trip_id)
-    
+
   }
+
+
+
+
 
     return (
         

@@ -17,45 +17,39 @@ import { ImBinoculars } from "react-icons/im";
 import userEvent from "@testing-library/user-event";
 
 const Dashboard = () => {
-
   const [currentTrip, setCurrentTrip] = useState({});
 
-  const [page, setPage] = useState("login")
+  const [page, setPage] = useState("login");
 
   const { isAuthenticated, user } = useAuth0(); // user, , getAccessTokenSilently
 
-  const [tripData, setTripData] = useState([])
+  const [tripData, setTripData] = useState([]);
 
+  const id = user?.sub;
 
-
-  const id = user?.sub
-
-  function openTripsPage(){
+  function openTripsPage() {
     getAllTrips(id);
     handlePage("view");
   }
-console.log(id)
+  console.log(id);
 
-  async function getAllTrips(id:any){
-    const res = await fetch(`http://localhost:3001/api/trip/${id}`)
-    const json = await res.json()
-    console.log(json)
-    setTripData(json.payload)
+  async function getAllTrips(id: any) {
+    console.log({ id });
+    const res = await fetch(`http://localhost:3001/api/trip/${id}`);
+    const json = await res.json();
+    console.log({ json });
+    setTripData(json.payload);
   }
 
-  function handlePage(page:string) {
-    console.log(page)
-    setPage(page)
-  
-  
+  function handlePage(page: string) {
+    console.log(page);
+    setPage(page);
   }
 
   return (
     <div id="dashboard-container">
       <section id="dashboard">
-        
-          <Navbar pageSelect={handlePage}></Navbar>
-        
+        <Navbar pageSelect={handlePage}></Navbar>
 
         <h1>Where are we going?</h1>
 
@@ -97,19 +91,18 @@ console.log(id)
         <Footer></Footer>
       </section>
 
-      <div className={ page === "login" ? "open" : "closed" }>
+      <div className={page === "login" ? "open" : "closed"}>
         {!isAuthenticated && <Login pageSelect={handlePage}></Login>}
       </div>
-      
 
-      <div className={ page === "create" ? "open" : "closed" }>
+      <div className={page === "create" ? "open" : "closed"}>
         <CreateTrip
           setTripDetails={setCurrentTrip}
           pageSelect={handlePage}
         ></CreateTrip>
       </div>
 
-      <div className={ page === "view" ? "open" : "closed"}>
+      <div className={page === "view" ? "open" : "closed"}>
         <ViewTrips
           setTripDetails={setCurrentTrip}
           pageSelect={handlePage}
@@ -118,14 +111,12 @@ console.log(id)
       </div>
 
       {currentTrip && (
-        <div
-          className={ page === "details" ? "open" : "closed" }
-        >
+        <div className={page === "details" ? "open" : "closed"}>
           <TripDetails tripDetails={currentTrip}></TripDetails>
         </div>
       )}
 
-      <div className={ page === "join" ? "open" : "closed"}>
+      <div className={page === "join" ? "open" : "closed"}>
         <JoinTrip pageSelect={handlePage}></JoinTrip>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import './TripCard.css'
 
-const TripCard = ({tripObject, handlePage, tripDetails,getTripDetail}:any) => {
+const TripCard = ({tripObject, handlePage, getTripDetail}:any) => {
 console.log(tripObject)
-function handleClick() {
+async function handleClick(id:any) {
     handlePage("details")
-    tripDetails(tripObject)
-    getTripDetail(tripObject.trip_id)
-    
+    // getTripDetail(tripObject.trip_id)
+    const res = await fetch(`http://localhost:3001/api/trip/${id}`)
+    const json = res.json
 }
 
     return (

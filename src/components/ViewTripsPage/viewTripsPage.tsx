@@ -105,12 +105,10 @@ import { AiOutlineConsoleSql } from "react-icons/ai";
 
 const ViewTrips = ({tripData, pageSelect, handlePage}:any) => { 
 
-  function getTripDetail(trip_id:any){
-    console.log(trip_id)
 
-  }
-
-
+function fetchTripDetails(id:any) {
+    console.log('does this work', id)
+}
 
 
 
@@ -122,10 +120,11 @@ const ViewTrips = ({tripData, pageSelect, handlePage}:any) => {
         <div className="view-trip-form-item">
        
             {tripData.map((trip:any) => {
+               
                 return (<div key={Math.random() * 10000}>
 
-
-                    <TripCard className="trip-card" handlePage={pageSelect} tripObject={trip} getTripDetail={getTripDetail}></TripCard>
+        
+                    <TripCard fetchTripDetails={fetchTripDetails} className="trip-card" handlePage={pageSelect} trip={trip}></TripCard>
 
                    
 

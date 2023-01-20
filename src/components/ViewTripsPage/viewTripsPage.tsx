@@ -2,113 +2,28 @@ import "./viewTripsPage.css"
 
 import TripCard from "./TripCard/TripCard";
 import { AiOutlineConsoleSql } from "react-icons/ai";
+import { useState } from "react";
 
-// const tripsArr = [
 
-
-//      {
-//         Admin: "newUser",
-//         group: "Minty Blobfish",
-//         destination: "aaaaa",
-//         date: [
-//                 {
-//                     name: "2023-01-11"
-//                 }
-//               ],
-//         event: [
-//                 {
-//                     type: "Accomodation",
-//                     location: "location",
-//                     date: "2023-01-13T11:11"
-//                 }
-//                ],
-//         member: [
-//                 {
-//                     name: "aaa",
-//                     email: "aaa@aaaa.com"
-//                 }
-//                 ],
-        
-//      },
-//      {
-//         Admin: "newUser",
-//         group: "Hen Do",
-//         destination: "aaaaa",
-//         date: [
-//                 {
-//                     name: "2023-01-11"
-//                 }
-//               ],
-//         event: [
-//                 {
-//                     type: "Accomodation",
-//                     location: "location",
-//                     date: "2023-01-13T11:11"
-//                 }
-//                ],
-//         member: [
-//                 {
-//                     name: "aaa",
-//                     email: "aaa@aaaa.com"
-//                 }
-//                 ],
-        
-//      },
-//      {
-//         Admin: "newUser",
-//         group: "Stag Weekend",
-//         destination: "aaaaa",
-//         date: [
-//                 {
-//                     name: "2023-01-11"
-//                 },
-//                 {
-//                     name: "2050-01-11"
-//                 }
-//               ],
-//         event: [
-//                 {
-//                     type: "Accomodation",
-//                     location: "salisbury",
-//                     date: "2023-01-13T11:11"
-//                 },
-//                 {
-//                     type: "Accomodation",
-//                     location: "london",
-//                     date: "2023-01-13T11:11"
-//                 },
-//                 {
-//                     type: "Accomodation",
-//                     location: "devon",
-//                     date: "2023-01-13T11:11"
-//                 }
-//                ],
-//         member: [
-//                 {
-//                     name: "aaa",
-//                     email: "aaa@aaaa.com"
-//                 },
-//                 {
-//                     name: "bbb",
-//                     email: "aaa@aaaa.com"
-//                 },
-//                 {
-//                     name: "ccc",
-//                     email: "aaa@aaaa.com"
-//                 }
-//                 ],
-        
-//      }
-
-// ]
 
 
 const ViewTrips = ({tripData, pageSelect, handlePage}:any) => { 
 
+    const [tripChoices, setTripChoices] = useState({})
 
-function fetchTripDetails(id:any) {
-    console.log('does this work', id)
-}
+async function fetchTripDetails(id:any) {
+    
+    
+        const res = await fetch(`http://localhost:3001/api/choices/${id}`)
+        const json = await res.json()
+        
+        setTripChoices(json)
+        console.log(json, "fetch has worked")
+        
+
+       
+      }
+
 
 
 
@@ -137,6 +52,6 @@ function fetchTripDetails(id:any) {
         
     )
 
-}
+        }
 
 export default ViewTrips;

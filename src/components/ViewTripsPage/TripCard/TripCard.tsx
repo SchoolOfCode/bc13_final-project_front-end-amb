@@ -3,7 +3,7 @@ import './TripCard.css'
 
 
 const TripCard = ({trip, handlePage, fetchTripDetails}:any) => {
-    console.log(trip)
+    
     function handleClick() {
         handlePage("details")
         

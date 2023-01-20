@@ -121,7 +121,8 @@ console.log(id)
         <div
           className={ page === "details" ? "open" : "closed" }
         >
-          <TripDetails tripDetails={currentTrip}></TripDetails>
+          <TripDetails ></TripDetails>
+          {/* tripDetails={currentTrip} */}
         </div>
       )}
 

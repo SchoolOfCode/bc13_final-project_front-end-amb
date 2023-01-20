@@ -65,7 +65,7 @@ console.log("here?")
     for(let i = 0; i < 4; i++){
         if(budgetArray[i] !== ""){
         let ob = {
-            "poll_id": budgetData.trip_id,
+            "poll_id": budgetData.poll_id,
             "category": "budget",
             "choice_name": `${budgetArray[i]}`
         }
@@ -112,7 +112,7 @@ async function choicesRestaurantTable(restaurantArray:any, restaurantData:any) {
         for(let i = 0; i < 4; i++){
             if(restaurantArray[i] !== ""){
             let ob = {
-                "poll_id": restaurantData.trip_id,
+                "poll_id": restaurantData.poll_id,
                 "category": "restaurant",
                 "choice_name": `${restaurantArray[i]}`
             }
@@ -159,7 +159,7 @@ async function choicesRestaurantTable(restaurantArray:any, restaurantData:any) {
             for(let i = 0; i < 4; i++){
                 if(accommodationArray[i] !== ""){
                 let ob = {
-                    "poll_id": accommodationData.trip_id,
+                    "poll_id": accommodationData.poll_id,
                     "category": "restaurant",
                     "choice_name": `${accommodationArray[i]}`
                 }

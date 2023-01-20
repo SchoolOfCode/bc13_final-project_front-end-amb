@@ -161,12 +161,12 @@ const CategoryForm = ({ ActualObj }: any) => {
     accommodationArray: any,
     accommodationData: any
   ) {
-    console.log("here?");
+    console.log(accommodationData, accommodationArray, "here?");
     for (let i = 0; i < 4; i++) {
       if (accommodationArray[i] !== "") {
         let ob = {
           poll_id: accommodationData.poll_id,
-          category: "restaurant",
+          category: "Accommodation",
           choice_name: `${accommodationArray[i]}`,
         };
 

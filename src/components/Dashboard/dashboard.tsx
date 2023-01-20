@@ -39,6 +39,7 @@ const Dashboard = () => {
         <div id="dashboard-btn-container">
           <div
             className="dashboard-container"
+            data-testId="create-page"
             onClick={() => {
               handlePage("create");
             }}
@@ -50,6 +51,7 @@ const Dashboard = () => {
 
           <div
             className="dashboard-container"
+            data-testId="join-page"
             onClick={() => {
               handlePage("join");
             }}
@@ -61,6 +63,7 @@ const Dashboard = () => {
 
           <div
             className="dashboard-container"
+            data-testId="view-page"
             onClick={() => {
               handlePage("view");
             }}

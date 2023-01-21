@@ -64,9 +64,9 @@ function onSubmit(data: any) {
 
     <h1 className='create-trip-h1'>create trip </h1>
 
-        <div className="create-trip-form">
+        <div className="create-trip-form-container">
               
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form  className = "create-trip-form"onSubmit={handleSubmit(onSubmit)}>
 
                 <div className='page-counter'>
                     {currentStepIndex + 1} / {steps.length}
@@ -75,8 +75,8 @@ function onSubmit(data: any) {
                 {step}
 
                 <div className='change-page-buttons'>               
-                    {!isFirstStep && <button className="button" type="button" onClick={back}>back</button>}
-                    <button className="button" type="submit">
+                    {!isFirstStep && <button className="button-beige" type="button" onClick={back}>back</button>}
+                    <button className="button-beige" type="submit">
                         {isLastStep ? "finish" : "next"}
                     </button>
                 </div>

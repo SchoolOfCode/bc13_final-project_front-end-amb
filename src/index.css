@@ -7,7 +7,7 @@
   --black: #000000;
   --red-brown: #511011;
   --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  --border-radius: 15px;
+  --border-radius: 6px;
 }
 
 body {
@@ -27,61 +27,39 @@ code {
 }
 
 .cancel-button {
-  width: 10vw;
-  background: var(--green);
+  
+  background: var(--beige);
   border: 2px solid var(--beige);
   border-radius: var(--border-radius);
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  transform: scale(0.8);
-  color: var(--beige);
+   color: var(--green);
   cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 0.9rem;
+  padding: 10px 20px;
   font-weight: bold;
   line-height: 16px;
-  height: 6vh;
-  min-height: 10px;
-  outline: 0;
   text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
   font-family: var(--font);
-  
 }
 
 .cancel-button:hover,
 .cancel-button:active {
-    border: 2px solid var(--dark-orange);
+    border: 2px solid var(--light-orange);
 }
 
 .submit-button{
-  margin: 13% 40px 0px 0px;
-  width: 100px;
+ 
   background: var(--green);
-  border: 2px solid var(--beige);
+  border: 2px solid var(--green);
   border-radius: var(--border-radius);
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  transform: scale(0.8);
-  color: var(--beige);
+  
+   color: var(--beige);
   cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  min-height: 20px;
-  outline: 0;
-  padding: 12px 14px;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
   text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
   font-family: var(--font);
 }
 
@@ -94,19 +72,44 @@ code {
   border-color: 2px solid var(--dark-orange);
 }
 
-.button {
-    width: 8vw;
-    height: 5vh;
-    border-radius: var(--border-radius);
-    background: var(--green);
-    border: 2px solid var(--beige);
-    color: var(--beige);
-    font-family: var(--font);
-    font-weight: bold;
+.button-green {
+   background: var(--beige);
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+ 
+   color: var(--green);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
 }
 
-.button:hover,
-.button:active {
+.button-green:hover,
+.button-green:active {
     border: 2px solid var(--dark-orange);
     color: var(--beige);
+}
+
+.button-beige {
+   background: var(--beige);
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+ 
+   color: var(--green);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+}
+
+.button-beige:hover,
+.button-beige:active {
+    border: 2px solid var(--dark-orange);
+    color: var(--green);
 }

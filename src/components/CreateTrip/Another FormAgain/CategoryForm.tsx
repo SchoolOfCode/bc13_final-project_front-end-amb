@@ -188,8 +188,8 @@ const CategoryForm = ({ ActualObj }: any) => {
 
   return (
     <>
-      <div>
-        <label>
+      <div className="form-page">
+        <label className="form-page-label">
           enter budget
           <input
             type="text"
@@ -225,7 +225,7 @@ const CategoryForm = ({ ActualObj }: any) => {
           ></input>
         </label>
 
-        <label>
+        <label className="form-page-label">
           enter accommodation
           <input
             type="text"
@@ -261,7 +261,7 @@ const CategoryForm = ({ ActualObj }: any) => {
           ></input>
         </label>
 
-        <label>
+        <label className="form-page-label">
           enter restaurant
           <input
             type="text"

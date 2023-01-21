@@ -27,7 +27,7 @@
  
   border-radius: 0.5rem;
   font-family: var(--font);
-  min-width: 50%;
+  min-width: 62%;
   height: 400px;
 
   color: var(--green);
@@ -48,11 +48,12 @@
 }
 
 .page-counter {
-  position: absolute;
-  top: 0.5rem;
+  
+ 
   right: 0.5rem;
   font-family: var(--font);
   font-size: 1rem;
+  align-self: flex-end;
 }
 
 /* format next button in here */
@@ -81,14 +82,35 @@
   width: 100%;
 }
 
+.form-page-choices {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 .form-page-label {
   display: flex;
   flex-direction: column;
   font-size: 16px;
   font-weight: bold;
-  width: 90%;
+  width: 100%;
   gap:3%
 }
+
+
+.form-page-label-choices {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  gap:7%
+}
+
 
 .form-page-label .placeholder {
   position: absolute;
@@ -116,15 +138,45 @@ margin-top: 1%;
   width: 100%;
 }
 
+
+.form-page-input-field-choices {
+  height: 2em;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: bold;
+margin-top: 1%;
+  border: 2px inset var(--beige);
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: white;
+  padding: 12px;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.form-page-input-field-choices:last-child {
+margin-bottom: 5%;
+}
+::placeholder{
+    color: rgb(170, 170, 170);
+}
+
 .form-page-label input:not(:placeholder-shown) + .placeholder,
 .form-page-label input:focus + .placeholder {
   top: -70%;
   font-size: 12px;
 }
 
-.form-page-input-field:focus {
+.form-page-input-field:focus, .form-page-input-field-choices:focus {
   outline: none;
   border: 2px solid var(--green);
+}
+
+.form-page-input-field:focus::placeholder, .form-page-input-field-choices:focus::placeholder {
+color: transparent;
 }
 
 .error-p-tag {
@@ -145,7 +197,7 @@ margin-top: 1%;
     opacity: 0;
       } */
 
-#date-page {
+/* #date-page {
   flex-direction: row;
 }
 
@@ -167,9 +219,9 @@ margin-top: 1%;
 
 #itinerary-page-item {
   width: 20vw;
-}
+} */
 
-.page-alignment {
+/* .page-alignment {
   margin-left: 47%;
   margin-top: 2%;
 }
@@ -183,4 +235,4 @@ margin-top: 1%;
   min-height: 25px;
   min-width: 100px;
   margin-left: 4%;
-}
+} */

@@ -103,7 +103,36 @@ h2 {
     cursor: pointer;
   }
   
-  
+  @media only screen and (max-width: 300px) {
+  #nav-right{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+}
+
+  @media only screen and (max-width: 500px) {
+  nav{
+    padding: 0 15px;
+  }
+    
+#nav-left{
+ align-items: flex-start;
+ flex-direction: column;
+justify-content: center;
+ font-size: 0.5rem;
+ 
+}
+
+.logo{
+height:60%;
+width:auto;
+
+}
+}
 
 
   /* nav .menu-item {

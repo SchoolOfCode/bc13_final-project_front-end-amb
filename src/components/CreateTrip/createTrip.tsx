@@ -58,37 +58,54 @@ function onSubmit(data: any) {
     }
 }
 
-    return (<>
-    
-    <div className="createTripContainer">
+    return (
+      <>
+        <div className="createTripContainer">
+          <h1 className="create-trip-h1">create trip </h1>
 
-    <h1 className='create-trip-h1'>create trip </h1>
+          <div className="create-trip-form-container">
+            <form
+              className="create-trip-form"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <div className="page-counter">
+                {currentStepIndex + 1} / {steps.length}
+              </div>
 
-        <div className="create-trip-form-container">
-              
-            <form  className = "create-trip-form"onSubmit={handleSubmit(onSubmit)}>
+              {step}
 
-                <div className='page-counter'>
-                    {currentStepIndex + 1} / {steps.length}
-                </div>
-
-                {step}
-
-                <div className='change-page-buttons'>               
-                    {!isFirstStep && <button className="button-beige" type="button" onClick={back}>back</button>}
-                    <button className="button-beige" type="submit">
-                        {isLastStep ? "finish" : "next"}
-                    </button>
-                </div>
-
+              <div className="change-page-buttons">
+                {!isFirstStep && (
+                  <button className="button-beige" type="button" onClick={back}>
+                    back
+                  </button>
+                )}
+                <button
+                  style={
+                    isLastStep
+                      ? { display: "none" }
+                      : {display:"inline-block" }
+                  }
+                  className="button-beige"
+                  type="submit"
+                >
+                  {isLastStep ? null : "next"}
+                </button>
+              </div>
             </form>
+          </div>
 
+          <button
+            className="create-cancel-button cancel-button"
+            onClick={() => {
+              pageSelect("dashboard");
+            }}
+          >
+            cancel
+          </button>
         </div>
-
-    <button className="create-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
-
-    </div>
-    </>)
+      </>
+    );
 }
 
 export default CreateTrip  

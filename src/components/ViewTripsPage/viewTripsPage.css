@@ -10,13 +10,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url(../../images/travel-bg.png);
+  background-size: cover;
 }
 
 .view-trip-form-item {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     flex-direction: row;
     margin-bottom: 0;
-    margin-bottom: 20%;
+  
 }
 .trip-card {
     background: var(--red-brown);

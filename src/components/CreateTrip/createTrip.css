@@ -27,7 +27,7 @@
  
   border-radius: 0.5rem;
   font-family: var(--font);
-  min-width: 62%;
+  width: 600px;
   height: 400px;
 
   color: var(--green);
@@ -184,6 +184,16 @@ color: transparent;
   font-weight: bold;
   color: var(--green);
   position: absolute;
+}
+
+@media only screen and (max-width: 700px)  {
+  .create-trip-form-container{
+    width:100%;
+  }
+
+  .createTripContainer{
+    padding: 0 5%;
+  }
 }
 
 /* .form-page .error-p-tag {

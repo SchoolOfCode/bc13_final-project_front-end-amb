@@ -18,7 +18,7 @@ body {
   background-color: var(--beige);
   color: var(--green);
   font-family: var(--font);
-  overflow: hidden;
+
 }
 
 code {

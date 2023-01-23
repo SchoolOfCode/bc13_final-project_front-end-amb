@@ -1,47 +1,72 @@
-import { useState } from 'react';
+import { useState } from "react";
 //import './App.css';
 
-function MemberForm() {
+function MemberForm({ ActualObj }: any) {
   const [inputFields, setInputFields] = useState([
-    { name: '', age: '' }
-  ])
+    { user_name: "", user_email: "" },
+  ]);
 
-
-  const handleFormChange = (index:any, event:any) => {
-    let data:any = [...inputFields];
+  const handleFormChange = (index: any, event: any) => {
+    let data: any = [...inputFields];
     data[index][event.target.name] = event.target.value;
     setInputFields(data);
-  }
+    console.log(data, " handleFormChange");
+  };
 
   const addFields = () => {
-    let newfield = { name: '', age: '' }
-    setInputFields([...inputFields, newfield])
+    let newfield = { user_name: "", user_email: "" };
+    setInputFields([...inputFields, newfield]);
+    console.log(newfield, "addFields");
+  };
+  const saveMembers = () => {
+    const memberObj = {
+      data: inputFields,
+      trip_id: ActualObj.trip_id,
+    };
+    postMembers(memberObj);
+  };
+  async function postMembers(data: any) {
+    const response = await fetch("http://localhost:3001/api/member", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    let reply = await response.json();
+    console.log(reply.payload);
   }
-
 
   return (
     <div className="App">
-      <form>
+      <div>
         {inputFields.map((input, index) => {
           return (
             <div key={index}>
               <input
-                name='name'
-                placeholder='Name'
-                value={input.name}
-                onChange={event => handleFormChange(index, event)}
+                name="user_name"
+                placeholder="Name"
+                value={input.user_name}
+                onChange={(event) => handleFormChange(index, event)}
               />
               <input
-                name='age'
-                placeholder='Age'
-                value={input.age}
-                onChange={event => handleFormChange(index, event)}
+                name="user_email"
+                placeholder="Member email"
+                value={input.user_email}
+                onChange={(event) => handleFormChange(index, event)}
               />
             </div>
-          )
+          );
         })}
-        <button type="button" onClick={addFields}>Add More..</button>
-      </form>
+        <button type="button" onClick={addFields}>
+          Add More..
+        </button>
+        <button
+          onClick={() => {
+            saveMembers();
+          }}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

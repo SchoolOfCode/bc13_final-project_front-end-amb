@@ -59,7 +59,7 @@ console.log(id)
     const json = await res.json()
     
     setTripChoices(json)
-    console.log(tripChoices, "fetch has worked")   
+    console.log(tripChoices, "fetch has worked") 
   }
 
 

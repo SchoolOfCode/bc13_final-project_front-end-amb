@@ -1,16 +1,34 @@
 import './tripDetailsPage.css'
-
+import CategoryDropdown from './CategoryDropdown/categoryDropdown';
 
 
 
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
+   
+ 
     return (
         <div className="trip-details-page">
         {tripChoices.success && <div className="nonVoteTripDetails">
-             <h1>this works hehehe {tripChoices.payload[0].trip_name} </h1>
+             <h1>{tripChoices.payload[0].trip_name} </h1>
              <h3>destination: {tripChoices.payload[0].choice_name}</h3>
             <h3>dates: {tripChoices.payload[1].choice_name}</h3> 
         </div>}
+        
+        <div className="">
+        {tripChoices.success && <CategoryDropdown 
+        tripChoices={tripChoices}
+        category={'budget'}/>}
+        
+        {tripChoices.success && <CategoryDropdown 
+        tripChoices={tripChoices}
+        category={'accommodation'}/>}
+
+        {/* {tripChoices.success && <CategoryDropdown 
+        tripChoices={tripChoices}
+        category={'restaurant'}/>} */}
+        </div>
+        
+{/*         
         <div className="voteTripDetailsSection">
             <div className="voteBudget">
             <select className='dropdowns' name="budget-category">
@@ -45,7 +63,7 @@ const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
            </select>
            <button>submit button here</button>
             </div>
-        </div>
+        </div> */}
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import './tripDetailsPage.css'
 
-const TripDetails = ({fetchTripDetails}:any) => {
+const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
     return (
         <div className="trip-details-page">
         <div className="nonVoteTripDetails">
-            <h1>name of trip taken from view trips prop of trip_id</h1>
-            <h2>destination taken from trip details fetch request</h2>
-            <h3>dates of trip taken from details of fetch request</h3>
+            <h1>{tripChoices[0].trip_name}</h1>
+            <h3>destination: {tripChoices[0].choice_name}</h3>
+            <h3>dates: {tripChoices[1].choice_name}</h3>
         </div>
         <div className="voteTripDetailsSection">
             <div className="voteBudget">

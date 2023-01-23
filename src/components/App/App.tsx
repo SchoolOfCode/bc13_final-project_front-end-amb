@@ -11,19 +11,9 @@ function App() {
 
   //const { user, isAuthenticated, getAccessTokenSilently} = useAuth0()
 
-var car1 = {
-  name: 'bmw',
-  model: 'i8',
-  display: function() {
-    return this.name + this.model;
-  }
-}
-var newCar = {
-  name: 'Audi',
-  model: 'A8'
-}
 
-console.log(car1.display.call(newCar))
+
+  
 
   return (
       <>

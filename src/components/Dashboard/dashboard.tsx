@@ -29,6 +29,8 @@ const Dashboard = () => {
   const [tripChoices, setTripChoices] = useState({})
 
 
+
+
   const id = user?.sub
 
   function openTripsPage(){
@@ -57,7 +59,7 @@ console.log(id)
     const json = await res.json()
     
     setTripChoices(json)
-    console.log(json, "fetch has worked")   
+    console.log(json.payload, "fetch has worked")   
   }
 
 

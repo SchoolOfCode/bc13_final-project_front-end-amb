@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const ViewTrips = ({tripData, pageSelect, handlePage, fetchTripDetails}:any) => { 
 
-    const [tripChoices, setTripChoices] = useState({})
+    
 
 
 

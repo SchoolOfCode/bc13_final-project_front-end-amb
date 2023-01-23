@@ -1,9 +1,39 @@
 import './tripDetailsPage.css'
+import { useState } from 'react';
 import CategoryDropdown from './CategoryDropdown/categoryDropdown';
 
+/**
+ * user selects option from dropdown
+ * write function that updates state
+ * function gets called onchange (onchange of the dropdown input)
+ * this state records the selected option
+ * this state will be used to send a fetch (post) request
+ * in the post request we are going to:
+ * - update the vote count by 1
+ * - add into the votes table the choice id (?)
+ * -  */
 
 
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
+
+    // const [budgetVote, setBudgetVote] = useState('')
+    // const [accommodationVote, setAccommodationVote] = useState('')
+
+    function handleChange(param:any) {
+        console.log('legend for real', param.target.value)
+
+         
+        // setBudgetVote(e.target.value)
+    }
+
+
+
+
+    
+
+
+
+
    
  
     return (
@@ -14,56 +44,21 @@ const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
             <h3>dates: {tripChoices.payload[1].choice_name}</h3> 
         </div>}
         
-        <div className="">
+        <div className="categoryDropdown">
         {tripChoices.success && <CategoryDropdown 
+        handleChange={handleChange}
         tripChoices={tripChoices}
         category={'budget'}/>}
         
         {tripChoices.success && <CategoryDropdown 
         tripChoices={tripChoices}
+        handleChange={handleChange}
         category={'accommodation'}/>}
 
         {/* {tripChoices.success && <CategoryDropdown 
         tripChoices={tripChoices}
         category={'restaurant'}/>} */}
         </div>
-        
-{/*         
-        <div className="voteTripDetailsSection">
-            <div className="voteBudget">
-            <select className='dropdowns' name="budget-category">
-              <option  value="" disabled selected>vote on budget</option>
-              <option value="option-1">option 1</option>
-              <option value="option-2">option 2</option>
-              <option value="option-3">option 3</option>
-              <option value="option-4">option 4</option>
-           </select>
-           <button>submit button here</button>
-            </div>
-     
-        <div className="voteAccommodation">
-        <select className='dropdowns' name="accommodation-category">
-              <option  value="" disabled selected>vote on accommodation</option>
-              <option value="option-1">option 1</option>
-              <option value="option-2">option 2</option>
-              <option value="option-3">option 3</option>
-              <option value="option-4">option 4</option>
-           </select>
-           <button>submit button here</button>
-
-            </div>
-        
-        <div className="voteRestaurant">
-        <select className='dropdowns' name="restaurant-category">
-              <option  value="" disabled selected>vote on restaurant</option>
-              <option value="option-1">option 1</option>
-              <option value="option-2">option 2</option>
-              <option value="option-3">option 3</option>
-              <option value="option-4">option 4</option>
-           </select>
-           <button>submit button here</button>
-            </div>
-        </div> */}
         </div>
     )
 }

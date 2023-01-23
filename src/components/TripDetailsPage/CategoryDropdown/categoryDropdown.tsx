@@ -1,18 +1,20 @@
 
 
- const CategoryDropdown = ({tripChoices, category}: any) => {
+ const CategoryDropdown = ({tripChoices, category,handleChange}: any) => {
 
  
 
   return (
     <div>
     <p>work in progress</p>
-    <select className='dropdowns'>
+    <select className='dropdowns' onChange={handleChange}>
     <option  value="" disabled selected>vote on {category}</option>
     {tripChoices.payload.filter((i:any) => i.category === `${category}`).map((filteredCategory:any) => (
-        <option value={filteredCategory.choice_name}>{filteredCategory.choice_name}</option>
+        <option key={Math.random() * 100}
+         value={filteredCategory.choice_name}>{filteredCategory.choice_name}</option>
     ))}
     </select>
+    <button>submit NEED ADD FUNCTION</button>
     </div>
 )};
 

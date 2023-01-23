@@ -1,5 +1,5 @@
 import "./viewTripsPage.css"
-
+import fetchTripDetails from "../Dashboard/dashboard"
 import TripCard from "./TripCard/TripCard";
 import { AiOutlineConsoleSql } from "react-icons/ai";
 import { useState } from "react";
@@ -7,22 +7,10 @@ import { useState } from "react";
 
 
 
-const ViewTrips = ({tripData, pageSelect, handlePage}:any) => { 
+const ViewTrips = ({tripData, pageSelect, handlePage, fetchTripDetails}:any) => { 
 
     const [tripChoices, setTripChoices] = useState({})
 
-async function fetchTripDetails(id:any) {
-    
-    
-        const res = await fetch(`http://localhost:3001/api/choices/${id}`)
-        const json = await res.json()
-        
-        setTripChoices(json)
-        console.log(json, "fetch has worked")
-        
-
-       
-      }
 
 
 

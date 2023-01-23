@@ -1,6 +1,6 @@
 import './tripDetailsPage.css'
 
-const TripDetails = () => {
+const TripDetails = ({fetchTripDetails}:any) => {
     return (
         <div className="trip-details-page">
         <div className="nonVoteTripDetails">
@@ -52,15 +52,6 @@ export default TripDetails;
 
 
 
-
-
-
-
-
-
-
-
-// import {useState} from 'react'
 // import VoteWrapper from './VoteWrapper/VoteWrapper'
 
 
@@ -71,116 +62,7 @@ export default TripDetails;
 //     const [itinereryVote, setItineraryVote] = useState(false)    
     
   
-
-//     // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
-//                                         // maybe have the functionality in a seperate component that we render instead of a div?
-       
-
-
-//     const tripDetails = {
-//         group: 'holiday',
-//         date: [
-//                 {
-//                     from: '2023-01-01',
-//                     to: '2023-01-02'
-//                 },
-//                 {
-//                     from: '2023-02-02',
-//                     to: '2023-02-03'
-//                 }
-//               ],
-//         destination: 'jamaica',
-//         member: [
-//                     {
-//                         name: 'celia',
-//                         email: 'celia@gmail.com'
-//                     },
-//                     {
-//                         name: 'lewis',
-//                         email: 'lewis@gmail.com'
-//                     },
-//                     {
-//                         name: 'Atyib',
-//                         email: 'atyib@gmail.com'
-//                     },
-//                     {
-//                         name: 'Kylie',
-//                         email: 'kylie@gmail.com'
-//                     },
-//                     {
-//                         name: 'Dionne',
-//                         email: 'dionne@gmail.com'
-//                     },
-//                     {
-//                         name: 'Natasha',
-//                         email: 'natasha@gmail.com'
-//                     }
-//                 ],
-                
-
-//                 restaurant:
-//                   [
-//                     {
-//                         id: 1,
-//                         name: 'name'
-//                     },
-//                     {
-//                         id: 2,
-//                         name: 'name'
-//                     },
-
-//                 ],
-                
-//                 accomodation: [
-//                     {
-
-//                     },
-//                     {
-
-//                     }
-//                 ],
-
-//         event: [
-//                    {
-//                        id: 101,
-//                        itinerary: [ 
-//                                     {
-//                                         id: 1,
-//                                         type: 'hotel',
-//                                         name: 'big place',
-//                                         date_time: "2023-11-11T11:11"
-//                                     },
-//                                     {
-//                                         id: 2,
-//                                         type: 'hotel',
-//                                         name: 'little place',
-//                                         date_time: "2023-11-11T11:11"
-//                                     }
-//                                   ]
-//                     },
-//                     {
-//                         id: 102,
-//                         itinerary: [
-//                                     {
-//                                         id: 1,
-//                                         type: 'restaurant',
-//                                         name: 'vegan',
-//                                         date_time: "2023-11-11T11:11"
-//                                     },
-//                                     {
-//                                         id: 2,
-//                                         type: 'restaurant',
-//                                         name: 'fish',
-//                                         date_time: "2022-11-11T11:11"
-//                                     }
-
-//                                     ]
-//                     }
-                    
-//             ]    
-//         }
-
-//         //console.log(tripDetails)
+      
 
 //     function handleDate() {
 //         setDataVote(current => !current)

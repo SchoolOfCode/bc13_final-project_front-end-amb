@@ -9,6 +9,7 @@ import MultipleEventForm from './MultipleEventForm/MultipleEventForm'
 import useMultistepForm from './Hooks/useMultistepForm'
 import NewForm from './AnotherFuckingForm/NewForm'
 import CategoryForm from './Another FormAgain/CategoryForm'
+import MemberForm from './AnotherFuckingForm/member_form'
 
 
 // import Navbar from '../NavBar/NavBar';
@@ -39,6 +40,7 @@ const CreateTrip = ({setTripDetails, pageSelect}:any) => {
        
       <NewForm ActualObj={object} CreatingObj={setObject}/>,
     <CategoryForm ActualObj={object}/>,
+    <MemberForm/>
     
 ])
 

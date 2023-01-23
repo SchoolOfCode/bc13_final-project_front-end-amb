@@ -2,7 +2,7 @@
 
 
 
-
+![GitHub all releases](https://img.shields.io/github/downloads/SchoolOfCode/bc13_final-project_front-end-amb/total?logo=github)
 
 
 

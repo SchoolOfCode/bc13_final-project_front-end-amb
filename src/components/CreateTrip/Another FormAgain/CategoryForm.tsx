@@ -166,7 +166,7 @@ const CategoryForm = ({ ActualObj }: any) => {
       if (accommodationArray[i] !== "") {
         let ob = {
           poll_id: accommodationData.poll_id,
-          category: "restaurant",
+          category: "accommodation",
           choice_name: `${accommodationArray[i]}`,
         };
 

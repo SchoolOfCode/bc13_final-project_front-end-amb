@@ -58,7 +58,7 @@ console.log(id)
     const res = await fetch(`http://localhost:3001/api/choices/${id}`)
     const json = await res.json()
     
-    setTripChoices(json)
+    setTripChoices(json.payload)
     console.log(json.payload, "fetch has worked")   
   }
 
@@ -135,7 +135,7 @@ console.log(id)
         <div
           className={ page === "details" ? "open" : "closed" }
         >
-          <TripDetails fetchTripDetails={fetchTripDetails} ></TripDetails>
+          <TripDetails fetchTripDetails={fetchTripDetails} tripChoices={tripChoices} ></TripDetails>
           {/* tripDetails={currentTrip} */}
         </div>
       )}

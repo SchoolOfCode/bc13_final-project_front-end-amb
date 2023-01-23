@@ -16,11 +16,13 @@ import CategoryDropdown from './CategoryDropdown/categoryDropdown';
 
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
 
+    
     // const [budgetVote, setBudgetVote] = useState('')
     // const [accommodationVote, setAccommodationVote] = useState('')
 
     function handleChange(param:any) {
         console.log('legend for real', param.target.value)
+    
 
          
         // setBudgetVote(e.target.value)

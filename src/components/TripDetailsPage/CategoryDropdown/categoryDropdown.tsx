@@ -14,7 +14,7 @@
          value={filteredCategory.choice_name}>{filteredCategory.choice_name}</option>
     ))}
     </select>
-    <button>submit NEED ADD FUNCTION</button>
+    <button className="button">submit NEED ADD FUNCTION</button>
     </div>
 )};
 

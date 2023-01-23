@@ -10,7 +10,7 @@
 ## 📌 The Creators
 
 - [@ksmaldon](https://github.com/ksmaldon)
-- [L-E-W-1-5](https://github.com/L-E-W-1-5)
+- [@L-E-W-1-5](https://github.com/L-E-W-1-5)
 - [@DionneSD](https://github.com/DionneSD)
 - [@celiabocking](https://github.com/celiabocking)
 - [@natashachinea](https://github.com/natashachinea)

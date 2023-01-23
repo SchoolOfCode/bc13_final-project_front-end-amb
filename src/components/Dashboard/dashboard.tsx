@@ -58,8 +58,8 @@ console.log(id)
     const res = await fetch(`http://localhost:3001/api/choices/${id}`)
     const json = await res.json()
     
-    setTripChoices(json.payload)
-    console.log(json.payload, "fetch has worked")   
+    setTripChoices(json)
+    console.log(tripChoices, "fetch has worked")   
   }
 
 

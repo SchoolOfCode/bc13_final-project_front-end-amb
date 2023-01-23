@@ -1,13 +1,16 @@
 import './tripDetailsPage.css'
 
+
+
+
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
     return (
         <div className="trip-details-page">
-        <div className="nonVoteTripDetails">
-            <h1>{tripChoices[0].trip_name}</h1>
-            <h3>destination: {tripChoices[0].choice_name}</h3>
-            <h3>dates: {tripChoices[1].choice_name}</h3>
-        </div>
+        {tripChoices.success && <div className="nonVoteTripDetails">
+             <h1>this works hehehe {tripChoices.payload[0].trip_name} </h1>
+             <h3>destination: {tripChoices.payload[0].choice_name}</h3>
+            <h3>dates: {tripChoices.payload[1].choice_name}</h3> 
+        </div>}
         <div className="voteTripDetailsSection">
             <div className="voteBudget">
             <select className='dropdowns' name="budget-category">

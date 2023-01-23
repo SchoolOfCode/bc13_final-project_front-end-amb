@@ -1,8 +1,10 @@
 ![](images/Travel%20Herd%20(1).png)
 
 
-
-![GitHub all releases](https://img.shields.io/github/downloads/SchoolOfCode/bc13_final-project_front-end-amb/total?logo=github)
+![GitHub all releases](https://img.shields.io/github/downloads/SchoolOfCode/bc13_final-project_front-end-amb/total?style=social)
+![GitHub forks](https://img.shields.io/github/forks/SchoolOfCode/bc13_final-project_front-end-amb?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/SchoolOfCode/bc13_final-project_front-end-amb?style=social)
+![GitHub Org's stars](https://img.shields.io/github/stars/SchoolOfCode?style=social)
 
 
 

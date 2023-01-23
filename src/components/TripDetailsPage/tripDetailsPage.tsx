@@ -22,7 +22,8 @@ const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
 
     function handleChange(param:any) {
         console.log('legend for real', param.target.value)
-    
+    //can this live in category dropDown?
+    //change name to VOTING FORM
 
          
         // setBudgetVote(e.target.value)

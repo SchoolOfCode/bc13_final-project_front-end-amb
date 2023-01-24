@@ -1,6 +1,7 @@
 import './tripDetailsPage.css'
 import { useState } from 'react';
 import VotingDropdown from './VotingDropdown/votingDropdown';
+// import { set } from 'react-hook-form';
 // import VoteWrapper from './VoteWrapper/VoteWrapper'
 
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
@@ -8,18 +9,10 @@ const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
 /*
 Plan:
 we need to record that they've voted for a particular category (eg. the budget)
-we need to record how many times they've voted out of a possible three votes
 we need to record the option they've picked so that we can send it to the backend, eg. one vote for 'hotel'
-we need to hide the dropdown they've already voted on so they can't vote again
-we need to hide the submit button once they've voted
-
-user votes on budget, we disable dropdown and replace with 'your vote on this category has been registered'
-has_voted should only be set when they click relevant submit button
-this should trigger hide of the dropdown and the submit button - replace with a message saying thanks for voting
 
 what they've voted for is handled onChange
 if they've voted is handled onClick of submit button
-
 
  POST REQUEST:
  * in the post request we are going to:
@@ -46,17 +39,20 @@ if they've voted is handled onClick of submit button
         // this state will be used to send a fetch (post) request    
     }
 
-    function handleSubmits(param:any) {
-        // user clicks submit button
-        // write function that updates state for whether they've voted on budget
-        // update function to apply to accom and restaurant
-        // function gets called onclick (onclick of the submit button)
-        // this state records whether they've voted
-        // this state will be used to hide the dropdown and submit button
-        // this state will be used to send a fetch (post) request   
-        // CAN we use Lewis' registerVote function here?
+    function handleSubmits(params:any) {
+        if (params === 'budget') {
+            setHasVotedBudget(true)
+        } else if (params === 'accommodation') {
+            setHasVotedAccommodation(true)
+        }
+        // else if (params === 'restaurant') {
+        //     setHasVotedRestaurant(true)
+        // }
+        console.log(params)
     }
 
+    // setHasVotedBudget(true)
+    // console.log(hasVotedBudget, "are we still legends?")
 
     return (
         <div className="trip-details-page">
@@ -68,20 +64,35 @@ if they've voted is handled onClick of submit button
         
         <div className="votingDropdown">
         <p>cast your vote for...</p>
-        {tripChoices.success && 
+        {tripChoices.success && !hasVotedBudget &&
         <VotingDropdown 
         handleChange={handleChange}
+        handleSubmits={handleSubmits}
         tripChoices={tripChoices}
         category={'budget'}/>}
+        {tripChoices.success && hasVotedBudget &&
+        <p>your vote on this category has been registered</p> 
+        }
         
-        {tripChoices.success && <VotingDropdown 
+        {tripChoices.success && !hasVotedAccommodation &&
+        <VotingDropdown 
         tripChoices={tripChoices}
         handleChange={handleChange}
+        handleSubmits={handleSubmits}
         category={'accommodation'}/>}
+         {tripChoices.success && hasVotedAccommodation &&
+        <p>your vote on this category has been registered</p> 
+        }
 
-        {/* {tripChoices.success && <VotingDropdown 
+        {/* {tripChoices.success && !hasVotedRestaurant &&
+        <VotingDropdown 
         tripChoices={tripChoices}
-        category={'restaurant'}/>} */}
+        handleChange={handleChange}
+        handleSubmits={handleSubmits}
+        category={'accommodation'}/>}
+         {tripChoices.success && hasVotedRestaurant &&
+        <p>your vote on this category has been registered</p> 
+        } */}
         </div>
         </div>
     )
@@ -90,18 +101,10 @@ if they've voted is handled onClick of submit button
 
 export default TripDetails;
 
-
-
-
-
 // function handleAll() {
 //             setDataVote(false)
 //             setItineraryVote(false)}
     
-//     function handleDate() {
-//         setDataVote(current => !current)
-
-
 
 // function registerVote(vote:any) {
 //             console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice

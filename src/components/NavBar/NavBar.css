@@ -16,7 +16,7 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap:2%;
+  gap:4%;
   flex-basis:50%;
   padding: 0 0 0 1.5%;
 }
@@ -30,7 +30,8 @@ nav {
 }
 
 .logo{
-max-height:90%;
+height:90px;
+width:125px;
 }
 
 
@@ -47,8 +48,8 @@ h2 {
   font-size: 1.8em;
   top: 50%;
   justify-content: left; 
-  line-height: 110px;
-  margin-left: 10px;
+  
+  
   font-weight: normal;
 }
 
@@ -102,7 +103,36 @@ h2 {
     cursor: pointer;
   }
   
-  
+  @media only screen and (max-width: 300px) {
+  #nav-right{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+}
+
+  @media only screen and (max-width: 500px) {
+  nav{
+    padding: 0 15px;
+  }
+    
+#nav-left{
+ align-items: flex-start;
+ flex-direction: column;
+justify-content: center;
+ font-size: 0.5rem;
+ 
+}
+
+.logo{
+height:60%;
+width:auto;
+
+}
+}
 
 
   /* nav .menu-item {

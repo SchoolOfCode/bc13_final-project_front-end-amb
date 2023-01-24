@@ -1,8 +1,8 @@
 .view-trips-div{
 
-    top: 110px;
+    top: 0px;
     left: 0%;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: fixed;
     background: var(--beige);
@@ -10,13 +10,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url(../../images/travel-bg.png);
+  background-size: cover;
 }
 
 .view-trip-form-item {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     flex-direction: row;
     margin-bottom: 0;
-    margin-bottom: 20%;
+  
 }
 .trip-card {
     background: var(--red-brown);

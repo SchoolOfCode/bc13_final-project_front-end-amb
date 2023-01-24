@@ -24,6 +24,7 @@ async function fetchall() {
         "trip_name": tripName,
         "admin_id": user?.sub
     }
+    console.log(ob)
     const response = await fetch(`${url}/trip`, {
         method:"POST",
 
@@ -148,6 +149,8 @@ async function choicesDateTable(dateData:any) {
     setObject({...object, choiceData})
     return choiceData;
 }
+
+
 
 
 

@@ -188,10 +188,12 @@ const CategoryForm = ({ ActualObj }: any) => {
 
   return (
     <>
-      <div>
-        <label>
+      <div className="form-page-choices">
+        <label className="form-page-label-choices">
           enter budget
           <input
+            placeholder="choice 1"
+            className="form-page-input-field-choices "
             type="text"
             value={budget0}
             name="budget0"
@@ -200,6 +202,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 2"
+            className="form-page-input-field-choices "
             type="text"
             value={budget1}
             name="budget1"
@@ -208,6 +212,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 3"
+            className="form-page-input-field-choices "
             type="text"
             value={budget2}
             name="budget2"
@@ -216,6 +222,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 4"
+            className="form-page-input-field-choices "
             type="text"
             value={budget3}
             name="budget3"
@@ -225,9 +233,11 @@ const CategoryForm = ({ ActualObj }: any) => {
           ></input>
         </label>
 
-        <label>
+        <label className="form-page-label-choices">
           enter accommodation
           <input
+            placeholder="choice 1"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation0}
             name="budget0"
@@ -236,6 +246,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 2"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation1}
             name="budget1"
@@ -244,6 +256,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 3"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation2}
             name="budget2"
@@ -252,6 +266,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 4"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation3}
             name="budget3"
@@ -261,9 +277,11 @@ const CategoryForm = ({ ActualObj }: any) => {
           ></input>
         </label>
 
-        <label>
+        <label className="form-page-label-choices">
           enter restaurant
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 1"
             type="text"
             value={restaurant0}
             name="budget0"
@@ -272,6 +290,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 2"
             type="text"
             value={restaurant1}
             name="budget1"
@@ -280,6 +300,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 3"
             type="text"
             value={restaurant2}
             name="budget2"
@@ -288,6 +310,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 4"
             type="text"
             value={restaurant3}
             name="budget3"
@@ -298,7 +322,9 @@ const CategoryForm = ({ ActualObj }: any) => {
         </label>
       </div>
 
-      <button onClick={saveForm}>submit</button>
+      <button className="submit-button" onClick={saveForm}>
+        submit
+      </button>
     </>
   );
 };

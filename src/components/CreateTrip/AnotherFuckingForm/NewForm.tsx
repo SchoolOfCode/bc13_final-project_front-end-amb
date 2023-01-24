@@ -24,6 +24,7 @@ async function fetchall() {
         "trip_name": tripName,
         "admin_id": user?.sub
     }
+    console.log(ob)
     const response = await fetch(`${url}/trip`, {
         method:"POST",
 
@@ -151,24 +152,62 @@ async function choicesDateTable(dateData:any) {
 
 
 
-    return(
-        <>
-        
-            <div>
-                <label> enter trip name
-                    <input type="text" name="trip_name" value={tripName} onChange={(e) => {setTripName(e.target.value)}}></input>
-                </label>
-                <label> enter destination
-                    <input type="text" name="destination" value={destination} onChange={(e) => {setDestination(e.target.value)}}></input>
-                </label>
-                <label> enter date
-                    <input type="text" name="date" value={date} onChange={(e) => {setDate(e.target.value)}}></input>
-                </label>
-            </div>
-            
-            <button onClick={(() => {fetchall()})}>submit</button>
-        </>
-    )
+
+
+    return (
+      <>
+        <div className="form-page">
+          <label className="form-page-label">
+            {" "}
+            enter trip name
+            <input
+              className="form-page-input-field"
+              type="text"
+              name="trip_name"
+              value={tripName}
+              onChange={(e) => {
+                setTripName(e.target.value);
+              }}
+            ></input>
+          </label>
+          <label className="form-page-label">
+            {" "}
+            enter destination
+            <input
+              
+              className="form-page-input-field"
+              type="text"
+              name="destination"
+              value={destination}
+              onChange={(e) => {
+                setDestination(e.target.value);
+              }}
+            ></input>
+          </label>
+          <label className="form-page-label">
+            {" "}
+            enter date
+            <input
+              className="form-page-input-field"
+              type="text"
+              name="date"
+              value={date}
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
+            ></input>
+          </label>
+        </div>
+
+        <button className='submit-button'
+          onClick={() => {
+            fetchall();
+          }}
+        >
+          submit
+        </button>
+      </>
+    );
 }
 
 export default NewForm

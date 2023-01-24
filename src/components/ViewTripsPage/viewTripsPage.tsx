@@ -1,114 +1,19 @@
 import "./viewTripsPage.css"
-
+import fetchTripDetails from "../Dashboard/dashboard"
 import TripCard from "./TripCard/TripCard";
 import { AiOutlineConsoleSql } from "react-icons/ai";
-
-const tripsArr = [
-
-
-     {
-        Admin: "newUser",
-        group: "Minty Blobfish",
-        destination: "aaaaa",
-        date: [
-                {
-                    name: "2023-01-11"
-                }
-              ],
-        event: [
-                {
-                    type: "Accomodation",
-                    location: "location",
-                    date: "2023-01-13T11:11"
-                }
-               ],
-        member: [
-                {
-                    name: "aaa",
-                    email: "aaa@aaaa.com"
-                }
-                ],
-        
-     },
-     {
-        Admin: "newUser",
-        group: "Hen Do",
-        destination: "aaaaa",
-        date: [
-                {
-                    name: "2023-01-11"
-                }
-              ],
-        event: [
-                {
-                    type: "Accomodation",
-                    location: "location",
-                    date: "2023-01-13T11:11"
-                }
-               ],
-        member: [
-                {
-                    name: "aaa",
-                    email: "aaa@aaaa.com"
-                }
-                ],
-        
-     },
-     {
-        Admin: "newUser",
-        group: "Stag Weekend",
-        destination: "aaaaa",
-        date: [
-                {
-                    name: "2023-01-11"
-                },
-                {
-                    name: "2050-01-11"
-                }
-              ],
-        event: [
-                {
-                    type: "Accomodation",
-                    location: "salisbury",
-                    date: "2023-01-13T11:11"
-                },
-                {
-                    type: "Accomodation",
-                    location: "london",
-                    date: "2023-01-13T11:11"
-                },
-                {
-                    type: "Accomodation",
-                    location: "devon",
-                    date: "2023-01-13T11:11"
-                }
-               ],
-        member: [
-                {
-                    name: "aaa",
-                    email: "aaa@aaaa.com"
-                },
-                {
-                    name: "bbb",
-                    email: "aaa@aaaa.com"
-                },
-                {
-                    name: "ccc",
-                    email: "aaa@aaaa.com"
-                }
-                ],
-        
-     }
-
-]
+import { useState } from "react";
 
 
-const ViewTrips = ({setTripDetails, tripData, pageSelect}:any) => { 
 
-  function getTripDetail(trip_id:any){
-    console.log(trip_id)
+
+const ViewTrips = ({tripData, pageSelect, handlePage, fetchTripDetails}:any) => { 
+
     
-  }
+
+
+
+
 
     return (
         
@@ -118,10 +23,11 @@ const ViewTrips = ({setTripDetails, tripData, pageSelect}:any) => {
         <div className="view-trip-form-item">
        
             {tripData.map((trip:any) => {
+               
                 return (<div key={Math.random() * 10000}>
 
-
-                    <TripCard className="trip-card" tripDetails={setTripDetails} handlePage={pageSelect} tripObject={trip} getTripDetail={getTripDetail}></TripCard>
+        
+                    <TripCard fetchTripDetails={fetchTripDetails} className="trip-card" handlePage={pageSelect} trip={trip}></TripCard>
 
                    
 
@@ -134,6 +40,6 @@ const ViewTrips = ({setTripDetails, tripData, pageSelect}:any) => {
         
     )
 
-}
+        }
 
 export default ViewTrips;

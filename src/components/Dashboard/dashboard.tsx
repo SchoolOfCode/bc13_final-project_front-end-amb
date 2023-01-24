@@ -26,6 +26,9 @@ const Dashboard = () => {
 
   const [tripData, setTripData] = useState([])
 
+  const [tripChoices, setTripChoices] = useState({})
+
+
 
 
   const id = user?.sub
@@ -49,6 +52,16 @@ console.log(id)
   
   
   }
+
+  async function fetchTripDetails(id:any) {
+     
+    const res = await fetch(`http://localhost:3001/api/choices/${id}`)
+    const json = await res.json()
+    
+    setTripChoices(json)
+    console.log(tripChoices, "fetch has worked") 
+  }
+
 
   return (
     <div id="dashboard-container">
@@ -111,6 +124,7 @@ console.log(id)
 
       <div className={ page === "view" ? "open" : "closed"}>
         <ViewTrips
+          fetchTripDetails={fetchTripDetails}
           setTripDetails={setCurrentTrip}
           pageSelect={handlePage}
           tripData={tripData}
@@ -121,7 +135,8 @@ console.log(id)
         <div
           className={ page === "details" ? "open" : "closed" }
         >
-          <TripDetails tripDetails={currentTrip}></TripDetails>
+          <TripDetails fetchTripDetails={fetchTripDetails} tripChoices={tripChoices} ></TripDetails>
+          {/* tripDetails={currentTrip} */}
         </div>
       )}
 

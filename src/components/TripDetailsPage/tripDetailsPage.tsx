@@ -30,14 +30,30 @@ if they've voted is handled onClick of submit button
     // const [hasVotedRestaurant, setHasVotedRestaurant] = useState(false)
 
 
-    function handleChange(param:any) {
+
+
+
+    
+ function handleChange(e:any) {
+    console.log('lolllllll')
+    // setBudgetVote(e.target.value)
+    console.log(e.target.value, 'this is e.target')
+   
+ }
+//  console.log(budgetVote, 'this is the budget vote')
+
+
+    
+
+
+
         // user selects option from dropdown
         // write function that updates state for budget
         // update function to apply to accom and restaurant
         // function gets called onchange (onchange of the dropdown input)
         // this state records the selected option
         // this state will be used to send a fetch (post) request    
-    }
+    
 
     function handleSubmits(params:any) {
         if (params === 'budget') {
@@ -71,7 +87,7 @@ if they've voted is handled onClick of submit button
         tripChoices={tripChoices}
         category={'budget'}/>}
         {tripChoices.success && hasVotedBudget &&
-        <p>your vote on this category has been registered</p> 
+        <p>your vote on the budget has been registered</p> 
         }
         
         {tripChoices.success && !hasVotedAccommodation &&
@@ -81,7 +97,7 @@ if they've voted is handled onClick of submit button
         handleSubmits={handleSubmits}
         category={'accommodation'}/>}
          {tripChoices.success && hasVotedAccommodation &&
-        <p>your vote on this category has been registered</p> 
+        <p>your vote on the accommodation has been registered</p> 
         }
 
         {/* {tripChoices.success && !hasVotedRestaurant &&

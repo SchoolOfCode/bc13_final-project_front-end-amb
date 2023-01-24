@@ -19,11 +19,10 @@ function MemberForm({ ActualObj }: any) {
     console.log(newfield, "addFields");
   };
   const saveMembers = () => {
-    console.log(inputFields)
+    console.log(inputFields);
 
     const memberObj = {
-      userName: inputFields[0].user_name,
-      userEmail: inputFields[0].user_email,
+      userName: inputFields,
       trip_id: ActualObj.trip_id,
     };
 
@@ -31,7 +30,7 @@ function MemberForm({ ActualObj }: any) {
   };
 
   async function postMembers(data: any) {
-    console.log(data)
+    console.log(data);
     const response = await fetch("http://localhost:3001/api/member/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

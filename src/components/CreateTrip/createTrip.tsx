@@ -47,6 +47,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
       setTripDetails(data); // TODO: maybe use local storage to save the details of the form while logging in?
       pageSelect("details"); // TODO: Create a function that changes state in the dashboard component to 'data'.
     }
+
   }
 
   return (
@@ -94,3 +95,4 @@ export default CreateTrip;
 // <DateForm {...{ control, register, errors}}/>,
 // <MembersForm {...{ control, register, errors}}/>,
 // <MultipleEventForm {...{ control, register, errors, getValues, setValue}}/>
+

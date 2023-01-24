@@ -1,32 +1,7 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import './tripDetailsPage.css'
 import { useState } from 'react';
 import VotingDropdown from './VotingDropdown/votingDropdown';
 // import VoteWrapper from './VoteWrapper/VoteWrapper'
-
-
-
-
-
 
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
 
@@ -46,8 +21,14 @@ what they've voted for is handled onChange
 if they've voted is handled onClick of submit button
 
 
-*/   
+ POST REQUEST:
+ * in the post request we are going to:
+ * - update the vote count by 1
+ * - add into the votes table the choice id (?)
+ * - 
 
+
+*/   
     const [budgetVote, setBudgetVote] = useState('')
     const [accommodationVote, setAccommodationVote] = useState('')
     // const [restaurantVote, setRestaurantVote] = useState('')
@@ -57,21 +38,24 @@ if they've voted is handled onClick of submit button
 
 
     function handleChange(param:any) {
-        console.log('legend for real', param.target.value)
-        console.log(param.target.category, "what are we doing?!") 
-       if (param.target.className === 'budget') {
-           setBudgetVote(param.target.value)
-           setHasVotedBudget(true)           
-       } else if (param.target.className === 'accommodation') {
-           setAccommodationVote(param.target.value)
-           setHasVotedAccommodation(true)
-       }
-       // else if (param.target.className === 'restaurant') {
-         //     setRestaurantVote(param.target.value)
-            //     setHasVotedRestaurant(true)
-            // }
+        // user selects option from dropdown
+        // write function that updates state for budget
+        // update function to apply to accom and restaurant
+        // function gets called onchange (onchange of the dropdown input)
+        // this state records the selected option
+        // this state will be used to send a fetch (post) request    
     }
 
+    function handleSubmits(param:any) {
+        // user clicks submit button
+        // write function that updates state for whether they've voted on budget
+        // update function to apply to accom and restaurant
+        // function gets called onclick (onclick of the submit button)
+        // this state records whether they've voted
+        // this state will be used to hide the dropdown and submit button
+        // this state will be used to send a fetch (post) request   
+        // CAN we use Lewis' registerVote function here?
+    }
 
 
     return (
@@ -106,16 +90,7 @@ if they've voted is handled onClick of submit button
 
 export default TripDetails;
 
-/**
- * user selects option from dropdown
- * write function that updates state
- * function gets called onchange (onchange of the dropdown input)
- * this state records the selected option
- * this state will be used to send a fetch (post) request
- * in the post request we are going to:
- * - update the vote count by 1
- * - add into the votes table the choice id (?)
- * -  */
+
 
 
 

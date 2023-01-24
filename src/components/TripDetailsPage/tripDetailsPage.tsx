@@ -1,6 +1,87 @@
 import './tripDetailsPage.css'
 import { useState } from 'react';
-import CategoryDropdown from './CategoryDropdown/categoryDropdown';
+import VotingDropdown from './VotingDropdown/votingDropdown';
+// import VoteWrapper from './VoteWrapper/VoteWrapper'
+
+
+
+
+const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
+
+/*
+Plan:
+we need to record that they've voted for a particular category (eg. the budget)
+we need to record how many times they've voted out of a possible three votes
+we need to record the option they've picked so that we can send it to the backend, eg. one vote for 'hotel'
+we need to hide the dropdown they've already voted on so they can't vote again
+we need to hide the submit button once they've voted
+
+user votes on budget, we disable dropdown and replace with 'your vote on this category has been registered'
+has_voted should only be set when they click relevant submit button
+this should trigger hide of the dropdown and the submit button - replace with a message saying thanks for voting
+
+what they've voted for is handled onChange
+if they've voted is handled onClick of submit button
+
+
+*/   
+
+    const [budgetVote, setBudgetVote] = useState('')
+    const [accommodationVote, setAccommodationVote] = useState('')
+    // const [restaurantVote, setRestaurantVote] = useState('')
+    const [hasVotedBudget, setHasVotedBudget] = useState(false)
+    const [hasVotedAccommodation, setHasVotedAccommodation] = useState(false)
+    // const [hasVotedRestaurant, setHasVotedRestaurant] = useState(false)
+
+
+    function handleChange(param:any) {
+        console.log('legend for real', param.target.value)
+        console.log(param.target.category, "what are we doing?!") 
+       if (param.target.className === 'budget') {
+           setBudgetVote(param.target.value)
+           setHasVotedBudget(true)           
+       } else if (param.target.className === 'accommodation') {
+           setAccommodationVote(param.target.value)
+           setHasVotedAccommodation(true)
+       }
+       // else if (param.target.className === 'restaurant') {
+         //     setRestaurantVote(param.target.value)
+            //     setHasVotedRestaurant(true)
+            // }
+    }
+
+
+    return (
+        <div className="trip-details-page">
+        {tripChoices.success && <div className="nonVoteTripDetails">
+             <h1>{tripChoices.payload[0].trip_name} </h1>
+             <h3>destination: {tripChoices.payload[0].choice_name}</h3>
+            <h3>dates: {tripChoices.payload[1].choice_name}</h3> 
+        </div>}
+        
+        <div className="votingDropdown">
+        <p>cast your vote for...</p>
+        {tripChoices.success && 
+        <VotingDropdown 
+        handleChange={handleChange}
+        tripChoices={tripChoices}
+        category={'budget'}/>}
+        
+        {tripChoices.success && <VotingDropdown 
+        tripChoices={tripChoices}
+        handleChange={handleChange}
+        category={'accommodation'}/>}
+
+        {/* {tripChoices.success && <VotingDropdown 
+        tripChoices={tripChoices}
+        category={'restaurant'}/>} */}
+        </div>
+        </div>
+    )
+}
+
+
+export default TripDetails;
 
 /**
  * user selects option from dropdown
@@ -14,166 +95,55 @@ import CategoryDropdown from './CategoryDropdown/categoryDropdown';
  * -  */
 
 
-const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
 
+// function handleAll() {
+//             setDataVote(false)
+//             setItineraryVote(false)}
     
-    // const [budgetVote, setBudgetVote] = useState('')
-    // const [accommodationVote, setAccommodationVote] = useState('')
-
-    function handleChange(param:any) {
-        console.log('legend for real', param.target.value)
-    //can this live in category dropDown?
-    //change name to VOTING FORM
-
-         
-        // setBudgetVote(e.target.value)
-    }
-
-
-
-
-    
-
-
-
-
-   
- 
-    return (
-        <div className="trip-details-page">
-        {tripChoices.success && <div className="nonVoteTripDetails">
-             <h1>{tripChoices.payload[0].trip_name} </h1>
-             <h3>destination: {tripChoices.payload[0].choice_name}</h3>
-            <h3>dates: {tripChoices.payload[1].choice_name}</h3> 
-        </div>}
-        
-        <div className="categoryDropdown">
-        {tripChoices.success && <CategoryDropdown 
-        handleChange={handleChange}
-        tripChoices={tripChoices}
-        category={'budget'}/>}
-        
-        {tripChoices.success && <CategoryDropdown 
-        tripChoices={tripChoices}
-        handleChange={handleChange}
-        category={'accommodation'}/>}
-
-        {/* {tripChoices.success && <CategoryDropdown 
-        tripChoices={tripChoices}
-        category={'restaurant'}/>} */}
-        </div>
-        </div>
-    )
-}
-
-
-export default TripDetails;
-
-
-
-// import VoteWrapper from './VoteWrapper/VoteWrapper'
-
-
-
-// const TripDetails = ({tripDetails1}:any) => {
-
-//     const [dateVote, setDataVote] = useState(false)
-//     const [itinereryVote, setItineraryVote] = useState(false)    
-    
-  
-      
-
 //     function handleDate() {
 //         setDataVote(current => !current)
-//     }
 
-// // //css merge conflict
-// //     function renderFields(fields:any) {  // TODO: figure out a way to conditionally render the component, then get it to disappear once a vote has been cast..
-// //                                         // maybe have the functionality in a seperate component that we render instead of a div?
-       
-// //         return fields.map((field:any) => {
-            
-// //             return <div key={Math.random() * 100}>
-// //                         <p>from: {field['from']}  to: {field['to']}</p>     
-// //                         <button className="button" onClick={() => {closePopup()
-// //                         }}>vote</button>
-// //                     </div>
-// //         })}
-// // //development merge conflict
-//     function handleItinerary() {
-//         setItineraryVote(current => !current)
-//     }
 
-//     function handleAll() {
-//         setDataVote(false)
-//         setItineraryVote(false)
-// //development merge conflict
-//     }
+// function registerVote(vote:any) {
+//             console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice
+//             alert("your vote has been registered.")
+//             handleAll()
+//         }
 
-//     function registerVote(vote:any) {
-//         console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice
-//         alert("your vote has been registered.")
-//         handleAll()
-//     }
 
-//     function registerItineraryItem(item:any) {
-//         console.log(item.type)
-//         alert("your vote has been registered")
-//     }
+// function registerItineraryItem(item:any) {
+//             console.log(item.type)
+//             alert("your vote has been registered")
+//         }
 
-    
-  
 
-//     return <div className="trip-details-page">
+// {/* <button className="button" onClick={handleDate}>vote on the dates!</button> :  */}
+// {dateVote && <VoteWrapper title="vote on the dates">
 
-//             <div className="details-layout">  
-//                 {tripDetails.group && <div className="details-layout">
-//                 <h1>{tripDetails.group}</h1>
-
-//                 <p>destination: {tripDetails.destination}</p>
-
-//                 {tripDetails.date.length > 1 ?  <button className="button" onClick={handleDate}>vote on the dates!</button> : 
-//                                                 <p>date from: {tripDetails.date[0].from} date to: {tripDetails.date[0].to}</p>}
-
-//                 {dateVote && <VoteWrapper title="vote on the dates">
-                    
-//                      {tripDetails.date.map((d:any) => { 
-//                           // TODO: will change to date id
-//                          return <div onClick={() => {registerVote(d)}}>   
-//                              <span className='clicked-event'>from: {d.to} to: {d.from}</span>
-//                              </div>
-//                      })}
-//                      <button className="vote-form-button button" onClick={handleDate}>close</button>
-//                      </VoteWrapper>}
+// return <div onClick={() => {registerVote(d)}}>   
+//<span className='clicked-event'>from: {d.to} to: {d.from}</span>
+// </div>
+//})}
+//<button className="vote-form-button button" onClick={handleDate}>close</button>
+//</VoteWrapper>}
 
                 
                     
-//                 <p>trip members:</p>
-//                 {tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>{tripDetails.member[0].name}</p>}
+// <p>trip members:</p>
+//{tripDetails.member.length > 1 ? tripDetails.member.map((mem:any) => {return <p>{mem.name}</p>}) : <p>{tripDetails.member[0].name}</p>}
 
-//                 {tripDetails.event.length > 1 ? <button className="button" onClick={handleItinerary}>vote on itinerary!</button> : 
-//                                                 <p>itinerary: {tripDetails.event[0].itinerary[0].type}</p>}
-
-//                 {itinereryVote && <VoteWrapper title="vote on the itinerary">
-//                         {tripDetails.event.map((events:any) => {
-//                            return <div>
-//                             <p>event</p>
-//                             { events.itinerary.map((event:any) => {
-//                                 return <div>  
-                                                                    
-//                                     <span  id='clicked-event' onClick={() => {registerItineraryItem(event)}}>{event.type} - {event.name} - {event.date_time}</span>
-//                                 </div>
-//                         })}
-//                             </div>
-//                         })}
-//                         <button className="vote-form-button" onClick={handleItinerary}>close</button>
-//                     </VoteWrapper>}
-
-//                 </div>}
-//             </div>
-           
-//        </div> 
-// }
-
-// export default TripDetails
-
+// {tripDetails.event.length > 1 ? <button className="button" onClick={handleItinerary}>vote on itinerary!</button> : 
+//<p>itinerary: {tripDetails.event[0].itinerary[0].type}</p>}
+// {itinereryVote && <VoteWrapper title="vote on the itinerary">
+// {tripDetails.event.map((events:any) => {
+//  return <div>
+//      <p>event</p>
+//     { events.itinerary.map((event:any) => {
+//       return <div>  
+// <span  id='clicked-event' onClick={() => {registerItineraryItem(event)}}>{event.type} - {event.name} - {event.date_time}</span>
+// </div>
+// })}
+// </div>
+//})}
+// <button className="vote-form-button" onClick={handleItinerary}>close</button>
+//</VoteWrapper>}

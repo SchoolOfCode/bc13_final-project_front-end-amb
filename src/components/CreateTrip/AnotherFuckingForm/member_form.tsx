@@ -64,14 +64,14 @@ function MemberForm({ ActualObj }: any) {
           );
         })}
         <button type="button" onClick={addFields}>
-          Add More..
+          add more..
         </button>
         <button
           onClick={() => {
             saveMembers();
           }}
         >
-          Submit
+          submit
         </button>
       </div>
     </div>

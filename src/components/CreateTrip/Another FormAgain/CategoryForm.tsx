@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const url = "http://localhost:3001/api";
 
-const CategoryForm = ({ ActualObj }: any) => {
+const CategoryForm = ({ ActualObj}: any) => {
   const [budget0, setBudget0] = useState("");
   const [budget1, setBudget1] = useState("");
   const [budget2, setBudget2] = useState("");
@@ -40,6 +40,7 @@ const CategoryForm = ({ ActualObj }: any) => {
     restaurantPollTable(restaurantArray);
 
     accommodationPollTable(accommodationArray);
+  
   }
 
   async function budgetPollTable(budgetArray: any) {

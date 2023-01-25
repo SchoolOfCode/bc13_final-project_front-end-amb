@@ -46,6 +46,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
       // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
       setTripDetails(data); // TODO: maybe use local storage to save the details of the form while logging in?
       pageSelect("dashboard"); // TODO: Create a function that changes state in the dashboard component to 'data'.
+      
     }
 
   }
@@ -81,6 +82,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
           className="create-cancel-button cancel-button"
           onClick={() => {
             pageSelect("dashboard");
+            
           }}
         >
           cancel

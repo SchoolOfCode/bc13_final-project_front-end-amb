@@ -63,7 +63,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
 
             {step}
 
-            <div className="change-page-buttons">
+            {/* <div className="change-page-buttons">
               {!isFirstStep && (
                 <button className="button" type="button" onClick={back}>
                   back
@@ -72,7 +72,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
               <button className="button" type="submit">
                 {isLastStep ? "finish" : "next"}
               </button>
-            </div>
+            </div> */}
           </form>
         </div>
 

@@ -24,12 +24,10 @@
 
   background: var(--beige);
   border: 3px solid var(--light-orange);
- 
   border-radius: 0.5rem;
   font-family: var(--font);
   width: 600px;
   height: 400px;
-
   color: var(--green);
 }
 
@@ -37,10 +35,14 @@
 .create-trip-form{
     display: flex;
     height: 100%;
-  padding:4%;
+    padding:4%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background: var(--beige);
+    border: 3px solid var(--light-orange);
+    border-radius: 0.5rem;
+    font-family: var(--font);
 }
 
 #groupName {
@@ -193,6 +195,9 @@ color: transparent;
   }
 }
 
+.button{
+  margin: 20px;
+}
 /* .form-page .error-p-tag {
     width: 250px;
     padding: 0 8px;

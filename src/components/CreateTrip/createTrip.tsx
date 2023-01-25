@@ -23,7 +23,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
     handleSubmit,
     //getValues,
     //setValue,
-    reset,
+    // reset,
     formState: { errors },
   } = useForm();
 
@@ -57,7 +57,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
     <>
       <div className="createTripContainer">
         <h1 className="create-trip-h1">create trip </h1>
-
+        <h3>add options for each category that your companions can vote on</h3>
         <div className="create-trip-form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="page-counter">

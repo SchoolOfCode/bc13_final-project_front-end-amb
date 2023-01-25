@@ -161,6 +161,7 @@ async function choicesDateTable(dateData:any) {
             {" "}
             enter trip name
             <input
+            required
               className="form-page-input-field"
               type="text"
               name="trip_name"
@@ -174,7 +175,7 @@ async function choicesDateTable(dateData:any) {
             {" "}
             enter destination
             <input
-              
+              required
               className="form-page-input-field"
               type="text"
               name="destination"
@@ -188,6 +189,7 @@ async function choicesDateTable(dateData:any) {
             {" "}
             enter date
             <input
+              required
               className="form-page-input-field"
               type="text"
               name="date"

@@ -73,6 +73,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
                 {isLastStep ? "finish" : "next"}
               </button>
             </div> */}
+            {/* <input {...register("exampleRequired", { required: true })} /> */}
           </form>
         </div>
 

@@ -47,12 +47,14 @@ function MemberForm({ ActualObj }: any) {
           return (
             <div key={index}>
               <input
+              required
                 name="user_name"
                 placeholder="Name"
                 value={input.user_name}
                 onChange={(event) => handleFormChange(index, event)}
               />
               <input
+              required
                 name="user_email"
                 placeholder="Member email"
                 value={input.user_email}

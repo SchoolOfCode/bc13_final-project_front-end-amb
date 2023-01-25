@@ -196,6 +196,7 @@ const CategoryForm = ({ ActualObj }: any) => {
         <label className="form-page-label-choices">
           enter budget
           <input
+          required
             placeholder="choice 1"
             className="form-page-input-field-choices "
             type="text"
@@ -240,11 +241,12 @@ const CategoryForm = ({ ActualObj }: any) => {
         <label className="form-page-label-choices">
           enter accommodation
           <input
+          required
             placeholder="choice 1"
             className="form-page-input-field-choices "
             type="text"
             value={accommodation0}
-            name="budget0"
+            name="accommodation0"
             onChange={(e) => {
               setAccommodation0(e.target.value);
             }}
@@ -254,7 +256,7 @@ const CategoryForm = ({ ActualObj }: any) => {
             className="form-page-input-field-choices "
             type="text"
             value={accommodation1}
-            name="budget1"
+            name="accommodation1"
             onChange={(e) => {
               setAccommodation1(e.target.value);
             }}
@@ -264,7 +266,7 @@ const CategoryForm = ({ ActualObj }: any) => {
             className="form-page-input-field-choices "
             type="text"
             value={accommodation2}
-            name="budget2"
+            name="accommodation2"
             onChange={(e) => {
               setAccommodation2(e.target.value);
             }}
@@ -274,7 +276,7 @@ const CategoryForm = ({ ActualObj }: any) => {
             className="form-page-input-field-choices "
             type="text"
             value={accommodation3}
-            name="budget3"
+            name="accommodation3"
             onChange={(e) => {
               setAccommodation3(e.target.value);
             }}
@@ -284,11 +286,12 @@ const CategoryForm = ({ ActualObj }: any) => {
         <label className="form-page-label-choices">
           enter restaurant
           <input
+          required
             className="form-page-input-field-choices "
             placeholder="choice 1"
             type="text"
             value={restaurant0}
-            name="budget0"
+            name="restaurant0"
             onChange={(e) => {
               setRestaurant0(e.target.value);
             }}
@@ -298,7 +301,7 @@ const CategoryForm = ({ ActualObj }: any) => {
             placeholder="choice 2"
             type="text"
             value={restaurant1}
-            name="budget1"
+            name="restaurant1"
             onChange={(e) => {
               setRestaurant1(e.target.value);
             }}
@@ -308,7 +311,7 @@ const CategoryForm = ({ ActualObj }: any) => {
             placeholder="choice 3"
             type="text"
             value={restaurant2}
-            name="budget2"
+            name="restaurant2"
             onChange={(e) => {
               setRestaurant2(e.target.value);
             }}
@@ -318,7 +321,7 @@ const CategoryForm = ({ ActualObj }: any) => {
             placeholder="choice 4"
             type="text"
             value={restaurant3}
-            name="budget3"
+            name="restaurant3"
             onChange={(e) => {
               setRestaurant3(e.target.value);
             }}

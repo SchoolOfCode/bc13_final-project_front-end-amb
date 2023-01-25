@@ -2,7 +2,9 @@ import "./viewTripsPage.css";
 import fetchTripDetails from "../Dashboard/dashboard";
 import TripCard from "./TripCard/TripCard";
 import { AiOutlineConsoleSql } from "react-icons/ai";
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
+import { BsArrowRightSquareFill, BsArrowLeftSquareFill } from "react-icons/bs";
+
 let count = 0;
 const ViewTrips = ({
   tripData,
@@ -58,12 +60,8 @@ const ViewTrips = ({
         })}
       </div>
       <div className="buttons">
-        <button className="action-btn2" onClick={scrollLeft}>
-          Left
-        </button>
-        <button className="action-btn1" onClick={scrollRight}>
-          right
-        </button>
+        <BsArrowLeftSquareFill className="left" onClick={scrollLeft} />
+        <BsArrowRightSquareFill className="right" onClick={scrollRight} />
       </div>
     </div>
   );

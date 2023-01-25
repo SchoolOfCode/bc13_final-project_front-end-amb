@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 const url = "http://localhost:3001/api";
 
@@ -35,12 +36,15 @@ const CategoryForm = ({ ActualObj}: any) => {
       restaurant3,
     ];
 
-    budgetPollTable(budgetArray);
+    await budgetPollTable(budgetArray);
 
-    restaurantPollTable(restaurantArray);
+    await restaurantPollTable(restaurantArray);
 
-    accommodationPollTable(accommodationArray);
-  
+   await accommodationPollTable(accommodationArray);
+  setBudget0("");
+  setBudget1("");
+  setBudget2("");
+  setBudget3("");
   }
 
   async function budgetPollTable(budgetArray: any) {
@@ -191,6 +195,9 @@ const CategoryForm = ({ ActualObj}: any) => {
       }
     }
   }
+  useEffect(()=>{
+return ()=>console.log("unmounting")
+  },[])
 
   return (
     <>

@@ -1,8 +1,8 @@
 import "./NavBar.css";
 import AuthButtons from "../AuthButtons/AuthButtons";
-
+import useMultistepForm from "../CreateTrip/Hooks/useMultistepForm";
 import logo from "../../images/Logo.png";
-
+console.log(useMultistepForm);
 const Navbar = ({ pageSelect }: any) => {
   return (
     <nav>
@@ -18,6 +18,7 @@ const Navbar = ({ pageSelect }: any) => {
         <div
           onClick={() => {
             pageSelect("dashboard");
+            //goTo(0);
           }}
           id="dashboard-link-container"
         >

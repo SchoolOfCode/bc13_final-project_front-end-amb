@@ -16,7 +16,7 @@
            value={filteredCategory.choice_name}>{filteredCategory.choice_name}</option>
       ))}
       </select>
-      <button className="button" onClick={()=> handleSubmits(category)}>vote for this option</button>
+      <button className="vote-button" onClick={()=> handleSubmits(category)}>vote</button>
       </div>
   )};
   

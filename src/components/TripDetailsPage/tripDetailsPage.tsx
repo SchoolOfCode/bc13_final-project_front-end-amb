@@ -61,7 +61,7 @@ if they've voted is handled onClick of submit button
       <div className="trip-details-container">
         {tripChoices.success && (
           <div className="nonVoteTripDetails">
-            <h1>{tripChoices.payload[0].trip_name} </h1>
+            <h1 id='trip_name'>{tripChoices.payload[0].trip_name} </h1>
             <h3>destination: {tripChoices.payload[0].choice_name}</h3>
             <h3>dates: {tripChoices.payload[1].choice_name}</h3>
           </div>

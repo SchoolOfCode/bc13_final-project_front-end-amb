@@ -1,83 +1,74 @@
-.view-trips-div{
-
-    top: 0px;
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background: var(--beige);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url(../../images/travel-bg.png);
+.view-trips-div {
+  top: 0px;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: var(--beige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../../images/travel-bg.png);
   background-size: cover;
 }
 
 .view-trip-form-item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0;
-    overflow-x: scroll;
-    width: 91vw;
-  
+  display: flex;
+  nt-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);flex-direction: row;
+  margin-bottom: 0;
+  overflow-x: hidden;
+  width: 91vw;
 }
 .trip-card {
-    background: var(--red-brown);
-    color: var(--beige);
-    border: 3px solid var(--red-brown);
+  background: var(--red-brown);
+  color: var(--beige);
+  border: 3px solid var(--red-brown);
 }
 
-.trip-card:hover{
-        background-color: var(--green);
-        color: var(--beige);
-        border: 3px solid var(--green);
-        cursor: pointer;
-        background-image: none;
+.trip-card:hover {
+  background-color: var(--green);
+  color: var(--beige);
+  border: 3px solid var(--green);
+  cursor: pointer;
+  background-image: none;
 }
 .buttons {
-    width: 200px;
-    margin: 0 auto;
-    display: inline;
-}
+  width: 200px;
+  /*margin: 100px;*/
+  display: inline;
+  }
+.right {
 
-.action_btn1 {
-    width: 200px;
-    margin: 0 auto;
-    display: inline;
-    background: var(--green);
-    border: 2px solid var(--green);
-    border-radius: var(--border-radius);
-    color: var(--beige);
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 10px 20px;
-    font-weight: bold;
-    line-height: 16px;
-    text-align: center;
-    font-family: var(--font);
-
+  color: darkslategray;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+  cursor: pointer;
+  margin-right:20px;
+  font-size: 300%;
 
 }
-.action_btn2 {
-    width: 200px;
-    margin: 0 auto;
-    display: inline;
-    background: var(--green);
-    border: 2px solid var(--green);
-    border-radius: var(--border-radius);
-    color: var(--beige);
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 10px 20px;
-    font-weight: bold;
-    line-height: 16px;
-    text-align: center;
-    font-family: var(--font);
+.left {
+  color: darkslategray;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+  cursor: pointer;
+  margin-right:20px;
+  font-size: 300%;
+
+
 
 
 }
-
-
-
 

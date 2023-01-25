@@ -10,6 +10,7 @@ import useMultistepForm from "./Hooks/useMultistepForm";
 import NewForm from "./AnotherFuckingForm/NewForm";
 import CategoryForm from "./Another FormAgain/CategoryForm";
 import MemberForm from "./AnotherFuckingForm/member_form";
+import Dashboard from "../Dashboard/dashboard";
 
 // import Navbar from '../NavBar/NavBar';
 
@@ -20,13 +21,13 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
     register,
     control,
     handleSubmit,
-    getValues,
-    setValue,
-    //reset,
+    //getValues,
+    //setValue,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
+  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next,goTo } =
     useMultistepForm([
       <NewForm ActualObj={object} CreatingObj={setObject} />,
       <CategoryForm ActualObj={object} />,
@@ -46,6 +47,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
       // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
       setTripDetails(data); // TODO: maybe use local storage to save the details of the form while logging in?
       pageSelect("dashboard"); // TODO: Create a function that changes state in the dashboard component to 'data'.
+     goTo(0);
       
     }
 
@@ -64,7 +66,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
 
             {step}
 
-            {/* <div className="change-page-buttons">
+             {/* <div className="change-page-buttons">
               {!isFirstStep && (
                 <button className="button" type="button" onClick={back}>
                   back
@@ -73,7 +75,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
               <button className="button" type="submit">
                 {isLastStep ? "finish" : "next"}
               </button>
-            </div> */}
+            </div>  */}
             {/* <input {...register("exampleRequired", { required: true })} /> */}
           </form>
         </div>
@@ -82,6 +84,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
           className="create-cancel-button cancel-button"
           onClick={() => {
             pageSelect("dashboard");
+            goTo(0);
             
           }}
         >

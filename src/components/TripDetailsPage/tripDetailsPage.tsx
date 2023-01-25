@@ -1,53 +1,27 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import './tripDetailsPage.css'
 import { useState } from 'react';
 import VotingDropdown from './VotingDropdown/votingDropdown';
+// import { set } from 'react-hook-form';
 // import VoteWrapper from './VoteWrapper/VoteWrapper'
-
-
-
-
-
 
 const TripDetails = ({fetchTripDetails, tripChoices}:any) => {
 
 /*
 Plan:
 we need to record that they've voted for a particular category (eg. the budget)
-we need to record how many times they've voted out of a possible three votes
 we need to record the option they've picked so that we can send it to the backend, eg. one vote for 'hotel'
-we need to hide the dropdown they've already voted on so they can't vote again
-we need to hide the submit button once they've voted
-
-user votes on budget, we disable dropdown and replace with 'your vote on this category has been registered'
-has_voted should only be set when they click relevant submit button
-this should trigger hide of the dropdown and the submit button - replace with a message saying thanks for voting
 
 what they've voted for is handled onChange
 if they've voted is handled onClick of submit button
 
+ POST REQUEST:
+ * in the post request we are going to:
+ * - update the vote count by 1
+ * - add into the votes table the choice id (?)
+ * - 
+
 
 */   
-
     const [budgetVote, setBudgetVote] = useState('')
     const [accommodationVote, setAccommodationVote] = useState('')
     // const [restaurantVote, setRestaurantVote] = useState('')
@@ -56,23 +30,45 @@ if they've voted is handled onClick of submit button
     // const [hasVotedRestaurant, setHasVotedRestaurant] = useState(false)
 
 
-    function handleChange(param:any) {
-        console.log('legend for real', param.target.value)
-        console.log(param.target.category, "what are we doing?!") 
-       if (param.target.className === 'budget') {
-           setBudgetVote(param.target.value)
-           setHasVotedBudget(true)           
-       } else if (param.target.className === 'accommodation') {
-           setAccommodationVote(param.target.value)
-           setHasVotedAccommodation(true)
-       }
-       // else if (param.target.className === 'restaurant') {
-         //     setRestaurantVote(param.target.value)
-            //     setHasVotedRestaurant(true)
-            // }
+
+
+
+    
+ function handleChange(e:any) {
+    console.log('lolllllll')
+    // setBudgetVote(e.target.value)
+    console.log(e.target.value, 'this is e.target')
+   
+ }
+//  console.log(budgetVote, 'this is the budget vote')
+
+
+    
+
+
+
+        // user selects option from dropdown
+        // write function that updates state for budget
+        // update function to apply to accom and restaurant
+        // function gets called onchange (onchange of the dropdown input)
+        // this state records the selected option
+        // this state will be used to send a fetch (post) request    
+    
+
+    function handleSubmits(params:any) {
+        if (params === 'budget') {
+            setHasVotedBudget(true)
+        } else if (params === 'accommodation') {
+            setHasVotedAccommodation(true)
+        }
+        // else if (params === 'restaurant') {
+        //     setHasVotedRestaurant(true)
+        // }
+        console.log(params)
     }
 
-
+    // setHasVotedBudget(true)
+    // console.log(hasVotedBudget, "are we still legends?")
 
     return (
         <div className="trip-details-page">
@@ -84,20 +80,35 @@ if they've voted is handled onClick of submit button
         
         <div className="votingDropdown">
         <p>cast your vote for...</p>
-        {tripChoices.success && 
+        {tripChoices.success && !hasVotedBudget &&
         <VotingDropdown 
         handleChange={handleChange}
+        handleSubmits={handleSubmits}
         tripChoices={tripChoices}
         category={'budget'}/>}
+        {tripChoices.success && hasVotedBudget &&
+        <p>your vote on the budget has been registered</p> 
+        }
         
-        {tripChoices.success && <VotingDropdown 
+        {tripChoices.success && !hasVotedAccommodation &&
+        <VotingDropdown 
         tripChoices={tripChoices}
         handleChange={handleChange}
+        handleSubmits={handleSubmits}
         category={'accommodation'}/>}
+         {tripChoices.success && hasVotedAccommodation &&
+        <p>your vote on the accommodation has been registered</p> 
+        }
 
-        {/* {tripChoices.success && <VotingDropdown 
+        {/* {tripChoices.success && !hasVotedRestaurant &&
+        <VotingDropdown 
         tripChoices={tripChoices}
-        category={'restaurant'}/>} */}
+        handleChange={handleChange}
+        handleSubmits={handleSubmits}
+        category={'accommodation'}/>}
+         {tripChoices.success && hasVotedRestaurant &&
+        <p>your vote on this category has been registered</p> 
+        } */}
         </div>
         </div>
     )
@@ -106,27 +117,10 @@ if they've voted is handled onClick of submit button
 
 export default TripDetails;
 
-/**
- * user selects option from dropdown
- * write function that updates state
- * function gets called onchange (onchange of the dropdown input)
- * this state records the selected option
- * this state will be used to send a fetch (post) request
- * in the post request we are going to:
- * - update the vote count by 1
- * - add into the votes table the choice id (?)
- * -  */
-
-
-
 // function handleAll() {
 //             setDataVote(false)
 //             setItineraryVote(false)}
     
-//     function handleDate() {
-//         setDataVote(current => !current)
-
-
 
 // function registerVote(vote:any) {
 //             console.log(vote.from, "has been voted on") // TODO: fetch request called here to add a vote to the corresponding choice

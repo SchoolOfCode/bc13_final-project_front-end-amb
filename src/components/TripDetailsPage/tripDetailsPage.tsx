@@ -24,10 +24,10 @@ if they've voted is handled onClick of submit button
 */   
     const [budgetVote, setBudgetVote] = useState('')
     const [accommodationVote, setAccommodationVote] = useState('')
-    // const [restaurantVote, setRestaurantVote] = useState('')
+    const [restaurantVote, setRestaurantVote] = useState('')
     const [hasVotedBudget, setHasVotedBudget] = useState(false)
     const [hasVotedAccommodation, setHasVotedAccommodation] = useState(false)
-    // const [hasVotedRestaurant, setHasVotedRestaurant] = useState(false)
+    const [hasVotedRestaurant, setHasVotedRestaurant] = useState(false)
 
 
 
@@ -61,9 +61,9 @@ if they've voted is handled onClick of submit button
         } else if (params === 'accommodation') {
             setHasVotedAccommodation(true)
         }
-        // else if (params === 'restaurant') {
-        //     setHasVotedRestaurant(true)
-        // }
+        else if (params === 'restaurant') {
+            setHasVotedRestaurant(true)
+        }
         console.log(params)
     }
 
@@ -100,15 +100,15 @@ if they've voted is handled onClick of submit button
         <p>your vote on the accommodation has been registered</p> 
         }
 
-        {/* {tripChoices.success && !hasVotedRestaurant &&
+        {tripChoices.success && !hasVotedRestaurant &&
         <VotingDropdown 
         tripChoices={tripChoices}
         handleChange={handleChange}
         handleSubmits={handleSubmits}
-        category={'accommodation'}/>}
+        category={'restaurant'}/>}
          {tripChoices.success && hasVotedRestaurant &&
-        <p>your vote on this category has been registered</p> 
-        } */}
+        <p>your vote on the restaurant has been registered</p> 
+        }
         </div>
         </div>
     )

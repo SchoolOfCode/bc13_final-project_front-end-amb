@@ -1,45 +1,72 @@
-import "./viewTripsPage.css"
-import fetchTripDetails from "../Dashboard/dashboard"
+import "./viewTripsPage.css";
+import fetchTripDetails from "../Dashboard/dashboard";
 import TripCard from "./TripCard/TripCard";
 import { AiOutlineConsoleSql } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useRef } from "react";
+let count = 0;
+const ViewTrips = ({
+  tripData,
+  pageSelect,
+  handlePage,
+  fetchTripDetails,
+}: any) => {
+  const myRef = useRef<null | HTMLDivElement>(null);
+  const [scroll, setScroll] = useState(580);
+  // const [tripWidth, setWidth] = useState(0);
 
+  function scrollRight() {
+    console.log(count);
+    if (scroll < (count / 2) * 290 - 1400) {
+      myRef.current?.scrollTo({
+        left: scroll + 580,
+        behavior: "smooth",
+      });
+      setScroll(scroll + 580);
+      count = 0;
+    }
+  }
+  function scrollLeft() {
+    if (scroll > 290) {
+      myRef.current?.scrollTo({
+        left: scroll - 580,
+        behavior: "smooth",
+      });
+      setScroll(scroll - 580);
+      count = 0;
+    }
+  }
+  // function addWidth() {
+  //   setWidth(tripWidth + 290);
+  // }
+  return (
+    <div className="view-trips-div">
+      <h1>your trips</h1>
 
-
-
-const ViewTrips = ({tripData, pageSelect, handlePage, fetchTripDetails}:any) => { 
-
-    
-
-
-
-
-
-    return (
-        
-       <div className='view-trips-div'>
-        <h1>your trips</h1>
-        
-        <div className="view-trip-form-item">
-       
-            {tripData.map((trip:any) => {
-               
-                return (<div key={Math.random() * 10000}>
-
-        
-                    <TripCard fetchTripDetails={fetchTripDetails} className="trip-card" handlePage={pageSelect} trip={trip}></TripCard>
-
-                   
-
-
-                </div>)
-            })}
-        </div>
-        <button className="view-trip-cancel-button cancel-button" onClick={() => {pageSelect("dashboard")}}>cancel</button>
-        </div>
-        
-    )
-
-        }
+      <div ref={myRef} className="view-trip-form-item">
+        {tripData.map((trip: any) => {
+          count++;
+          return (
+            <div key={Math.random() * 10000}>
+              <TripCard
+                fetchTripDetails={fetchTripDetails}
+                className="trip-card"
+                handlePage={pageSelect}
+                trip={trip}
+              ></TripCard>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button className="action-btn2" onClick={scrollLeft}>
+          Left
+        </button>
+        <button className="action-btn1" onClick={scrollRight}>
+          right
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default ViewTrips;

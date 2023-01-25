@@ -2,7 +2,7 @@
 
     top: 0px;
     left: 0%;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     background: var(--beige);
@@ -16,10 +16,10 @@
 
 .view-trip-form-item {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     flex-direction: row;
     margin-bottom: 0;
+    overflow-x: scroll;
+    width: 91vw;
   
 }
 .trip-card {
@@ -35,3 +35,49 @@
         cursor: pointer;
         background-image: none;
 }
+.buttons {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;
+}
+
+.action_btn1 {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;
+    background: var(--green);
+    border: 2px solid var(--green);
+    border-radius: var(--border-radius);
+    color: var(--beige);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+    font-family: var(--font);
+
+
+}
+.action_btn2 {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;
+    background: var(--green);
+    border: 2px solid var(--green);
+    border-radius: var(--border-radius);
+    color: var(--beige);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+    font-family: var(--font);
+
+
+}
+
+
+
+

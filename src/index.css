@@ -52,8 +52,7 @@ code {
   background: var(--green);
   border: 2px solid var(--green);
   border-radius: var(--border-radius);
-  
-   color: var(--beige);
+  color: var(--beige);
   cursor: pointer;
   font-size: 0.9rem;
   padding: 10px 20px;

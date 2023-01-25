@@ -142,62 +142,69 @@ const NewForm = ({ ActualObj, CreatingObj }: any) => {
     console.log(choiceData);
     setObject({ ...object, choiceData });
     return choiceData;
-  }
+}
 
-  return (
-    <>
-      <div className="form-page">
-        <label className="form-page-label">
-          {" "}
-          enter trip name
-          <input
-            className="form-page-input-field"
-            type="text"
-            name="trip_name"
-            value={tripName}
-            onChange={(e) => {
-              setTripName(e.target.value);
-            }}
-          ></input>
-        </label>
-        <label className="form-page-label">
-          {" "}
-          enter destination
-          <input
-            className="form-page-input-field"
-            type="text"
-            name="destination"
-            value={destination}
-            onChange={(e) => {
-              setDestination(e.target.value);
-            }}
-          ></input>
-        </label>
-        <label className="form-page-label">
-          {" "}
-          enter date
-          <input
-            className="form-page-input-field"
-            type="text"
-            name="date"
-            value={date}
-            onChange={(e) => {
-              setDate(e.target.value);
-            }}
-          ></input>
-        </label>
-      </div>
 
-      <button
-        className="submit-button"
-        onClick={() => {
-          fetchall();
-        }}
-      >
-        submit
-      </button>
-    </>
-  );
-};
 
-export default NewForm;
+
+
+    return (
+      <>
+        <div className="form-page">
+          <label className="form-page-label">
+            {" "}
+            enter trip name
+            <input
+            required
+              className="form-page-input-field"
+              type="text"
+              name="trip_name"
+              value={tripName}
+              onChange={(e) => {
+                setTripName(e.target.value);
+              }}
+            ></input>
+          </label>
+          <label className="form-page-label">
+            {" "}
+            enter destination
+            <input
+              required
+              className="form-page-input-field"
+              type="text"
+              name="destination"
+              value={destination}
+              onChange={(e) => {
+                setDestination(e.target.value);
+              }}
+            ></input>
+          </label>
+          <label className="form-page-label">
+            {" "}
+            enter date
+            <input
+              required
+              className="form-page-input-field"
+              type="text"
+              name="date"
+              value={date}
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
+            ></input>
+          </label>
+        </div>
+
+        <button className='submit-button'
+          onClick={() => {
+            fetchall();
+          }}
+        >
+          submit
+        </button>
+      </>
+    );
+}
+
+export default NewForm
+

@@ -45,7 +45,8 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
     if (isLastStep) {
       // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
       setTripDetails(data); // TODO: maybe use local storage to save the details of the form while logging in?
-      pageSelect("details"); // TODO: Create a function that changes state in the dashboard component to 'data'.
+      pageSelect("dashboard"); // TODO: Create a function that changes state in the dashboard component to 'data'.
+      
     }
 
   }
@@ -63,7 +64,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
 
             {step}
 
-            <div className="change-page-buttons">
+            {/* <div className="change-page-buttons">
               {!isFirstStep && (
                 <button className="button" type="button" onClick={back}>
                   back
@@ -72,7 +73,8 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
               <button className="button" type="submit">
                 {isLastStep ? "finish" : "next"}
               </button>
-            </div>
+            </div> */}
+            {/* <input {...register("exampleRequired", { required: true })} /> */}
           </form>
         </div>
 
@@ -80,6 +82,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
           className="create-cancel-button cancel-button"
           onClick={() => {
             pageSelect("dashboard");
+            
           }}
         >
           cancel

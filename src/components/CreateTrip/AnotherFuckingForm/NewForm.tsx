@@ -8,7 +8,7 @@ type trip_data = {
     user_id: string
 }
 
-const url = 'http://localhost:3001/api'
+const url = 'https://travelherd.onrender.com/api'
 
 const NewForm = ({ActualObj, CreatingObj}:any) => {
 

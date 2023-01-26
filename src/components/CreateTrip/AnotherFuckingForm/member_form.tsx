@@ -31,7 +31,7 @@ function MemberForm({ ActualObj }: any) {
 
   async function postMembers(data: any) {
     console.log(data);
-    const response = await fetch("http://localhost:3001/api/member/email", {
+    const response = await fetch("https://travelherd.onrender.com/api/member/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

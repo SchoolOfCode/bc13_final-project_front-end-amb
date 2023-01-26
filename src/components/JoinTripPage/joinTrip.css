@@ -15,24 +15,21 @@
 }
 
 .join-h2 {
-    color: var(--green);
-     background-color: #f9f7dc;
-  position: relative;
-  padding-left: 2%;
-  padding-right: 2%;
-  display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.116);
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    width:70%;
+   color: var(--green);
+   margin: 5% 0;
 
 }
 
 .join-form h1{
     flex-basis:10%;
    
+}
+
+.input-field{
+    border-radius: var(--border-radius);
+}
+.form-page-input-field{
+    border-radius: var;
 }
 
 .join-form-item{
@@ -43,10 +40,40 @@
     gap:10%;
 }
 
+.submit-button {
+    margin-top: 8%;
+
+}
+
 .join-cancel-button {
-    margin-bottom: 10%;
+    margin-top: 2%;
 }
 
 .join-nav {
     top: 0px;
+}
+
+.join-container{
+      /* color: var(--green);
+     background-color: #f9f7dc;
+  
+ height: 40%;
+ 
+ 
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 5%;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width:60%; */
+    background: var(--beige);
+  border: 3px solid var(--light-orange);
+  border-radius: 0.5rem;
+  font-family: var(--font);
+  width: 60%;
+  height: 400px;
+  color: var(--green);
+  padding: 5%;
 }

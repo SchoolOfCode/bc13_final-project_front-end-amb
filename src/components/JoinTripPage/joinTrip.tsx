@@ -39,32 +39,35 @@ const JoinTrip = (props: any) => {
   return (
     <div className="join-form">
       <h1>join trip</h1>
-      <h2 className="join-h2">
-        ask your trip organiser for the ID of your trip to see details and add
-        your votes
-      </h2>
+      <div className="join-container">
+        <h2 className="join-h2">
+          ask your trip organiser for the ID of your trip to see details and add
+          your votes
+        </h2>
 
-      <form className="join-form-item" onSubmit={handleSubmit}>
-        <label>
-          Enter trip ID:
+        <form className="join-form-item" onSubmit={handleSubmit}>
+          <label>
+            Enter trip ID:
+            <input
+              className="input-field"
+              type="text"
+              onChange={(e) => {
+                setTripID(e.target.value);
+              }}
+              value={tripID}
+            ></input>
+          </label>
           <input
-            className="input-field"
-            type="text"
-            onChange={(e) => {
-              setTripID(e.target.value);
+            className="submit-button"
+            onClick={() => {
+              insertMembers();
             }}
-            value={tripID}
+            type="submit"
+            value="submit"
           ></input>
-        </label>
-        <input
-          className="submit-button"
-          onClick={() => {
-            insertMembers();
-          }}
-          type="submit"
-          value="submit"
-        ></input>
-      </form>
+        </form>
+      </div>
+
       <button
         className="join-cancel-button cancel-button"
         onClick={() => {

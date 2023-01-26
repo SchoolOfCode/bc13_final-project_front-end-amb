@@ -29,6 +29,7 @@
   background: var(--red-brown);
   color: var(--beige);
   border: 3px solid var(--red-brown);
+  padding-top: 25px;
 }
 
 .trip-card:hover {
@@ -39,7 +40,7 @@
   background-image: none;
 }
 .buttons {
-  width: 200px;
+  /*width: 200px;*/
   /*margin: 100px;*/
   display: inline;
   }

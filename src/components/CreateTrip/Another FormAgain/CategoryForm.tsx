@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-const url = "http://localhost:3001/api";
+const url = "https://travelherd.onrender.com/api";
 
 const CategoryForm = ({ ActualObj}: any) => {
   const [budget0, setBudget0] = useState("");

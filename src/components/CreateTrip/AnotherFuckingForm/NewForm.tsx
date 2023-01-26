@@ -2,22 +2,26 @@ import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 type trip_data = {
-  trip_id: number;
-  trip_name: string;
-  admin_id: string;
-  user_id: string;
-};
 
-const url = "http://localhost:3001/api";
+    trip_id: number
+    trip_name: string
+    admin_id: string
+    user_id: string
+}
 
-const NewForm = ({ ActualObj, CreatingObj }: any) => {
-  const { user } = useAuth0();
-  const [tripName, setTripName] = useState("");
-  const [destination, setDestination] = useState("");
-  const [object, setObject] = useState({});
-  const [date, setDate] = useState("");
+const url = 'https://travelherd.onrender.com/api'
 
-  async function fetchall() {
+const NewForm = ({ActualObj, CreatingObj}:any) => {
+
+    const { user } = useAuth0();
+    const [tripName, setTripName] = useState("")
+    const [destination, setDestination] = useState("")
+    const [object, setObject] = useState({})
+    const [date, setDate] = useState("")
+
+async function fetchall() {
+
+
     let ob = {
       trip_name: tripName,
       admin_id: user?.sub,

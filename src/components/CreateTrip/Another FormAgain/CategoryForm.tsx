@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
-const url = "http://localhost:3001/api";
+const url = "https://travelherd.onrender.com/api";
 
-const CategoryForm = ({ ActualObj }: any) => {
+const CategoryForm = ({ ActualObj}: any) => {
   const [budget0, setBudget0] = useState("");
   const [budget1, setBudget1] = useState("");
   const [budget2, setBudget2] = useState("");
@@ -35,11 +36,15 @@ const CategoryForm = ({ ActualObj }: any) => {
       restaurant3,
     ];
 
-    budgetPollTable(budgetArray);
+    await budgetPollTable(budgetArray);
 
-    restaurantPollTable(restaurantArray);
+    await restaurantPollTable(restaurantArray);
 
-    accommodationPollTable(accommodationArray);
+   await accommodationPollTable(accommodationArray);
+  setBudget0("");
+  setBudget1("");
+  setBudget2("");
+  setBudget3("");
   }
 
   async function budgetPollTable(budgetArray: any) {
@@ -94,6 +99,7 @@ const CategoryForm = ({ ActualObj }: any) => {
       category: "restaurant",
       selected_choice: "undecided",
     };
+    console.log(ob.trip_id, '!!!!!!!!!!!!')
     const response = await fetch(`${url}/poll`, {
       method: "POST",
 
@@ -112,11 +118,11 @@ const CategoryForm = ({ ActualObj }: any) => {
     restaurantArray: any,
     restaurantData: any
   ) {
-    console.log(restaurantData);
+    console.log(restaurantData, 'kylie celia !!!!!!');
     for (let i = 0; i < 4; i++) {
       if (restaurantArray[i] !== "") {
         let ob = {
-          poll_id: restaurantData.trip_id,
+          poll_id: restaurantData.poll_id,
           category: "restaurant",
           choice_name: `${restaurantArray[i]}`,
         };
@@ -161,12 +167,16 @@ const CategoryForm = ({ ActualObj }: any) => {
     accommodationArray: any,
     accommodationData: any
   ) {
-    console.log("here?");
+    console.log(accommodationData, accommodationArray, "here?");
     for (let i = 0; i < 4; i++) {
       if (accommodationArray[i] !== "") {
         let ob = {
           poll_id: accommodationData.poll_id,
+
+          
+
           category: "accommodation",
+
           choice_name: `${accommodationArray[i]}`,
         };
 
@@ -185,13 +195,19 @@ const CategoryForm = ({ ActualObj }: any) => {
       }
     }
   }
+  useEffect(()=>{
+return ()=>console.log("unmounting")
+  },[])
 
   return (
     <>
-      <div>
-        <label>
+      <div className="form-page-choices">
+        <label className="form-page-label-choices">
           enter budget
           <input
+          required
+            placeholder="choice 1"
+            className="form-page-input-field-choices "
             type="text"
             value={budget0}
             name="budget0"
@@ -200,6 +216,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 2"
+            className="form-page-input-field-choices "
             type="text"
             value={budget1}
             name="budget1"
@@ -208,6 +226,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 3"
+            className="form-page-input-field-choices "
             type="text"
             value={budget2}
             name="budget2"
@@ -216,6 +236,8 @@ const CategoryForm = ({ ActualObj }: any) => {
             }}
           ></input>
           <input
+            placeholder="choice 4"
+            className="form-page-input-field-choices "
             type="text"
             value={budget3}
             name="budget3"
@@ -225,72 +247,90 @@ const CategoryForm = ({ ActualObj }: any) => {
           ></input>
         </label>
 
-        <label>
+        <label className="form-page-label-choices">
           enter accommodation
           <input
+          required
+            placeholder="choice 1"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation0}
-            name="budget0"
+            name="accommodation0"
             onChange={(e) => {
               setAccommodation0(e.target.value);
             }}
           ></input>
           <input
+            placeholder="choice 2"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation1}
-            name="budget1"
+            name="accommodation1"
             onChange={(e) => {
               setAccommodation1(e.target.value);
             }}
           ></input>
           <input
+            placeholder="choice 3"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation2}
-            name="budget2"
+            name="accommodation2"
             onChange={(e) => {
               setAccommodation2(e.target.value);
             }}
           ></input>
           <input
+            placeholder="choice 4"
+            className="form-page-input-field-choices "
             type="text"
             value={accommodation3}
-            name="budget3"
+            name="accommodation3"
             onChange={(e) => {
               setAccommodation3(e.target.value);
             }}
           ></input>
         </label>
 
-        <label>
+        <label className="form-page-label-choices">
           enter restaurant
           <input
+          required
+            className="form-page-input-field-choices "
+            placeholder="choice 1"
             type="text"
             value={restaurant0}
-            name="budget0"
+            name="restaurant0"
             onChange={(e) => {
               setRestaurant0(e.target.value);
             }}
           ></input>
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 2"
             type="text"
             value={restaurant1}
-            name="budget1"
+            name="restaurant1"
             onChange={(e) => {
               setRestaurant1(e.target.value);
             }}
           ></input>
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 3"
             type="text"
             value={restaurant2}
-            name="budget2"
+            name="restaurant2"
             onChange={(e) => {
               setRestaurant2(e.target.value);
             }}
           ></input>
           <input
+            className="form-page-input-field-choices "
+            placeholder="choice 4"
             type="text"
             value={restaurant3}
-            name="budget3"
+            name="restaurant3"
             onChange={(e) => {
               setRestaurant3(e.target.value);
             }}
@@ -298,7 +338,9 @@ const CategoryForm = ({ ActualObj }: any) => {
         </label>
       </div>
 
-      <button onClick={saveForm}>submit</button>
+      <button className="submit-button" onClick={saveForm}>
+        submit
+      </button>
     </>
   );
 };

@@ -1,33 +1,75 @@
-.view-trips-div{
-
-    top: 110px;
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background: var(--beige);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.view-trips-div {
+  top: 0px;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: var(--beige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../../images/travel-bg.png);
+  background-size: cover;
 }
 
 .view-trip-form-item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0;
-    margin-bottom: 20%;
+  display: flex;
+  nt-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);flex-direction: row;
+  margin-bottom: 0;
+  overflow-x: hidden;
+  width: 91vw;
 }
 .trip-card {
-    background: var(--red-brown);
-    color: var(--beige);
-    border: 3px solid var(--red-brown);
+  background: var(--red-brown);
+  color: var(--beige);
+  border: 3px solid var(--red-brown);
+  padding-top: 25px;
 }
 
-.trip-card:hover{
-        background-color: var(--green);
-        color: var(--beige);
-        border: 3px solid var(--green);
-        cursor: pointer;
-        background-image: none;
+.trip-card:hover {
+  background-color: var(--green);
+  color: var(--beige);
+  border: 3px solid var(--green);
+  cursor: pointer;
+  background-image: none;
 }
+.buttons {
+  /*width: 200px;*/
+  /*margin: 100px;*/
+  display: inline;
+  }
+.right {
+
+  color: darkslategray;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+  cursor: pointer;
+  margin-right:20px;
+  font-size: 300%;
+
+}
+.left {
+  color: darkslategray;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+  cursor: pointer;
+  margin-right:20px;
+  font-size: 300%;
+
+
+
+
+}
+

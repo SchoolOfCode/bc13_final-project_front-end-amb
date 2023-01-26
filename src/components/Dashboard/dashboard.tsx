@@ -14,7 +14,7 @@ import Footer from "../Footer/footer";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { IoMdCreate } from "react-icons/io";
 import { ImBinoculars } from "react-icons/im";
-import userEvent from "@testing-library/user-event";
+//import userEvent from "@testing-library/user-event";
 
 const Dashboard = () => {
 
@@ -40,7 +40,7 @@ const Dashboard = () => {
 console.log(id)
 
   async function getAllTrips(id:any){
-    const res = await fetch(`http://localhost:3001/api/trip/${id}`)
+    const res = await fetch(`https://travelherd.onrender.com/api/trip/${id}`)
     const json = await res.json()
     console.log(json)
     setTripData(json.payload)
@@ -55,7 +55,7 @@ console.log(id)
 
   async function fetchTripDetails(id:any) {
      
-    const res = await fetch(`http://localhost:3001/api/choices/${id}`)
+    const res = await fetch(`https://travelherd.onrender.com/api/choices/${id}`)
     const json = await res.json()
     
     setTripChoices(json)

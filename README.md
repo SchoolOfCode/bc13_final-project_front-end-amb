@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+![](images/Travel%20Herd%20(1).png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![GitHub all releases](https://img.shields.io/github/downloads/SchoolOfCode/bc13_final-project_front-end-amb/total?style=social)
+![GitHub forks](https://img.shields.io/github/forks/SchoolOfCode/bc13_final-project_front-end-amb?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/SchoolOfCode/bc13_final-project_front-end-amb?style=social)
+![GitHub Org's stars](https://img.shields.io/github/stars/SchoolOfCode?style=social)
 
-In the project directory, you can run:
 
-### `npm start`
+## 📌 The Creators
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [@ksmaldon](https://github.com/ksmaldon)
+- [@L-E-W-1-5](https://github.com/L-E-W-1-5)
+- [@DionneSD](https://github.com/DionneSD)
+- [@celiabocking](https://github.com/celiabocking)
+- [@natashachinea](https://github.com/natashachinea)
+- [@Muhammed-Ali1](https://github.com/Muhammed-Ali1)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 🗺️Travel Herd
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+"Welcome to the ultimate travelling companion! Our app is designed to make planning trips abroad with friends and family a breeze. Say goodbye to endless discussions about where to go and what to do. Our app allows you to easily plan and organize every aspect of your trip, from selecting the perfect destination and activities, to finding the perfect place to stay. With our app, you can focus on what truly matters - creating unforgettable memories with your loved ones. Download our app now and start planning your next adventure!"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🌍 Frontend development 
+<div align="center">
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
+<img src="https://user-images.githubusercontent.com/78863735/213716962-66c91b86-e6a2-42fc-a6c6-db8f144a23d6.png" alt="Auth0" width="40" height="40"/> </a>
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40"/> </a>
+          
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+⚛ [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)  
+``` 
+npm install --save-dev @testing-library/react
 
-### `npm run eject`
+yarn add --dev @testing-library/react
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌏 Backend development and testing libraries
+<div align="center">
+<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>
+<a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> </a> 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a href="https://www.cypress.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg" alt="cypress" width="40" height="40"/> </a>
+<a href="https://www.npmjs.com/package/nodemon" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/78863735/213686543-7e4c1571-c252-45d7-9175-bedfd6a99472.png" alt="nodemon" width="40" height="40"/> </a>
+<a href="https://www.postman.com/automated-testing/" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/78863735/213710289-3a470262-051e-487b-b002-ffd4c7ca2e7c.png" alt="postman" width="40" height="40"/> </a>
+  
+  
+</div>
+
+⚛ [Jest v29.3.1](https://jestjs.io/)  
+⚛ [Cypress v12.3.0](https://www.cypress.io/)   
+⚛ [Nodemon v2.0.20](https://www.npmjs.com/package/nodemon)    
+⚛ [Postman](https://www.postman.com/automated-testing/)  
+
+
+
+
+
+## 🌏 Hosting
+
+⚛ [ElephantSQL](https://www.elephantsql.com/)
+⚛ [Netlify](https://www.netlify.com/)  
+⚛ [Railway](https://www.railway.app/)
+
+
+## 🌏 Travel Herd Demo
+
+

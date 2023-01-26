@@ -1,10 +1,11 @@
 
- const VotingDropdown = ({tripChoices, category,handleChange}: any) => {
+ const VotingDropdown = ({tripChoices, category, handleChange, handleSubmits}: any) => {
 
-    function handleClick() {
-        console.log('clicked')
-        alert('thanks for voting!')
-    }
+    // //onClick might need two function?
+    // function handleClick() {
+    //     console.log('clicked')
+    //     alert('thanks for voting!')
+    // }
 
     return (
       <div>
@@ -15,7 +16,7 @@
            value={filteredCategory.choice_name}>{filteredCategory.choice_name}</option>
       ))}
       </select>
-      <button className="button" onClick={handleClick}>vote for this option</button>
+      <button className="vote-button" onClick={()=> handleSubmits(category)}>vote</button>
       </div>
   )};
   

@@ -23,16 +23,24 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
     handleSubmit,
     //getValues,
     //setValue,
-    reset,
+    // reset,
     formState: { errors },
   } = useForm();
 
-  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next,goTo } =
-    useMultistepForm([
-      <NewForm ActualObj={object} CreatingObj={setObject} />,
-      <CategoryForm ActualObj={object} />,
-      <MemberForm ActualObj={object} />,
-    ]);
+  const {
+    steps,
+    currentStepIndex,
+    step,
+    isFirstStep,
+    isLastStep,
+    back,
+    next,
+    goTo,
+  } = useMultistepForm([
+    <NewForm ActualObj={object} CreatingObj={setObject} />,
+    <CategoryForm ActualObj={object} />,
+    <MemberForm ActualObj={object} />,
+  ]);
 
   const { user } = useAuth0(); //, isAuthenticated, getAccessTokenSilently
 
@@ -47,17 +55,15 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
       // TODO: Create a fetch request to retrieve the trip ID and save the trip to a database.
       setTripDetails(data); // TODO: maybe use local storage to save the details of the form while logging in?
       pageSelect("dashboard"); // TODO: Create a function that changes state in the dashboard component to 'data'.
-     goTo(0);
-      
+      goTo(0);
     }
-
   }
 
   return (
     <>
       <div className="createTripContainer">
         <h1 className="create-trip-h1">create trip </h1>
-
+        <h3>add options for each category that your companions can vote on</h3>
         <div className="create-trip-form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="page-counter">
@@ -66,7 +72,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
 
             {step}
 
-             {/* <div className="change-page-buttons">
+            {/* <div className="change-page-buttons">
               {!isFirstStep && (
                 <button className="button" type="button" onClick={back}>
                   back
@@ -81,14 +87,13 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
         </div>
 
         <button
-          className="create-cancel-button cancel-button"
+          className="create-cancel-button cancel-button reset-button"
           onClick={() => {
-            pageSelect("dashboard");
+            // pageSelect("dashboard");
             goTo(0);
-            
           }}
         >
-          cancel
+          reset
         </button>
       </div>
     </>
@@ -101,4 +106,3 @@ export default CreateTrip;
 // <DateForm {...{ control, register, errors}}/>,
 // <MembersForm {...{ control, register, errors}}/>,
 // <MultipleEventForm {...{ control, register, errors, getValues, setValue}}/>
-

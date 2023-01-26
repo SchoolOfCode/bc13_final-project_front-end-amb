@@ -32,7 +32,7 @@ code {
   border: 2px solid var(--beige);
   border-radius: var(--border-radius);
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-   color: var(--green);
+  color: var(--green);
   cursor: pointer;
   font-size: 0.9rem;
   padding: 10px 20px;
@@ -52,14 +52,13 @@ code {
   background: var(--green);
   border: 2px solid var(--green);
   border-radius: var(--border-radius);
-  
-   color: var(--beige);
+  color: var(--beige);
   cursor: pointer;
   font-size: 0.9rem;
   padding: 10px 20px;
   font-weight: bold;
   line-height: 16px;
-  text-align: center;
+  /*text-align: center;*/
   font-family: var(--font);
 }
 

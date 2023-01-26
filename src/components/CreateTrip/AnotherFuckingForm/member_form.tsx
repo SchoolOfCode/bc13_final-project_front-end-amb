@@ -42,11 +42,12 @@ function MemberForm({ ActualObj }: any) {
 
   return (
     <div className="App">
-      <div>
+      <div className="create-trip-container" >
         {inputFields.map((input, index) => {
           return (
             <div key={index}>
               <input
+              className="form-page-input-field"
               required
                 name="user_name"
                 placeholder="Name"
@@ -54,6 +55,7 @@ function MemberForm({ ActualObj }: any) {
                 onChange={(event) => handleFormChange(index, event)}
               />
               <input
+              className="form-page-input-field"
               required
                 name="user_email"
                 placeholder="Member email"
@@ -63,10 +65,10 @@ function MemberForm({ ActualObj }: any) {
             </div>
           );
         })}
-        <button type="button" onClick={addFields}>
-          add more..
+        <button className="button-beige button" type="button" onClick={addFields}>
+          add more...
         </button>
-        <button
+        <button className="submit-button button"
           onClick={() => {
             saveMembers();
           }}

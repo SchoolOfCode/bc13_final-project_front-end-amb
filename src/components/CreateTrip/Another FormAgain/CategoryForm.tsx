@@ -99,6 +99,7 @@ const CategoryForm = ({ ActualObj}: any) => {
       category: "restaurant",
       selected_choice: "undecided",
     };
+    console.log(ob.trip_id, '!!!!!!!!!!!!')
     const response = await fetch(`${url}/poll`, {
       method: "POST",
 
@@ -117,11 +118,11 @@ const CategoryForm = ({ ActualObj}: any) => {
     restaurantArray: any,
     restaurantData: any
   ) {
-    console.log(restaurantData);
+    console.log(restaurantData, 'kylie celia !!!!!!');
     for (let i = 0; i < 4; i++) {
       if (restaurantArray[i] !== "") {
         let ob = {
-          poll_id: restaurantData.trip_id,
+          poll_id: restaurantData.poll_id,
           category: "restaurant",
           choice_name: `${restaurantArray[i]}`,
         };

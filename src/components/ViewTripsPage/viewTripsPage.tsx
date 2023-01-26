@@ -1,113 +1,70 @@
-import "./viewTripsPage.css"
-
+import "./viewTripsPage.css";
+//import fetchTripDetails from "../Dashboard/dashboard";
 import TripCard from "./TripCard/TripCard";
+//import { AiOutlineConsoleSql } from "react-icons/ai";
+import React, { useState, useRef } from "react";
+import { BsArrowRightSquareFill, BsArrowLeftSquareFill } from "react-icons/bs";
 
-const tripsArr = [
+let count = 0;
+const ViewTrips = ({
+  tripData,
+  pageSelect,
+  handlePage,
+  fetchTripDetails,
+}: any) => {
+  const myRef = useRef<null | HTMLDivElement>(null);
+  const [scroll, setScroll] = useState(580);
+  // const [tripWidth, setWidth] = useState(0);
 
+  function scrollRight() {
+    console.log(count);
+    if (scroll < (count / 2) * 290 - 1400) {
+      myRef.current?.scrollTo({
+        left: scroll + 580,
+        behavior: "smooth",
+      });
+      setScroll(scroll + 580);
+      count = 0;
+    }
+  }
+  function scrollLeft() {
+    if (scroll > 290) {
+      myRef.current?.scrollTo({
+        left: scroll - 580,
+        behavior: "smooth",
+      });
+      setScroll(scroll - 580);
+      count = 0;
+    }
+  }
+  // function addWidth() {
+  //   setWidth(tripWidth + 290);
+  // }
+  return (
+    <div className="view-trips-div">
+      <h1>your trips</h1>
 
-     {
-        Admin: "newUser",
-        group: "Minty Blobfish",
-        destination: "aaaaa",
-        date: [
-                {
-                    name: "2023-01-11"
-                }
-              ],
-        event: [
-                {
-                    type: "Accomodation",
-                    location: "location",
-                    date: "2023-01-13T11:11"
-                }
-               ],
-        member: [
-                {
-                    name: "aaa",
-                    email: "aaa@aaaa.com"
-                }
-                ],
-        
-     },
-     {
-        Admin: "newUser",
-        group: "Natasha's Group",
-        destination: "aaaaa",
-        date: [
-                {
-                    name: "2023-01-11"
-                }
-              ],
-        event: [
-                {
-                    type: "Accomodation",
-                    location: "location",
-                    date: "2023-01-13T11:11"
-                }
-               ],
-        member: [
-                {
-                    name: "aaa",
-                    email: "aaa@aaaa.com"
-                }
-                ],
-        
-     },
-
-     {
-        Admin: "newUser",
-        group: "Kylie's Group",
-        destination: "aaaaa",
-        date: [
-                {
-                    name: "2023-01-11"
-                }
-              ],
-        event: [
-                {
-                    type: "Accomodation",
-                    location: "location",
-                    date: "2023-01-13T11:11"
-                }
-               ],
-        member: [
-                {
-                    name: "aaa",
-                    email: "aaa@aaaa.com"
-                }
-                ],
-        
-     }
-
-]
-
-
-const ViewTrips = (props:any) => {
-
-  
-    return (
-       <div className='view-trips-div'>
-
-       <div className="view-trip-form-item">
-            {/* <Navbar /> */}
-       </div>
-       
-       <div className="view-trip-form-item">
-       
-            {tripsArr.map((trip) => {
-                return (<div key={Math.random() * 10000}>
-
-
-                    <TripCard tripDetails={props.setTripDetails} handlePage={props.pageSelect} trip={trip}></TripCard>
-
-                </div>)
-            })}
-        </div>
-        <button className="view-trip-cancel-button cancel-button" onClick={() => {props.pageSelect("dashboard")}}>cancel</button>
-        </div>
-        
-    )
-
-}
+      <div ref={myRef} className="view-trip-form-item">
+        {tripData.map((trip: any) => {
+          count++;
+          return (
+            <div key={Math.random() * 10000}>
+              <TripCard
+                fetchTripDetails={fetchTripDetails}
+                className="trip-card"
+                handlePage={pageSelect}
+                trip={trip}
+              ></TripCard>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <BsArrowLeftSquareFill className="left" onClick={scrollLeft} />
+        <BsArrowRightSquareFill className="right" onClick={scrollRight} />
+      </div>
+    </div>
+  );
+};
 
 export default ViewTrips;

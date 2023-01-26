@@ -252,4 +252,8 @@ color: transparent;
   /*position: fixed;*/
   /*bottom: %;*/
   margin-top: 1%;
+  box-shadow:rgb(170, 170, 170);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
 }

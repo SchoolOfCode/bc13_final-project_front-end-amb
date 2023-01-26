@@ -71,6 +71,7 @@ function MemberForm({ ActualObj }: any) {
         <button className="submit-button button"
           onClick={() => {
             saveMembers();
+            alert('thanks for creating a trip!');
           }}
         >
           submit

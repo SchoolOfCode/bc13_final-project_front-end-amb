@@ -92,6 +92,7 @@ const CreateTrip = ({ setTripDetails, pageSelect }: any) => {
           onClick={() => {
             // pageSelect("dashboard");
             goTo(0);
+            
           }}
         >
           reset

@@ -46,7 +46,7 @@ const JoinTrip = (props: any) => {
         </h2>
 
         <form className="join-form-item" onSubmit={handleSubmit}>
-          <label>
+          <label className="label-id">
             Enter trip ID:
             <input
               className="input-field"

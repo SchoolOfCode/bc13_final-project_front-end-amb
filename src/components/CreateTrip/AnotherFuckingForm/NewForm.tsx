@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 type trip_data = {
 
-    trip_id: number
+     trip_id: number
     trip_name: string
-    admin_id: string
+     admin_id: string
     user_id: string
-}
+ }
 
 const url = 'https://travelherd.onrender.com/api'
 
@@ -37,7 +38,7 @@ async function fetchall() {
     console.log(data.payload[0]);
     const tripData = data.payload[0];
     setObject({ ...tripData });
-    const userData = await memberTable(tripData);
+     const userData = await memberTable(tripData);
     const destinationData = await destinationTable(tripData);
 
     const dateData = await dateTable(tripData);

@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import AuthButtons from "../AuthButtons/AuthButtons";
 import useMultistepForm from "../CreateTrip/Hooks/useMultistepForm";
-import goTo from "../CreateTrip/Hooks/useMultistepForm"
+//import goTo from "../CreateTrip/Hooks/useMultistepForm"
 import logo from "../../images/Logo.png";
 console.log(useMultistepForm);
 

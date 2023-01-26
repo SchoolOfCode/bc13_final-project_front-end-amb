@@ -1,7 +1,7 @@
 import "./viewTripsPage.css";
-import fetchTripDetails from "../Dashboard/dashboard";
+//import fetchTripDetails from "../Dashboard/dashboard";
 import TripCard from "./TripCard/TripCard";
-import { AiOutlineConsoleSql } from "react-icons/ai";
+//import { AiOutlineConsoleSql } from "react-icons/ai";
 import React, { useState, useRef } from "react";
 import { BsArrowRightSquareFill, BsArrowLeftSquareFill } from "react-icons/bs";
 

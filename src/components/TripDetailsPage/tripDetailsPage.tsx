@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import "./tripDetailsPage.css";
 import { useState } from "react";
 import VotingDropdown from "./VotingDropdown/votingDropdown";

@@ -23,7 +23,7 @@ const JoinTrip = (props: any) => {
     console.log(data.payload[0]);
     let userData = data.payload[0];
     return userData;
-    console.log(userData);
+    //console.log(userData);
   }
 
   function handleSubmit(e: any) {

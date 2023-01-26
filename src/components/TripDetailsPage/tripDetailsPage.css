@@ -28,7 +28,7 @@
   padding-bottom: 0.2cm;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: var(--dark-orange) 1.95px 1.95px 2.6px;
   border-radius: var(--border-radius);
   text-align: left;
   width: 60%;
@@ -43,6 +43,7 @@
 
 .votingDropdown {
     width:100%;
+    font-weight: bold;
 }
 
 .vote-button{
@@ -52,13 +53,25 @@
     padding: 0.7rem 1rem;
     font-size: 1.2rem;
     font: var(--font);
+    font-weight: bold;
+    color: var(--black);
+    cursor: pointer;
+    border: 2px solid var(--light-orange);
     
+}
+
+.vote-button:hover,
+.vote-button:active {
+    border: 2px solid var(--dark-orange);
 }
 
 .dropdowns{
     border-radius: var(--border-radius);
     padding: 0.7rem;
     font-size: 1.2rem;
+    font: var(--font);
+    color: var(--green);
+    font-weight: bold;
     
 }
 
@@ -119,6 +132,10 @@ h3 {
     margin-bottom: 3rem;
 }
 
+.dropdowns:focus, .dropdowns:focus {
+    outline: none;
+    border: 2px solid var(--green);
+  }
 
 
 @media only screen and (max-width: 600px) {
@@ -135,9 +152,12 @@ h3 {
     border-radius: var(--border-radius);
     padding: 0.7rem 0.6rem;
     font-size: 0.8rem;
+    cursor: pointer;
    
     
 }
+
+
 
 .votingDropdown div {
     margin-bottom:0.5rem;

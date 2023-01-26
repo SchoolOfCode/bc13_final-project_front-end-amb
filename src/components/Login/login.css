@@ -39,13 +39,13 @@
 .getStarted {
 
  
-  background-color: var(--green);
+  background-color: var(--light-orange);
   border-radius: var(--border-radius);
   border-style: none;
-  color: var(--beige);
+  color: var(--black);
   font-family: var(--font);
   font-size: 150%;
-border: 3px solid var(--green);
+  border: 3px solid var(--light-orange);
   padding:1% 2% 1% 2%;
   
 }

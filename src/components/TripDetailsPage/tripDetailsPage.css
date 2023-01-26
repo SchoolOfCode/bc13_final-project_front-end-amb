@@ -15,19 +15,19 @@
 
 .trip-details-container{
     background-color: #f9f7dc;
-  position: relative;
- padding:0 8rem;
-  display: flex;
-  height: 50%;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.116);
+    position: relative;
+    padding:0 8rem;
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.116);
   padding-bottom: 0.2cm;
   justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: var(--border-radius);
-  text-align: left;
-  width: 45rem;
+    text-align: left;
+    width: 45rem;
 }
 
 .votingDropdown div {

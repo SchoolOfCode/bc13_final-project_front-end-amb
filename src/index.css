@@ -1,0 +1,114 @@
+:root{
+  --green: #084d46;
+  --dark-orange: #df6332;
+  --light-orange: #f3792b;
+  --beige: #f9f7dc;
+  --yellow: #febd11;
+  --black: #000000;
+  --red-brown: #511011;
+  --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  --border-radius: 6px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: var(--beige);
+  color: var(--green);
+  font-family: var(--font);
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.cancel-button {
+  
+  background: var(--beige);
+  border: 2px solid var(--beige);
+  border-radius: var(--border-radius);
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+}
+
+.cancel-button:hover,
+.cancel-button:active {
+    border: 2px solid var(--light-orange);
+}
+
+.submit-button{
+ 
+  background: var(--green);
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+  color: var(--beige);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  /*text-align: center;*/
+  font-family: var(--font);
+}
+
+.submit-button:hover,
+.submit-button:active {
+    border: 2px solid var(--dark-orange);
+}
+
+.input-field {
+  border-color: 2px solid var(--dark-orange);
+}
+
+.button-green {
+   background: var(--beige);
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+ 
+   color: var(--green);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+}
+
+.button-green:hover,
+.button-green:active {
+    border: 2px solid var(--dark-orange);
+    color: var(--beige);
+}
+
+.button-beige {
+   background: var(--beige);
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+ 
+   color: var(--green);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  font-family: var(--font);
+}
+
+.button-beige:hover,
+.button-beige:active {
+    border: 2px solid var(--dark-orange);
+    color: var(--green);
+}

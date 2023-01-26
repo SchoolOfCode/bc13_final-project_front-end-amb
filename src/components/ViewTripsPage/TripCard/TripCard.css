@@ -1,0 +1,14 @@
+.trip-card {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 4px solid var(--red-brown);
+    border-radius: var(--border-radius);
+    background-color: var(--red-brown);
+    color: var(--beige);
+    background-image: url(../../../../src/images/travel-bg.png);
+    background-size: cover;
+    }

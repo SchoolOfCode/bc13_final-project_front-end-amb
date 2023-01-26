@@ -41,8 +41,7 @@ const JoinTrip = (props: any) => {
       <h1>join trip</h1>
       <div className="join-container">
         <h2 className="join-h2">
-          ask your trip organiser for the ID of your trip to see details and add
-          your votes
+        If a trip has already been created for your group, you will have received an email containing the trip ID.
         </h2>
 
         <form className="join-form-item" onSubmit={handleSubmit}>
